@@ -8,4 +8,4 @@
 Gatsby를 이용해서 프로젝트를 구현하고, 관리하고 있습니다.
 
 # 링크 
-[BLOG-AROUND](https://wndudqus.github.io/Blog-Around/);
+[BLOG-AROUND](https://wndudqus.github.io/Blog-Around/)
