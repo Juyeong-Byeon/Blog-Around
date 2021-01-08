@@ -4,6 +4,14 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import styled from 'styled-components'
+
+
+const MainImage = styled.img`
+  width:80%;
+  border-radius:5px;
+  margin-left:10%;
+`
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -27,7 +35,11 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      {posts.map(post => {
+      <MainImage src='Main.png'></MainImage>
+      <br />
+      <br />
+      <hr />
+      {posts.map((post, index) => {
         const title = post.frontmatter.title || post.fields.slug
         return (
           <article
@@ -36,8 +48,11 @@ const BlogIndex = ({ data, location }) => {
             itemScope
             itemType="http://schema.org/Article"
           >
+
             <header>
+
               <h2>
+                {(index + 1) + " ) "}
                 <Link to={post.fields.slug} itemProp="url">
                   <span itemProp="headline">{title}</span>
                 </Link>
@@ -52,6 +67,8 @@ const BlogIndex = ({ data, location }) => {
                 itemProp="description"
               />
             </section>
+            <br />
+            <hr />
           </article>
         )
       })}

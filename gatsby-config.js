@@ -1,14 +1,16 @@
 module.exports = {
+  pathPrefix: "/Blog-Around",
+
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Blog-Around`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Juyeong Byeong`,
+      summary: `.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `개발, 그리고 여러 잡다한 끄적임.`,
+    siteUrl: `https://wndudqus.github.io/Blog-Around/`,
     social: {
-      twitter: `kylemathews`,
+      github: `wndudqus`,
     },
   },
   plugins: [
