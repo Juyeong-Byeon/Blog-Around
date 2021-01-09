@@ -1,18 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 09 Jan 2021 01:43:46 GMT</lastBuildDate><item><title><![CDATA[Bingo with react and redux.]]></title><description><![CDATA[…]]></description><link>https://wndudqus.github.io/Blog-Around/project/bingo_with_redux/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/project/bingo_with_redux/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h2&gt;들어가며&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 09 Jan 2021 02:12:13 GMT</lastBuildDate><item><title><![CDATA[Bingo with react and redux.]]></title><description><![CDATA[…]]></description><link>https://wndudqus.github.io/Blog-Around/project/bingo_with_redux/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/project/bingo_with_redux/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h2&gt;들어가며&lt;/h2&gt;
 &lt;p&gt; 최근 왓챠의 과제전형을 통해 리액트와 리덕스를 이용해 빙고를 만들어볼 기회가 생겼다. 리덕스를 학습한지 꽤 오랜만에🤣 다시 빠르게 복습해서 만들었는데, 꽤나 재미있게 만들었던 프로젝트 같다.이번 글에서는 프로젝트를 진행하기 위해 했던 고민들과 만든 뒤에 생각난 개선사항들을 한번 적어보았다.&lt;/p&gt;
 &lt;h2&gt;데모 &amp;#x26; github&lt;/h2&gt;
-&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;&gt;
-      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/Blog-Around/static/f95c8bf7131c706eab37d2262b235c71/d9199/bingo_with_redux.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
-    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 97.46835443037975%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADJElEQVQ4y32S+UsUYRyH90/ITA2vucc1Vmdmx7n2cN651kxNXdfUza1MO4wyNUulCDsgiH4qOqg0Cn8oQexQKyvIwMiyiNYjj7Qsywr6GxrXXKNUeBjmHT4Pn+/7zmsBTiBQnMDwAsNJDM8yHFB0GagUzbJMmrlk7EtjBizpiuYCqgw0RdEVWVOBDtwqcCm6avhkT6asA6DJ/2EW8ILDoukeSXRV1tT0Dwe76ILe621Pb93uoX19r19XHaoXRaeqeczoPyiqIYhOi6YZgluu9W2ZPXJpmPJPVZ6a3Hd6jNr8pelyY0k575ZV1fgjKLoW4i9ZNUSg7De8kzm1b7nAcHLhUPKmITYwihccFDIFTVNDaVnRN8qeTXKGD2Toi7LuEQTngfrG77Ozg47t4+yWcb5szB74KJbXp+fyiqoujGpqxfJ6Ew8wgLYgi6Krqrp29N3QC3fZAJn3isx7KW0d7nlWV31AkFzhPWcCIwsYOcCj/tNcV9/wa/bHqD0w3XDu09GLE0zpz6/fDjcd43lppQNTNUOUXDt2VT55+Kidzu+6cK2rpbWDzn94r3v33ipBdJm5ZX8VzaShGInhSRCMQWToOf+C4iSeRBLJOGFdElOxpKQycfEQjOBzawjDEMIEhTACxgXYaoMJGEITl8LssJi3LHJNTGGx/3Hng3Ys425za+f55pvxyv2U/A0YHQMhyPwsSzE3dkTEmorKPTPTnwdTioZ2nhipOD5A5E1RpYU4G2XOBOPhNBxiUTabV0fFbCv0j7V1v7H7XyHZA3hun803Yiv2Yvbov2QbTHKIlUGS4IUvFirVHpGQUIbzk7aSIFUSZPxB++Z+uugDVerD2bBsFnJosoSuc6DrCIRIXGyOjA5sKwv29fdi2b2r3M99tU97ngQH3ni9vuiYWAQl5ntIhEhCSCtCIMhCM02xEWtjy9XsmeNXR8+2jp25PnH7cfD9yMzJ5iKHHhWXEI4mQOg8ieE9MzQbDSNeKLXdmnXrTkfbg+62zrs3rrS045nroZRYDMdQAlkGi5GxwbxoojOdc7q5NCGEyAkS50oXnW7JsRK/AS9TR2ZEwhTlAAAAAElFTkSuQmCC&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;bingo with react and redux demo&quot; title=&quot;bingo with react and redux demo&quot; src=&quot;/Blog-Around/static/f95c8bf7131c706eab37d2262b235c71/f058b/bingo_with_redux.png&quot; srcset=&quot;/Blog-Around/static/f95c8bf7131c706eab37d2262b235c71/c26ae/bingo_with_redux.png 158w,
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/Blog-Around/static/f95c8bf7131c706eab37d2262b235c71/d9199/bingo_with_redux.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 97.46835443037975%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAIAAAAf7rriAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADJElEQVQ4y32S+UsUYRyH90/ITA2vucc1Vmdmx7n2cN651kxNXdfUza1MO4wyNUulCDsgiH4qOqg0Cn8oQexQKyvIwMiyiNYjj7Qsywr6GxrXXKNUeBjmHT4Pn+/7zmsBTiBQnMDwAsNJDM8yHFB0GagUzbJMmrlk7EtjBizpiuYCqgw0RdEVWVOBDtwqcCm6avhkT6asA6DJ/2EW8ILDoukeSXRV1tT0Dwe76ILe621Pb93uoX19r19XHaoXRaeqeczoPyiqIYhOi6YZgluu9W2ZPXJpmPJPVZ6a3Hd6jNr8pelyY0k575ZV1fgjKLoW4i9ZNUSg7De8kzm1b7nAcHLhUPKmITYwihccFDIFTVNDaVnRN8qeTXKGD2Toi7LuEQTngfrG77Ozg47t4+yWcb5szB74KJbXp+fyiqoujGpqxfJ6Ew8wgLYgi6Krqrp29N3QC3fZAJn3isx7KW0d7nlWV31AkFzhPWcCIwsYOcCj/tNcV9/wa/bHqD0w3XDu09GLE0zpz6/fDjcd43lppQNTNUOUXDt2VT55+Kidzu+6cK2rpbWDzn94r3v33ipBdJm5ZX8VzaShGInhSRCMQWToOf+C4iSeRBLJOGFdElOxpKQycfEQjOBzawjDEMIEhTACxgXYaoMJGEITl8LssJi3LHJNTGGx/3Hng3Ys425za+f55pvxyv2U/A0YHQMhyPwsSzE3dkTEmorKPTPTnwdTioZ2nhipOD5A5E1RpYU4G2XOBOPhNBxiUTabV0fFbCv0j7V1v7H7XyHZA3hun803Yiv2Yvbov2QbTHKIlUGS4IUvFirVHpGQUIbzk7aSIFUSZPxB++Z+uugDVerD2bBsFnJosoSuc6DrCIRIXGyOjA5sKwv29fdi2b2r3M99tU97ngQH3ni9vuiYWAQl5ntIhEhCSCtCIMhCM02xEWtjy9XsmeNXR8+2jp25PnH7cfD9yMzJ5iKHHhWXEI4mQOg8ieE9MzQbDSNeKLXdmnXrTkfbg+62zrs3rrS045nroZRYDMdQAlkGi5GxwbxoojOdc7q5NCGEyAkS50oXnW7JsRK/AS9TR2ZEwhTlAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;bingo with react and redux demo&quot;
+        title=&quot;bingo with react and redux demo&quot;
+        src=&quot;/Blog-Around/static/f95c8bf7131c706eab37d2262b235c71/f058b/bingo_with_redux.png&quot;
+        srcset=&quot;/Blog-Around/static/f95c8bf7131c706eab37d2262b235c71/c26ae/bingo_with_redux.png 158w,
 /Blog-Around/static/f95c8bf7131c706eab37d2262b235c71/6bdcf/bingo_with_redux.png 315w,
 /Blog-Around/static/f95c8bf7131c706eab37d2262b235c71/f058b/bingo_with_redux.png 630w,
 /Blog-Around/static/f95c8bf7131c706eab37d2262b235c71/40601/bingo_with_redux.png 945w,
-/Blog-Around/static/f95c8bf7131c706eab37d2262b235c71/d9199/bingo_with_redux.png 960w&quot; sizes=&quot;(max-width: 630px) 100vw, 630px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+/Blog-Around/static/f95c8bf7131c706eab37d2262b235c71/d9199/bingo_with_redux.png 960w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
   &lt;/a&gt;
     &lt;/span&gt;
-&lt;br&gt;
-&amp;#x2002; &amp;#xBA3C;&amp;#xC800; &amp;#xC544;&amp;#xB798;&amp;#xC758; &amp;#xB370;&amp;#xBAA8;&amp;#xB97C; &amp;#xD655;&amp;#xC778;&amp;#xD574;&amp;#xBCF4;&amp;#xC790;! &amp;#xC5B4;&amp;#xB514;&amp;#xC5D0; &amp;#xB0B4;&amp;#xB193;&amp;#xC744; &amp;#xC815;&amp;#xB3C4;&amp;#xB85C; &amp;#xD2B9;&amp;#xBCC4;&amp;#xD558;&amp;#xAC70;&amp;#xB098; &amp;#xB300;&amp;#xB2E8;&amp;#xD55C; &amp;#xD504;&amp;#xB85C;&amp;#xC81D;&amp;#xD2B8;&amp;#xB294; &amp;#xC544;&amp;#xB2C8;&amp;#xC9C0;&amp;#xB9CC;, &amp;#xAC1C;&amp;#xC778;&amp;#xC801;&amp;#xC73C;&amp;#xB85C; &amp;#xD504;&amp;#xB85C;&amp;#xB355;&amp;#xD2B8;&amp;#xAC00; &amp;#xD558;&amp;#xB098; &amp;#xB0B4; &amp;#xC190;&amp;#xC73C;&amp;#xB85C; &amp;#xB9CC;&amp;#xB4E4;&amp;#xC5B4;&amp;#xC9C0;&amp;#xBA74; &amp;#xC790;&amp;#xAFB8;&amp;#xB9CC; &amp;#xC5EC;&amp;#xAE30;&amp;#xC800;&amp;#xAE30; &amp;#xBCF4;&amp;#xC5EC;&amp;#xC8FC;&amp;#xACE0; &amp;#xC2F6;&amp;#xC5B4;&amp;#xC11C; &amp;#xB123;&amp;#xC5B4;&amp;#xBCF4;&amp;#xC558;&amp;#xB2E4;. &amp;#x1F601;
+  먼저 아래의 데모를 확인해보자! 어디에 내놓을 정도로 특별하거나 대단한 프로젝트는 아니지만, 개인적으로 프로덕트가 하나 내 손으로 만들어지면 자꾸만 여기저기 보여주고 싶어서 넣어보았다. 😁&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://wndudqus.github.io/bingo_with_redux/&quot;&gt;Bingo-with-react-and-redux-데모&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/wndudqus/bingo_with_redux&quot;&gt;Bingo-with-react-and-redux-소스&lt;/a&gt;&lt;/li&gt;
@@ -34,16 +54,36 @@
 &lt;p&gt;사용자가 빙고를 이용하는 flow를 생각해 보니 위의 action들이 필요할 것 같다는 생각이 들었다. &lt;/p&gt;
 &lt;h5&gt;2. flow와 인터랙션을 생각하며 필요한 UI를 설계해 보자!&lt;/h5&gt;
 &lt;p&gt; 그 후에는 사용자가 이용할 UI의 컴포넌트들을 어떻게 나눌까를 고민했다. 필자는 보통 리액트를 이용해 프로젝트를 구성할 때 사용할 상황들을 생각하고 그 다음으로 UI 구조를 먼저 생각하는 편이다. 리액트의 경우 컴포넌트 기반으로 프로젝트를 조립하듯이 구성해나간다. 이 때문에 컴포넌트를 나누어 설계해보면 각 컴포넌트에서 필요한 데이터가 구체화가 자연스럽게 되어 UI 구조를 먼저 잡는 것을 좋아한다. 그래서 아래와 같이 구조를 먼저 잡고 프로젝트를 진행했다.
-&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 482px; &quot;&gt;
-      &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/Blog-Around/static/025b2a95d4c4a89f09d81c3f25103ae6/37e0d/bingo_with_redux_react_structure.png&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
-    &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 113.29113924050634%; position: relative; bottom: 0; left: 0; background-image: url(&amp;apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAAsSAAALEgHS3X78AAADxUlEQVQ4y5WUO0ybVxTHPxubkqgIESpXjYSUhm5IYWnLkCVJ6ZgBKWIIajIUlKlDkRBtJaYMdmTHQBSBKygMiAWQeCywIAUhBh7iKR5+Cdm8XzYYbMBBuL9z+Zwa2ljplY7ud7977v+e8z//czXtI2NyctIgc3t7e87Ozo7/5OQkEYlE4ltbW+/D4fD74+Pj+MHBQWJhYeG++Hk8HqOWbiwvLyvA7u7u3NPT03BCH0dHR4nUEQwGH4jf5uZmRlrA0dFRNbe2tmZx6HeifI3ZAoHAGw47dnd3bWtra86pqak74jc3N2dICzgyMqJml8slgL+RngOzktpbATw8PLRubGw4JiYmFODMzEx6wKWlJeUwNjaWC2/Ri4uLxNnZWeL8/FxZLBZTKQP+SPzW19fTpzw9Pa0Ae3t7swF8hwU47MZ829vbXtYe5oDP5/tW/Px+f/qi9PX1qdlqtZoB/3FlZaV0f3//MVQ8o2BP4O8xvJUODAzcEr+hoaG0eNri4qKKsKOjIweJeOLx+AVFiRHV2d7e3inpx0RKRKhkA8//RNjT0yMpqu/BwUGpsAEdGvV1LofDScmIJfnTZfNQT9k0PDxs+M80U4fRaMykMKVE/Gx1dfWn+fn5F16v9znVfsqlz8ngi38damxs1Pr7+9V3S0tLDsBfwk9eVVXVNzU1NXcKCgqy2cpOOZKlr2+Wl5ffdTqd+egxr6ury6J24UEjepUiPP1FWmE0t4J4t5jXWAfgK0JlfxGfUCjUz78QFqRQm6zX0WUQW01q7gMgBRgWbiA+EY1GFV84Kr44+FJ86Gm3rKWXpTDiwz/lowBlpuEVobTWz9zson9fE2ET3w0ccrLvgvgfdJ9fuayJy+tkXwzQBoJo0LglgypmSIRUyXyNXtO1tYEWM2v/Y1xRe2Fh4Y2ioqKs66CpCwkEy0iaRgfYCdUOB3ZSchH+K6J+hYAds7OzX42Pj9+G+DpSssGl+DTpPnX07x8VFRWfCXBzc7NWW1urbkgkCRZi4eWDaJHCdxTse/mW/+IjwpZiycA/bLPZsnUNX0YO8RGRBE+RMqRxyKEIADGiu4d471GQE/b2iSjE4yC2h7yiZDZbXV39ueB0dnZeId5UXFxsyszMvJWfn2/W/5n1tjS73W4Ll1qovIWoLFxo4RIL7ZpXUlKiIquvr79E49Wwk4odjdkR+J8y4yy8Omi5rz+lkmVlZVeq9NFBZEndmUjXkGpQYKCghsrKSoXT1tZ2CUgFfTxNPlLyEqmPanrRpRfi/fSzejwBNn6q7v4GoiJ6luJUkyQAAAAASUVORK5CYII=&amp;apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
-  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;bingo react structure&quot; title=&quot;bingo react structure&quot; src=&quot;/Blog-Around/static/025b2a95d4c4a89f09d81c3f25103ae6/37e0d/bingo_with_redux_react_structure.png&quot; srcset=&quot;/Blog-Around/static/025b2a95d4c4a89f09d81c3f25103ae6/c26ae/bingo_with_redux_react_structure.png 158w,
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 482px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/Blog-Around/static/025b2a95d4c4a89f09d81c3f25103ae6/37e0d/bingo_with_redux_react_structure.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 113.29113924050634%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAAAsSAAALEgHS3X78AAADxUlEQVQ4y5WUO0ybVxTHPxubkqgIESpXjYSUhm5IYWnLkCVJ6ZgBKWIIajIUlKlDkRBtJaYMdmTHQBSBKygMiAWQeCywIAUhBh7iKR5+Cdm8XzYYbMBBuL9z+Zwa2ljplY7ud7977v+e8z//czXtI2NyctIgc3t7e87Ozo7/5OQkEYlE4ltbW+/D4fD74+Pj+MHBQWJhYeG++Hk8HqOWbiwvLyvA7u7u3NPT03BCH0dHR4nUEQwGH4jf5uZmRlrA0dFRNbe2tmZx6HeifI3ZAoHAGw47dnd3bWtra86pqak74jc3N2dICzgyMqJml8slgL+RngOzktpbATw8PLRubGw4JiYmFODMzEx6wKWlJeUwNjaWC2/Ri4uLxNnZWeL8/FxZLBZTKQP+SPzW19fTpzw9Pa0Ae3t7swF8hwU47MZ829vbXtYe5oDP5/tW/Px+f/qi9PX1qdlqtZoB/3FlZaV0f3//MVQ8o2BP4O8xvJUODAzcEr+hoaG0eNri4qKKsKOjIweJeOLx+AVFiRHV2d7e3inpx0RKRKhkA8//RNjT0yMpqu/BwUGpsAEdGvV1LofDScmIJfnTZfNQT9k0PDxs+M80U4fRaMykMKVE/Gx1dfWn+fn5F16v9znVfsqlz8ngi38damxs1Pr7+9V3S0tLDsBfwk9eVVXVNzU1NXcKCgqy2cpOOZKlr2+Wl5ffdTqd+egxr6ury6J24UEjepUiPP1FWmE0t4J4t5jXWAfgK0JlfxGfUCjUz78QFqRQm6zX0WUQW01q7gMgBRgWbiA+EY1GFV84Kr44+FJ86Gm3rKWXpTDiwz/lowBlpuEVobTWz9zson9fE2ET3w0ccrLvgvgfdJ9fuayJy+tkXwzQBoJo0LglgypmSIRUyXyNXtO1tYEWM2v/Y1xRe2Fh4Y2ioqKs66CpCwkEy0iaRgfYCdUOB3ZSchH+K6J+hYAds7OzX42Pj9+G+DpSssGl+DTpPnX07x8VFRWfCXBzc7NWW1urbkgkCRZi4eWDaJHCdxTse/mW/+IjwpZiycA/bLPZsnUNX0YO8RGRBE+RMqRxyKEIADGiu4d471GQE/b2iSjE4yC2h7yiZDZbXV39ueB0dnZeId5UXFxsyszMvJWfn2/W/5n1tjS73W4Ll1qovIWoLFxo4RIL7ZpXUlKiIquvr79E49Wwk4odjdkR+J8y4yy8Omi5rz+lkmVlZVeq9NFBZEndmUjXkGpQYKCghsrKSoXT1tZ2CUgFfTxNPlLyEqmPanrRpRfi/fSzejwBNn6q7v4GoiJ6luJUkyQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;bingo react structure&quot;
+        title=&quot;bingo react structure&quot;
+        src=&quot;/Blog-Around/static/025b2a95d4c4a89f09d81c3f25103ae6/37e0d/bingo_with_redux_react_structure.png&quot;
+        srcset=&quot;/Blog-Around/static/025b2a95d4c4a89f09d81c3f25103ae6/c26ae/bingo_with_redux_react_structure.png 158w,
 /Blog-Around/static/025b2a95d4c4a89f09d81c3f25103ae6/6bdcf/bingo_with_redux_react_structure.png 315w,
-/Blog-Around/static/025b2a95d4c4a89f09d81c3f25103ae6/37e0d/bingo_with_redux_react_structure.png 482w&quot; sizes=&quot;(max-width: 482px) 100vw, 482px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot;&gt;
+/Blog-Around/static/025b2a95d4c4a89f09d81c3f25103ae6/37e0d/bingo_with_redux_react_structure.png 482w&quot;
+        sizes=&quot;(max-width: 482px) 100vw, 482px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
   &lt;/a&gt;
-    &lt;/span&gt;
-&lt;br/&gt;
-버튼과 같은 자주 사용될 것 같은 요소들도 컴포넌트로 만들어서 재사용했지만 너무 간단한 컴포넌트여서 위의 트리에는 표기하지 않았다.&lt;/p&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;버튼과 같은 자주 사용될 것 같은 요소들도 컴포넌트로 만들어서 재사용했지만 너무 간단한 컴포넌트여서 위의 트리에는 표기하지 않았다.&lt;/p&gt;
 &lt;h5&gt;3. 구체화된 action과 Component를 기반으로 필요한 state를 뽑아내자!&lt;/h5&gt;
 &lt;p&gt; 이렇게 Action과 Component 들에 대해 생각을 해보니 자연스럽게 Component들이 가져야할 state들이 어떤 것이 있는지, action이 변경시킬 상태들이 어떠한 것들이 있는지 구체적으로 생각해볼 수 있게 되었다. 그리고 이를 통해 구체화된 상태데이터 들에 대해서 자연스럽게 구조를 어떻게 잡아야할지 고민하게 되었다. 그 구조들은 대략 아래와 같이 생각해 볼 수 있었다.(물론 아래 정리 된 것 보다 더 rough 하게 정리 되었는데 데이터 중복성 등을 고려해서 삭제 했다.)&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token constant&quot;&gt;BINGO&lt;/span&gt;
@@ -176,7 +216,7 @@ Players&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;BingoPlayerAre
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 53.79746835443038%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAlElEQVQoz+3MMQ/BQBjG8fdz9CqCoa5xUp3K0Gv1LIYiRa8hbEJ8//nR00gMlqOj4Zf/Mz3kBXN8YzjJwMOsbr1Ds9UT8SCFDd8cColIrlGe7lhuztgeriiqC3bHG6g/W8HGwHSaw4sLjBcVRkpDqKYGdRINa6mGm5Rw4j2YfLVBjEew4b71E3K6PtpErCfQpv/h7x6SCkxK3Syn2QAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 53.79746835443038%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABr0lEQVQoz63OW1PaUBQF4Dz02VfboAkJF0FCQkgUjBckgJgYq+KgIoqjyahMq+14a2d01N/pn1ndJ2lF7dQ+6MM3a5+z56w5XE41MZ5njEfZME1Eu8H94GxC0Sb+kkpnwWWLdRSmllCc9qBbHgxKY2YZhbILtbQInXbsnqVaclCkWSs7YO9eSmZUcFW3i73gO04v79E7ukTXp/n8FkH/AnvHV/D75MtPtDYDLG8c4uT8DgdHZ1DMOjK/i6JsUKFGPyzYSOmLMCwXeaMW0ksLpAlrfgVFSmPKgWk5yOk2JqZdzFRXkVHnMKZWKAeSaQVc0m7DdptIVFqQ6zuQa9uIVzshcX4rFJtthymQkbmN6Mz21a0nOpDyk+C8lQYefnxAy5tFJbjD9ukN1r7eYrV/gzZlrXeGz8fXqOx8A8+K7A4EejxK5c+wT7BCxdnESdeC6a5DaPrIej4yXoC0e4AUSTr7NPtIUI7WdiHU/6HRQ1wrgxuWNAyJkxiWdfCyio9S5NMfsvaYsUThVaI8Bo4XxyFIOcTijPIq/j9EKcUKqUjKvxlPRCn9HoVKiI9Hhb8AhaBmI++kPDkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -527,7 +567,7 @@ Players&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;BingoPlayerAre
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 105.69620253164558%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAVABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMFBP/EABUBAQEAAAAAAAAAAAAAAAAAAAIA/9oADAMBAAIQAxAAAAGdp6Csx0jT7gLJDP8A/8QAHRAAAgIBBQAAAAAAAAAAAAAAAQIDMREABCEiI//aAAgBAQABBQJYuqnOphiQ+hVSqO/O3ugb/8QAFxEBAQEBAAAAAAAAAAAAAAAAARARMf/aAAgBAwEBPwF1j2f/xAAYEQACAwAAAAAAAAAAAAAAAAABEAIRMf/aAAgBAgEBPwEVEIYv/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIAESEDMUFREiLB/9oACAEBAAY/AvLU9V67gIUqoOFH2GKwyx2B2ENZYyquuYy8VcNdwz//xAAcEAACAgMBAQAAAAAAAAAAAAAAARExIUGhUYH/2gAIAQEAAT8htPQEpEA3ZFevJLHr6FWJd5LciYQukNtmW6+LK9B3H//aAAwDAQACAAMAAAAQAyC+/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAEQESH/2gAIAQMBAT8QZmlTf//EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBEh/9oACAECAQE/ECROrblh/8QAIBABAQACAQQDAQAAAAAAAAAAAREAITFBUWFxgZGhsf/aAAgBAQABPxBIXfRZ4vHrnLo4ZtxvsJXfNxSfCPv9HCSWheg3fmJgwER93X5JjJi2ZRzjvrEJpBjPZj0lSeKC/wBxPI8uuf/Z&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 105.69620253164558%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAVABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAQCAwX/xAAWAQEBAQAAAAAAAAAAAAAAAAACAQD/2gAMAwEAAhADEAAAAcqIabtCgbzqAOcBf//EABoQAAIDAQEAAAAAAAAAAAAAAAEDAAISERP/2gAIAQEAAQUCAWJdeoVjq+4W3oZ5apbN2Wxef//EABcRAQEBAQAAAAAAAAAAAAAAAAEQITH/2gAIAQMBAT8B4xNn/8QAGBEBAQADAAAAAAAAAAAAAAAAARARITH/2gAIAQIBAT8B6ZIOp//EACAQAAEEAQQDAAAAAAAAAAAAAAABAhEhMRASInJBUVL/2gAIAQEABj8C+qkuE9QZFamW2hG7qc3wvYa4VjK8zp//xAAcEAEAAgIDAQAAAAAAAAAAAAABABEhUTFBYXH/2gAIAQEAAT8hzuXSnj5LbSjl2IaipYnT/c7IiXKgpq01BoHaKByMq1z9M61Cjqf/2gAMAwEAAgADAAAAEFjIAf/EABcRAQEBAQAAAAAAAAAAAAAAAAEAETH/2gAIAQMBAT8QeDZAnbL/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QCzWQQW3/xAAcEAEBAAMBAQEBAAAAAAAAAAABEQAhQTFRcYH/2gAIAQEAAT8QOGEWJbSnUfTeIUU8Z8HGYCekxPOpnXAiviF3DRskycIAEg/2dzwhZPo6TNVyldHR8PzIoF6rtc//2Q==&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
@@ -1794,7 +1834,125 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 &lt;p&gt;구조중립적이다. &lt;/p&gt;
 &lt;p&gt;바이트코드와 JVM을 사용하기 때문에 소스코드를 한번만 작성하고, 기기에 상관 없이 JVM에서 사용할 수 있다. &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 자료형과 표준 입출력]]></title><description><![CDATA[Java의 기본문법1: 자료형과 표준 입출력 자바 프로그램의 가장 기본적인 구조는 다음과 같다.  import 문장 java.lang을 재외한 모든 패키지를 가져올때는 import…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/2_Java의 기본문법_자료형과 표준입출력/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/2_Java의 기본문법_자료형과 표준입출력/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 기본문법1: 자료형과 표준 입출력&lt;/h1&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 class, 객체 지향형 언어의 특성.]]></title><description><![CDATA[Java의 class…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/4_Java의 class, 객체 지향형언어의 특성/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/4_Java의 class, 객체 지향형언어의 특성/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 class, 객체지향형 언어의 특성&lt;/h1&gt;
+&lt;p&gt;객체지향형은 소프트웨어 모듈의 재사용성과 독립성을 지원해준다. &lt;/p&gt;
+&lt;p&gt;즉 코드에 객체라는 효율적인 정보관리를 위해 의미를 부여하고, 분류하는 개념적인 단위를 이용한 것이다.또한 객체는 순차 지향형 언어가 공유데이터에 함수로써 접근해 결과를 얻어내는 것과 다르게 (객체.프로퍼티) 꼴의 message를 통해 통신함으로써 원하는 결과를 얻게 된다. &lt;/p&gt;
+&lt;p&gt;객체는 메서드와 프로퍼티로 구성되어있으며, 메서드는 객체의 정보인 프로퍼티와 파라미터로 전달되는 값을 이용해 객체가 할 수 있도록 정의된 일들을 해준다. 이러한 객체를 생성해주는 것을 class라고 한다. 클래스는 객체를 생성하는 template로 볼 수 있다.
+클래스는 자료구조(필드)와 연산(메서드)를 가진다.
+클래스로 부터 생성된 객체를 instance라고 부른다.
+class를 이용해 객체를 생성할 땐, 다음과 같이 생성한다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;classname testC&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;classname&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 생성한 객체는 class에서 정의하는 프로퍼티와, 메서드를 가지게 된다. &lt;/p&gt;
+&lt;h2&gt;클래스의 상속&lt;/h2&gt;
+&lt;p&gt;클래스의 상속이란 추상화된 클래스를 하위클래스가 그 특성을 받아 이용하고, 구체화 시키는 것을 말한다. 이로써 하위클래스가 꼭 가져야 하는 메서드와, 프로퍼티를 강제할 수도 있고, 소프트웨어의 재사용성을 지원할 수 있다.&lt;/p&gt;
+&lt;p&gt;예를 들어 학생에는 초등학생, 중학생, 고등학생, 대학생이 있다. 이 객체들에서 학생이 공통적으로 가지는 특성은 학교 이름과 학년이 있을 것이다. 또한 학생이 가지는 기본적인 행위인 수강, 시험보기 등의 기능이 공통적으로 있을 것이다. 이 것을 가지는 상위 클래스인 학생을 정의하고, 상속 함으로써 각각 초등학생, 중학생, 고등학생, 대학생의 class를 정의 할 때, 공통적인 기능과 프로퍼티는 새로 정의 하지 않아도 되는 것이다. &lt;/p&gt;
+&lt;h2&gt;캡슐화&lt;/h2&gt;
+&lt;p&gt;객체를 캡슐화 해서 어떠한 작업을 할 수 있는 인터페이스와, 제공하는 정보만을 볼 수 있게 하고, 이외의 프로퍼티는 객체 내부에서만 접근 할 수 있도록 하여 해당 객체를 이용할때, 용도와 다르게 이용되거나, 처리가 되는 과정이 드러나는 것을 막는다. &lt;/p&gt;
+&lt;p&gt;이 방법을 통해 독립성과, 사용법의 지속성, 이식성등을 좋게 할 수 있다. &lt;/p&gt;
+&lt;h2&gt;다형성 (polymorphism)&lt;/h2&gt;
+&lt;p&gt;하나의 인터페이스를 사용해 다양한 구현 방법을 제공 하는 것이다. 상위클래스변수를 선언한 후 runtime에 상황에 맞게 하위 class를 이용해 초기화 해주는 것을 의미한다. 이로써 객체를 이용할 때, 더 다양한 구현체를 다룰 수 있도록 지윈한다. &lt;/p&gt;
+&lt;h2&gt;Class의 선언 및 정의&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;클래스 접근 제한자&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;protected&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; className &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; superclass&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;implements&lt;/span&gt; interfaceName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;필드 접근 제한자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; 멤버변수&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;생성자 접근 제한자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;생성자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;메소드 접근 제한자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; 메서드
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//[]안의 값은 옵션이라는 뜻이다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이를 기반으로 class를 정의 해보자면&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; grade&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; counter&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; grade&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;grade&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;grade&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;attend&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token class-name&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;hi my name is %s &quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;와 같이 정의 할 수 있다. &lt;/p&gt;
+&lt;p&gt;만약 이 class를 사용하고 싶다면 정의와 생성을 해주어야 한다. &lt;/p&gt;
+&lt;p&gt;정의&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;Student&lt;/span&gt; student1&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//className objName= new className();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;와 같이 정의 할 수 있다. &lt;/p&gt;
+&lt;p&gt;이렇게 정의 했을때는 아직 student 변수에 메모리 공간이 할당되지 않았다. 따라서 다음과 같이 생성을 해주어야 한다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;student1&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;drone&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//생성자를 이용한 프로퍼티 초기화&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;객체 내의 속성을 참조하고 싶을 때는 &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;student1&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;와 같이 참조하면 된다 하지만 위의 예제에서는 private를 이용해 객체 내부에서만 참조 가능하도록 객체를 캡슐화 시켜 놓았기 때문에 &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;student1&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;attend&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;와 같이 getter함수나, 내부에 정의된 함수를 이용해 참조 해야한다. &lt;/p&gt;
+&lt;h3&gt;java는 메모리를 자동으로 관리해주기 때문에 객체의 소멸자를 지원하지 않는다.&lt;/h3&gt;
+&lt;h2&gt;맴버변수&lt;/h2&gt;
+&lt;p&gt;맴버변수는 클래스 선언시에 클래스 내에 메소드와 함께 메소드 바깥부분에 선언되는 객체의 고유한 정보를 저장하는 변수이다.&lt;/p&gt;
+&lt;p&gt;맴버변수의 종류에는&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;객체변수&lt;/p&gt;
+&lt;p&gt;객체의 속성을 표현하기 위해 기본자료형 변수들로 선언된다.
+기본적인 값들이 저장된다.
+객체 참조변수의 경우 객체가 저장된 메모리의 주소가 저장된다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;클래스변수&lt;/p&gt;
+&lt;p&gt;클래스의 모든 객체가 공유할 수 있는 변수이다.
+한정자 앞에 static을 선언한다.
+class를 정의 할 때 static을 이용해 변수를 정의해 놓을 경우 class를 이용해 만든 객체인 인스턴스들이 해당 static 변수를 공유한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;종단변수&lt;/p&gt;
+&lt;p&gt;상수값을 정의하는 변수이다.
+한번 선언되어 초기화 되면 그 값을 변경할 수 없게된다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; PI&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3.141592&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;메소드&lt;/h2&gt;
+&lt;p&gt;메소드는 객체가 할 수 있는 행동을 하도록 하는 명령이다.
+또한 객체를 외부에서 사용할 수 있도록 연결해주는 인터페이스이다.&lt;/p&gt;
+&lt;p&gt;매소드는 &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;접근제어자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; returnType &lt;span class=&quot;token function&quot;&gt;methodName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;argument&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; something
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;와 같은 방식으로 정의가 된다. &lt;/p&gt;
+&lt;p&gt;argument는 실인수와 가인수로 나뉘는데,
+actual argument 는 호출 메서드에 나타나는 인수이고(body에서 사용되는 메모리)
+formal argument는 피호출 메소드에 나타나는 인수이다. &lt;/p&gt;
+&lt;p&gt;메소드의 종류는&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;객체 메소드&lt;/p&gt;
+&lt;p&gt;객체를 통해 접근 가능한 메소드&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;클래스 메소드&lt;/p&gt;
+&lt;p&gt;클래스의 모든 객체가 공유할 수 있는 메서드&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;종단 메소드&lt;/p&gt;
+&lt;p&gt;서브클레스에서 오버라이딩(overriding)될 수 없는 메소드&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;추상 메소드&lt;/p&gt;
+&lt;p&gt;추상 클래스 안에서만 선언 가능하며, 선언부분만 가지고 있으며, 몸체는 가질 수 없다. 인터페이스 제공&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;동기 메소드
+스레드를 동기화 가능한 기법을 제공하는 메소드 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;등이 있다. &lt;/p&gt;
+&lt;h2&gt;메소드의 overloading&lt;/h2&gt;
+&lt;p&gt;같은 class내에서 이름이 같은 다른 타입의 메소드가 존재하는 것을 말한다. 오버로딩된 메서드는 각각을 구분하기 위해 매개변수의 데이터형, 또는 개수가 반드시 달라야 한다. &lt;/p&gt;
+&lt;p&gt;static으로 정의된 정적 메서드는 오버로딩 불가&lt;/p&gt;
+&lt;p&gt;메소드의 오버로딩은 객체 지향형에서 다형성 개념을 지원해준다.&lt;/p&gt;
+&lt;h2&gt;생성자&lt;/h2&gt;
+&lt;p&gt;클래스에서 객체를 생성할 때, 객체를 초기화 하는 특수한 메소드이다.
+클래스명과 동일한 이름을 사용하며, 사용후 반환 값이 없다.&lt;/p&gt;
+&lt;p&gt;class내의 객체 변수들을 초기화 할 때, 사용한다. 명시적으로 생성자를 호출 하지 않고, new연산자를 이용해 객체가 생성될 때, 자동적으로 호출 된다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 자료형과 표준 입출력]]></title><description><![CDATA[Java의 기본문법1: 자료형과 표준 입출력 자바 프로그램의 가장 기본적인 구조는 다음과 같다.  import 문장 java.lang을 재외한 모든 패키지를 가져올때는 import…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/2_Java의 기본문법_자료형과 표준입출력/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/2_Java의 기본문법_자료형과 표준입출력/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 기본문법1: 자료형과 표준 입출력&lt;/h1&gt;
 &lt;p&gt;자바 프로그램의 가장 기본적인 구조는 다음과 같다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Java_EX_01&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; args&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -1920,125 +2078,7 @@ continue: 다음 명령을 실행하지 않고 루프의 맨 앞으로 돌아감
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; arr1&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;arr2&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; arr3&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-arr3&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 class, 객체 지향형 언어의 특성.]]></title><description><![CDATA[Java의 class…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/4_Java의 class, 객체 지향형언어의 특성/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/4_Java의 class, 객체 지향형언어의 특성/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 class, 객체지향형 언어의 특성&lt;/h1&gt;
-&lt;p&gt;객체지향형은 소프트웨어 모듈의 재사용성과 독립성을 지원해준다. &lt;/p&gt;
-&lt;p&gt;즉 코드에 객체라는 효율적인 정보관리를 위해 의미를 부여하고, 분류하는 개념적인 단위를 이용한 것이다.또한 객체는 순차 지향형 언어가 공유데이터에 함수로써 접근해 결과를 얻어내는 것과 다르게 (객체.프로퍼티) 꼴의 message를 통해 통신함으로써 원하는 결과를 얻게 된다. &lt;/p&gt;
-&lt;p&gt;객체는 메서드와 프로퍼티로 구성되어있으며, 메서드는 객체의 정보인 프로퍼티와 파라미터로 전달되는 값을 이용해 객체가 할 수 있도록 정의된 일들을 해준다. 이러한 객체를 생성해주는 것을 class라고 한다. 클래스는 객체를 생성하는 template로 볼 수 있다.
-클래스는 자료구조(필드)와 연산(메서드)를 가진다.
-클래스로 부터 생성된 객체를 instance라고 부른다.
-class를 이용해 객체를 생성할 땐, 다음과 같이 생성한다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;classname testC&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;classname&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이렇게 생성한 객체는 class에서 정의하는 프로퍼티와, 메서드를 가지게 된다. &lt;/p&gt;
-&lt;h2&gt;클래스의 상속&lt;/h2&gt;
-&lt;p&gt;클래스의 상속이란 추상화된 클래스를 하위클래스가 그 특성을 받아 이용하고, 구체화 시키는 것을 말한다. 이로써 하위클래스가 꼭 가져야 하는 메서드와, 프로퍼티를 강제할 수도 있고, 소프트웨어의 재사용성을 지원할 수 있다.&lt;/p&gt;
-&lt;p&gt;예를 들어 학생에는 초등학생, 중학생, 고등학생, 대학생이 있다. 이 객체들에서 학생이 공통적으로 가지는 특성은 학교 이름과 학년이 있을 것이다. 또한 학생이 가지는 기본적인 행위인 수강, 시험보기 등의 기능이 공통적으로 있을 것이다. 이 것을 가지는 상위 클래스인 학생을 정의하고, 상속 함으로써 각각 초등학생, 중학생, 고등학생, 대학생의 class를 정의 할 때, 공통적인 기능과 프로퍼티는 새로 정의 하지 않아도 되는 것이다. &lt;/p&gt;
-&lt;h2&gt;캡슐화&lt;/h2&gt;
-&lt;p&gt;객체를 캡슐화 해서 어떠한 작업을 할 수 있는 인터페이스와, 제공하는 정보만을 볼 수 있게 하고, 이외의 프로퍼티는 객체 내부에서만 접근 할 수 있도록 하여 해당 객체를 이용할때, 용도와 다르게 이용되거나, 처리가 되는 과정이 드러나는 것을 막는다. &lt;/p&gt;
-&lt;p&gt;이 방법을 통해 독립성과, 사용법의 지속성, 이식성등을 좋게 할 수 있다. &lt;/p&gt;
-&lt;h2&gt;다형성 (polymorphism)&lt;/h2&gt;
-&lt;p&gt;하나의 인터페이스를 사용해 다양한 구현 방법을 제공 하는 것이다. 상위클래스변수를 선언한 후 runtime에 상황에 맞게 하위 class를 이용해 초기화 해주는 것을 의미한다. 이로써 객체를 이용할 때, 더 다양한 구현체를 다룰 수 있도록 지윈한다. &lt;/p&gt;
-&lt;h2&gt;Class의 선언 및 정의&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;클래스 접근 제한자&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;protected&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; className &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; superclass&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;implements&lt;/span&gt; interfaceName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;필드 접근 제한자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; 멤버변수&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;생성자 접근 제한자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;생성자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;메소드 접근 제한자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; 메서드
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;//[]안의 값은 옵션이라는 뜻이다.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이를 기반으로 class를 정의 해보자면&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; grade&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; counter&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; age&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; grade&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;age&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;grade&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;grade&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;attend&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;token class-name&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;out&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;hi my name is %s &quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;와 같이 정의 할 수 있다. &lt;/p&gt;
-&lt;p&gt;만약 이 class를 사용하고 싶다면 정의와 생성을 해주어야 한다. &lt;/p&gt;
-&lt;p&gt;정의&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token class-name&quot;&gt;Student&lt;/span&gt; student1&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;//className objName= new className();&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;와 같이 정의 할 수 있다. &lt;/p&gt;
-&lt;p&gt;이렇게 정의 했을때는 아직 student 변수에 메모리 공간이 할당되지 않았다. 따라서 다음과 같이 생성을 해주어야 한다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;student1&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;drone&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//생성자를 이용한 프로퍼티 초기화&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;객체 내의 속성을 참조하고 싶을 때는 &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;student1&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;와 같이 참조하면 된다 하지만 위의 예제에서는 private를 이용해 객체 내부에서만 참조 가능하도록 객체를 캡슐화 시켜 놓았기 때문에 &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;student1&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;attend&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;와 같이 getter함수나, 내부에 정의된 함수를 이용해 참조 해야한다. &lt;/p&gt;
-&lt;h3&gt;java는 메모리를 자동으로 관리해주기 때문에 객체의 소멸자를 지원하지 않는다.&lt;/h3&gt;
-&lt;h2&gt;맴버변수&lt;/h2&gt;
-&lt;p&gt;맴버변수는 클래스 선언시에 클래스 내에 메소드와 함께 메소드 바깥부분에 선언되는 객체의 고유한 정보를 저장하는 변수이다.&lt;/p&gt;
-&lt;p&gt;맴버변수의 종류에는&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;객체변수&lt;/p&gt;
-&lt;p&gt;객체의 속성을 표현하기 위해 기본자료형 변수들로 선언된다.
-기본적인 값들이 저장된다.
-객체 참조변수의 경우 객체가 저장된 메모리의 주소가 저장된다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;클래스변수&lt;/p&gt;
-&lt;p&gt;클래스의 모든 객체가 공유할 수 있는 변수이다.
-한정자 앞에 static을 선언한다.
-class를 정의 할 때 static을 이용해 변수를 정의해 놓을 경우 class를 이용해 만든 객체인 인스턴스들이 해당 static 변수를 공유한다.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;종단변수&lt;/p&gt;
-&lt;p&gt;상수값을 정의하는 변수이다.
-한번 선언되어 초기화 되면 그 값을 변경할 수 없게된다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;float&lt;/span&gt; PI&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3.141592&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;메소드&lt;/h2&gt;
-&lt;p&gt;메소드는 객체가 할 수 있는 행동을 하도록 하는 명령이다.
-또한 객체를 외부에서 사용할 수 있도록 연결해주는 인터페이스이다.&lt;/p&gt;
-&lt;p&gt;매소드는 &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;접근제어자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; returnType &lt;span class=&quot;token function&quot;&gt;methodName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;argument&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; something
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;와 같은 방식으로 정의가 된다. &lt;/p&gt;
-&lt;p&gt;argument는 실인수와 가인수로 나뉘는데,
-actual argument 는 호출 메서드에 나타나는 인수이고(body에서 사용되는 메모리)
-formal argument는 피호출 메소드에 나타나는 인수이다. &lt;/p&gt;
-&lt;p&gt;메소드의 종류는&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;객체 메소드&lt;/p&gt;
-&lt;p&gt;객체를 통해 접근 가능한 메소드&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;클래스 메소드&lt;/p&gt;
-&lt;p&gt;클래스의 모든 객체가 공유할 수 있는 메서드&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;종단 메소드&lt;/p&gt;
-&lt;p&gt;서브클레스에서 오버라이딩(overriding)될 수 없는 메소드&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;추상 메소드&lt;/p&gt;
-&lt;p&gt;추상 클래스 안에서만 선언 가능하며, 선언부분만 가지고 있으며, 몸체는 가질 수 없다. 인터페이스 제공&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;동기 메소드
-스레드를 동기화 가능한 기법을 제공하는 메소드 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;등이 있다. &lt;/p&gt;
-&lt;h2&gt;메소드의 overloading&lt;/h2&gt;
-&lt;p&gt;같은 class내에서 이름이 같은 다른 타입의 메소드가 존재하는 것을 말한다. 오버로딩된 메서드는 각각을 구분하기 위해 매개변수의 데이터형, 또는 개수가 반드시 달라야 한다. &lt;/p&gt;
-&lt;p&gt;static으로 정의된 정적 메서드는 오버로딩 불가&lt;/p&gt;
-&lt;p&gt;메소드의 오버로딩은 객체 지향형에서 다형성 개념을 지원해준다.&lt;/p&gt;
-&lt;h2&gt;생성자&lt;/h2&gt;
-&lt;p&gt;클래스에서 객체를 생성할 때, 객체를 초기화 하는 특수한 메소드이다.
-클래스명과 동일한 이름을 사용하며, 사용후 반환 값이 없다.&lt;/p&gt;
-&lt;p&gt;class내의 객체 변수들을 초기화 할 때, 사용한다. 명시적으로 생성자를 호출 하지 않고, new연산자를 이용해 객체가 생성될 때, 자동적으로 호출 된다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Java - Java의 상속, 인터페이스, 접근제어자]]></title><description><![CDATA[Java…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/5_Java의 상속, 인터페이스, 접근제어자/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/5_Java의 상속, 인터페이스, 접근제어자/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 상속, 인터페이스, 접근제어자&lt;/h1&gt;
+arr3&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Java - Java의 상속, 인터페이스, 접근제어자]]></title><description><![CDATA[Java…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/5_Java의 상속, 인터페이스, 접근제어자/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/5_Java의 상속, 인터페이스, 접근제어자/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 상속, 인터페이스, 접근제어자&lt;/h1&gt;
 &lt;h2&gt;상속&lt;/h2&gt;
 &lt;p&gt;자바에서 상속은 하나의 클래스에서 이 클래스를 확장하여 새로운 클래스를 만들어 나가는 과정을 말한다. 여러개의 클래스를 확장할 수 있는 것이 아니라 단일 상속으로 확장된다. 단, 인터페이스의 경우 다중 상속이 가능하다. &lt;/p&gt;
 &lt;p&gt;상위클래스 내의 멤버변수나 메소드가 private접근제어자를 사용할때는 그 멤버를 상속할 수 없다. &lt;/p&gt;
