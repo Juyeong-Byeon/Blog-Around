@@ -39,9 +39,69 @@
   </a>
     </span></p>
 <p>Model은 데이터와 해당 데이터에 대한 비즈니스 로직을 가지고 있고, View는 이 데이터를 보여주는 역할을 한다. 그리고 Controller는 이 둘 사이에서 View를 통해 입력이 들어오면 모델에게 전달해 Model을 업데이트 해주고 이를 View에 반영해주는 역할을 한다.</p>
-<p> 왜 이렇게 관심사를 분리했는데 유지보수성이 좋아질까? 상황에 따라 다르겠지만. 코드에 구조가 전혀 없다고 가정해보자. </p>
+<p> 왜 이렇게 관심사를 분리했는데 유지보수성과 재사용성이 좋아질까? 상황에 따라 다르겠지만. 코드에 구조가 전혀 없다고 가정해보자. 코드의 구조가 전혀 없는 todolist app을 한번 보자.</p>
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>todoInput</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>text<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>addButton<span class="token punctuation">'</span></span> <span class="token attr-name">onClick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>onClickAddTodo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   추가
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>deleteButton<span class="token punctuation">'</span></span> <span class="token attr-name">onClick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>onClickAddTodo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   삭제
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>updateButton<span class="token punctuation">'</span></span> <span class="token attr-name">onClick</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>onClickAddTodo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+   수정
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>todoList<span class="token punctuation">'</span></span><span class="token punctuation">></span></span>
+
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>text/javascript<span class="token punctuation">'</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+
+       <span class="token keyword">const</span> todoApp<span class="token operator">=</span><span class="token punctuation">{</span>
+           user<span class="token operator">:</span><span class="token keyword">undefined</span>
+           todoList<span class="token operator">:</span><span class="token keyword">undefined</span>
+       <span class="token punctuation">}</span>
+       <span class="token keyword">function</span> <span class="token function">onClickAddTodo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token comment">//...some code</span>
+           <span class="token comment">//view 처리</span>
+           <span class="token keyword">const</span> todoListContainer<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'todoList'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token comment">//view 처리</span>
+           <span class="token keyword">const</span> todoInput<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'todoInput'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token comment">//데이터 처리</span>
+           todoApp<span class="token punctuation">.</span>todoList<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Todo</span><span class="token punctuation">(</span>todoInput<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token comment">//view 처리</span>
+           todoApp<span class="token punctuation">.</span>todoList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">todo</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span>
+               <span class="token keyword">const</span> newTodo<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+               newTodo<span class="token punctuation">.</span>innerText<span class="token operator">=</span>todo<span class="token punctuation">.</span>value
+
+               <span class="token keyword">const</span> wrapper<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+               wrapper<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>newTodo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+               
+               todoList<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>newTodo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+               todoListContainer<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token punctuation">}</span><span class="token punctuation">)</span>   
+       <span class="token punctuation">}</span>
+       <span class="token keyword">function</span> <span class="token function">onClickDelete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token comment">//...some code</span>
+       <span class="token punctuation">}</span>
+       <span class="token keyword">function</span> <span class="token function">onClickupdateButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+           <span class="token comment">//...some code</span>
+       <span class="token punctuation">}</span>
+   </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
+<p>코드를 보면 사용자에게 보여지는 view를 그리는 로직, 데이터를 처리하는 로직, 둘을 업데이트하고 제어하는 로직이 모두 물리적으로 한 파일에 있을뿐더러 관련된 로직들이 섞여있다.때문에 위 코드를 볼때 각각의 코드가 무엇을 하는지 파악이 어렵다. 여를 들어 todolist의 정보를 저장하는 todoApp object와 각각의 함수들이 어떤 관계를 가지는지 알기도 어렵고 각각의 함수도 view로직이 섞여있어 todoApp object와만 관계가 있다고 하기도 어렵다. 이런 경우 코드간의 영향이 커지고 이에따라 유지보수성과 재사용성이 안좋아진다. 예를 들어 todo를 추가할 때 추가되는 view 모습을 바꾸고 싶다면 onClickAddTodo 함수를 수정해야하는데 내부에 데이터의 처리와 view 모습에 대한 정의가 함께 있기 때문에 변경에 따라 영향을 받을 확률이 커질 것이다. </p>
+<p>이런 문제를 해결하기 위해서 MVC에서는 데이터 그리고 이를 처리하는 로직의 단위인 Model, 화면을 구성하는 단위인 View, 둘을 제어하는 로직인 Controller로 관심사를 분리해 관리한다. </p>
 <h2>예시와 적용</h2>
-<p>앞선 부분에서 MVC 적용이유와 각각의 역할을 설명 했다. 이를 정말 기초적인 앱인 TODO list app에 적용해서 각각의 Model,View,Controller를 설명해보려고 한다.  </p>
+<p>앞선 부분에서 구조가 없는 todolist를 보면서 구조화의 필요성과 MVC 적용이유를 설명했다. 이번엔 list app에 MVC를 적용해서 각각의 Model,View,Controller를 설명하고 코드의 재사용성과 유지보수성을 어떻게 개선시키는지 확인해보자.</p>
 <h3>Model</h3>
 <p> 보통 Model은 이렇게 설명한다. “소프트웨어가 알아야할 데이터에 대한 정의와 비즈니스 로직을 담당한다.” 하지만 이런 설명은 View나 Controller에 대한 설명보다 직관적이지 못해서 일반적으로 이해하기 힘든 부분인 것 같다. 하지만 이해하고 보면 별게 아니다. 아래 코드를 보자.</p>
 <div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">class</span> <span class="token class-name">TodoApp</span><span class="token punctuation">{</span>
@@ -69,12 +129,43 @@
    <span class="token punctuation">}</span>
 
    <span class="token keyword">public</span> <span class="token keyword">delete</span><span class="token punctuation">(</span>id<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span><span class="token punctuation">{</span>
-       <span class="token keyword">this</span><span class="token punctuation">.</span>todoList<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token operator">=></span>todo<span class="token punctuation">.</span>id<span class="token operator">!==</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">this</span><span class="token punctuation">.</span>todoList<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">.</span>todoList<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token operator">=></span>todo<span class="token punctuation">.</span>id<span class="token operator">!==</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p> 이 코드는 todolist를 저장하고, 특정 로직을 통해서 저장된 데이터에 대해 처리를 해주는 코드이다. 여기서 다시한번 “소프트웨어가 알아야할 데이터에 대한 정의와 비즈니스 로직을 담당한다.” 이 문장을 보자.</p>
+<p> 이 코드는 todolist를 저장하고, 특정 로직을 통해서 저장된 데이터에 대해 처리를 해주는 앱의 모델이다. 여기서 다시한번 “소프트웨어가 알아야할 데이터에 대한 정의와 비즈니스 로직을 담당한다.” 이 문장을 보자. 여기서 “데이터에 대한 정의는” Todo List app 이 가져야할 데이터인 유저 정보와 (todolist)할일에 대한 정보이다. </p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token operator">...</span> some code
+   <span class="token keyword">constructor</span><span class="token punctuation">(</span>
+       <span class="token keyword">private</span> user<span class="token operator">:</span>User<span class="token punctuation">,</span>
+       <span class="token keyword">private</span> todoList<span class="token operator">:</span>Todo<span class="token punctuation">[</span><span class="token punctuation">]</span>
+   <span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+   <span class="token punctuation">}</span>
+ <span class="token operator">...</span></code></pre></div>
+<p> 그리고 아래처럼 앞에서 정의한 데이터에대한 처리를 하는 로직을 모델에 함께 정의하는데, 이게 바로 비즈니스 로직이다. 즉 해당 데이터를 정책에 맞게 처리하는 로직이 비즈니스 로직이다. </p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"> <span class="token keyword">public</span> <span class="token function">getTodoList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span>Todo<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>todoList<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">append</span><span class="token punctuation">(</span>todo<span class="token operator">:</span>Todo<span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>todoList<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token function">update</span><span class="token punctuation">(</span>changedTodo<span class="token operator">:</span>Todo<span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>todoList<span class="token operator">=</span><span class="token keyword">this</span><span class="token punctuation">.</span>todoList<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id<span class="token operator">===</span>changedTodo<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token keyword">return</span> changedTodo
+            <span class="token keyword">else</span> <span class="token keyword">return</span> todo<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">delete</span><span class="token punctuation">(</span>id<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>todoList<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token operator">=></span>todo<span class="token punctuation">.</span>id<span class="token operator">!==</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre></div>
+<p>위 코드에서 알 수 있듯이 모델은 view나 controller등에 대한 내용은 전혀 알지 못한다. 때문에 모델에은 View나 controller의 변화와 상관없이 독립성을 유지할수 있다. 또한 View와 Controller또한 모델의 비즈니스 로직이 변화하더라도 인터페이스만 유지되면 영향을 받지 않기때문에 코드의 유지보수가 좋아진다고 볼수 있다. </p>
 <h3>View</h3>
-<h3>Controller</h3></section><hr/><footer><div class="bio"><div class="bio-avatar gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIEBQP/xAAYAQACAwAAAAAAAAAAAAAAAAACAwABBP/aAAwDAQACEAMQAAABjU7Z+5eizVjaoCTkGz//xAAcEAACAgIDAAAAAAAAAAAAAAAAAgEDBBEQITH/2gAIAQEAAQUCLJEyWRZnqW2bLPOP/8QAGREAAgMBAAAAAAAAAAAAAAAAACEBAhAx/9oACAEDAQE/AZYyvM//xAAaEQACAgMAAAAAAAAAAAAAAAAAAQIhAxIx/9oACAECAQE/AaTs0iZeiP/EABgQAAMBAQAAAAAAAAAAAAAAAAABEBEx/9oACAEBAAY/AhGJzsd//8QAGhAAAgMBAQAAAAAAAAAAAAAAAAERIXEQQf/aAAgBAQABPyFsgYXamELMqK3DRgPwZ//aAAwDAQACAAMAAAAQXOe+/8QAGBEAAgMAAAAAAAAAAAAAAAAAABEBEFH/2gAIAQMBAT8QaAtWf//EABgRAAMBAQAAAAAAAAAAAAAAAAABMUER/9oACAECAQE/EE+TQ24iZB//xAAbEAEAAwEAAwAAAAAAAAAAAAABABEhQWFxgf/aAAgBAQABPxCFo8MqgBwBCYwC2bhdilVfIUsYw8dbMPoR0/Cf/9k=" alt="Juyeong Byeong" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/Blog-Around/static/896e7a31a23b164907ba2b522cbece28/340ed/profile-pic.jpg 1x,
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"></code></pre></div>
+<h3>Controller</h3>
+<h2>한계</h2>
+<h2>결론</h2></section><hr/><footer><div class="bio"><div class="bio-avatar gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIEBQP/xAAYAQACAwAAAAAAAAAAAAAAAAACAwABBP/aAAwDAQACEAMQAAABjU7Z+5eizVjaoCTkGz//xAAcEAACAgIDAAAAAAAAAAAAAAAAAgEDBBEQITH/2gAIAQEAAQUCLJEyWRZnqW2bLPOP/8QAGREAAgMBAAAAAAAAAAAAAAAAACEBAhAx/9oACAEDAQE/AZYyvM//xAAaEQACAgMAAAAAAAAAAAAAAAAAAQIhAxIx/9oACAECAQE/AaTs0iZeiP/EABgQAAMBAQAAAAAAAAAAAAAAAAABEBEx/9oACAEBAAY/AhGJzsd//8QAGhAAAgMBAQAAAAAAAAAAAAAAAAERIXEQQf/aAAgBAQABPyFsgYXamELMqK3DRgPwZ//aAAwDAQACAAMAAAAQXOe+/8QAGBEAAgMAAAAAAAAAAAAAAAAAABEBEFH/2gAIAQMBAT8QaAtWf//EABgRAAMBAQAAAAAAAAAAAAAAAAABMUER/9oACAECAQE/EE+TQ24iZB//xAAbEAEAAwEAAwAAAAAAAAAAAAABABEhQWFxgf/aAAgBAQABPxCFo8MqgBwBCYwC2bhdilVfIUsYw8dbMPoR0/Cf/9k=" alt="Juyeong Byeong" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/Blog-Around/static/896e7a31a23b164907ba2b522cbece28/340ed/profile-pic.jpg 1x,
 /Blog-Around/static/896e7a31a23b164907ba2b522cbece28/32ce1/profile-pic.jpg 1.5x,
 /Blog-Around/static/896e7a31a23b164907ba2b522cbece28/04d41/profile-pic.jpg 2x" /><img loading="lazy" width="50" height="50" srcset="/Blog-Around/static/896e7a31a23b164907ba2b522cbece28/340ed/profile-pic.jpg 1x,
 /Blog-Around/static/896e7a31a23b164907ba2b522cbece28/32ce1/profile-pic.jpg 1.5x,
