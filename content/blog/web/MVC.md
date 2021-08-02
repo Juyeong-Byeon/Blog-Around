@@ -4,8 +4,6 @@ date: "20210729"
 description: "MVC 아키텍쳐 정리 해보자."
 ---
 
-<h5 style='color:red;'> 20210729 작성중<h5>
-
 # MVC
 MVC(Model-View-Controller) 모델은 아키텍쳐 패턴으로써 소프트웨어 서비스에서 관심사를 분리해 코드의 재사용성을 높히고 유지보수를 쉽게 하기위해 사용한다. 사실 MVC는 정말 널리알려지고, 아키텍쳐 패턴을 처음 배울때 한번쯤은 꼭 공부해보는 아키텍쳐 패턴이다. 본인도 현재 다니고 있는 회사에서 MVC패턴을 지향해 프론트엔드코드를 짜고 있기 때문에 처음 회사에 들어와서 아키텍쳐 패턴을 공부했던것이 바로 MVC이다. 이번 글에서는 이 MVC 패턴을 사용하는 이유와 M,V,C 각각의 역할을 알아보고 간단한 MVC 구조 코드를 작성해볼 것이다. 
 
@@ -163,17 +161,76 @@ class TodoApp{
 
 ### View
 
-```TS
+view는 사용자에게 보여지는 영역의 코드이다. 앞선 예시에서는 view와 model이 한 곳에 섞여있어 어떤것이 데이터를 위한 로직인지, view를 위한 로직인지 알아차리기 힘들었다. 하지만 아래에는 데이터를 위한 로직이 없고 변화가 일어났을때 데이터를 Controller에게 전달하기만 한다. 이를 통해 View와 로직을 분리함으로써 view를 수정할때 로직에 영향이 없도록 할 수 있다. 또한 View는 데이터를 render 함수를 통해 받아 수동적으로 그려주기만 하고 있는 것을 알 수 있는데, 이를 통해 모델 내의 비즈니스 로직을 수정하더라도 인터페이스만 동일하면 view또한 수정이 없도록 할 수 있다.
 
+```TS
+class TodoListContainerView{
+    constructor(){
+        //
+    }
+
+    public render(todoList:Todo[],user:User):void{
+        /*
+        ...render with todoListModel
+        */
+    }
+
+    private onClickAddButton():void{
+        const todoText:string=document.getElementById('todo_text_input');
+        TodoAppController.add(todoText);
+    }
+
+    private onClickDeleteButton(todoId:number):void{
+        TodoAppController.delete(todoId);
+    }
+
+    private onClickUpdateButton(todoId:number):void{
+         const todoText:string=document.getElementById('todo_text_input');
+        TodoAppController.update(todoId,todoText);
+    }
+
+}
+```
+
+
+
+### Controller
+controller는 View 코드에서도 볼 수 있듯이 가장 먼저 View에서 이벤트를 전달 받는 역할을 한다. 이후 이를 model의 적절한 비즈니스로직이 있는 메서드에 전달해 이를 가공해 저장하도록 한 뒤 이 결과를 다시 View에 알려주게 된다. 이를 통해 model이 view를 직접 알지 못하도록 해서 둘의 관계를 느슨하게 해준다. 
+
+```TS
+    class TodoAppController{
+
+        constructor(private todoApp:TodoApp,private view:TodoListContainerView):void{
+            
+        }
+
+        public add(todoText:string):void{
+            this.todoApp.append(new Todo(todoText));//model에게 데이터 전달.
+            this.view.render(this.todoApp.getTodoList(),this.todoApp.getUser());//view에게 결과 전달.
+        }
+
+        public delete(todoId:number):void{
+            this.todoApp.delete(todoId);//model에게 데이터 전달.
+            this.view.render(this.todoApp.getTodoList(),this.todoApp.getUser());//view에게 결과 전달.
+        }
+
+        public update(todoId:number,todoText:string):void{
+            this.todoApp.update(todoId,todoText);//model에게 데이터 전달.
+            this.view.render(this.todoApp.getTodoList(),this.todoApp.getUser());//view에게 결과 전달.
+        }
+
+    }
 
 ```
 
 
-### Controller
+## 한계 및 결론
+MVC 모델은 구조가 없는 기존의 코드를 각각을 관심사 별로 구분지어줌으로써 코드의 유지보수성 향상과 코드의 재사용성을 가져다 줬지만 다음과 같은 한계점이 존재 한다. 
 
 
+1. todolist 와 같이 데이터의 흐름이 단순한 경우는 문제가 없지만 controller 하나가 관리하는 view가 많아 질 경우 controller가 뚱뚱해진다.
+2. 1번에 이어 많은 모델과 view가 controller를 통해 통신하게 되면 데이터의 흐름을 예측하고 제어하기 힘들다는 단점이 있다. (react project에서 redux를 사용하는 이유)
+3. view가 모델에 종속적이게 된다. (위 코드에서 render의 파라메터로 받는 데이터도 결국에 모델이다.)
 
-## 한계 
+이러한 단점들을 보완하기위해서 MVVM, MVP, MV*, Flux 등의 새로운 아키텍쳐 패턴들이 만들어 지게 되었다. 이후에 이런 내용들을 다시 정리해보려고 한다.  
 
-
-## 결론
