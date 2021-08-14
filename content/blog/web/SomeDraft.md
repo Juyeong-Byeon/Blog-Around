@@ -142,10 +142,11 @@ export const IconButton = withTheme(FloatingActionButtonWrapper);
 ```
 
 
-## 20210814 -추가 아이디어
+## 20210814 -추가 아이디어 
+
 
 저번 금요일에 dooboolab에 직접 가서 메인테이너와, 그리고 컨트리뷰톤 참가자들과 함께 위 내용에 대해서 논의해볼 시간이 생겼다. 
-위 내용에 대해서 고민을 해본 후 얻게된 고찰은 위의 두 장점을 합쳐서 하나의 컴포넌트를 제공할 수 있다는 점이었다. 아래처럼
+위 내용에 대해서 고민을 해본 후 얻게된 고찰은 위의 두 장점을 합쳐서 하나의 컴포넌트를 제공할 수 있다는 점이었다. 
 
 ```TSX
 
@@ -231,3 +232,10 @@ const FloatingActionButtons: FC<FloatingActionButtonsWrapperProps> = ({
 
 export const FAB = withTheme(FloatingActionButtons);
 ```
+
+위의 내용을 보면 기본적으로 callback 과 아이콘을 props로 넘기게 함으로써 dooboo-ui 에서 제공하는 스타일과 컴포넌트의 사용의도록 strick 하게 제한 할 수 있다. 
+이와 동시에 renderFABListItem, renderActiveFAB, renderDefaultFAB 등을 체크해서 callback 들이 구현되어있다면 위 callback을 통해 해당 컴포넌트의 사용자가 원하는데로 item을 정의할 수 있도록 인터페이스를 제공할 수 있다.
+이렇게 함으로써 위에서 고민했던 두가지 장점을 모두 합칠 수 있는 것 같다. 
+
+메인테이너님이 추천해주신 레퍼런스 컴포넌트는 페이스북에서 만든[flatlist](https://reactnative.dev/docs/flatlist)였는데 해당 컴포넌트를 보아도 같은 방식을 사용하는 것을 볼 수 있었다. 
+많은 테크닉들이 있는데 여러 레퍼런스들과, 커뮤니티 들을 통해 고민들을 공유하고 이를 갈고닦는 것이 중요하다는 생각이 들었다.
