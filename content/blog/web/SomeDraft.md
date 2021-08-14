@@ -140,3 +140,94 @@ FloatingActionButtonWrapper.defaultProps = {theme: light};
 export const IconButton = withTheme(FloatingActionButtonWrapper);
 
 ```
+
+
+## 20210814 -추가 아이디어
+
+저번 금요일에 dooboolab에 직접 가서 메인테이너와, 그리고 컨트리뷰톤 참가자들과 함께 위 내용에 대해서 논의해볼 시간이 생겼다. 
+위 내용에 대해서 고민을 해본 후 얻게된 고찰은 위의 두 장점을 합쳐서 하나의 컴포넌트를 제공할 수 있다는 점이었다. 아래처럼
+
+```TSX
+
+
+
+export type FABItem = {
+  icon: IconName;
+  onPress: () => void;
+};
+
+interface FloatingActionButtonsWrapperProps {
+  active: boolean;
+  DefaultFAB: FABItem;
+  ActiveFAB: FABItem;
+  FABList: FABItem[];
+  renderDefaultFAB?: (item: FABItem) => React.ReactElement;
+  renderActiveFAB?: (item: FABItem) => React.ReactElement;
+  renderFABListItem?: (item: FABItem, idx: number) => React.ReactElement;
+}
+
+const FloatingActionButtons: FC<FloatingActionButtonsWrapperProps> = ({
+  active,
+  DefaultFAB,
+  ActiveFAB,
+  FABList,
+  renderDefaultFAB,
+  renderActiveFAB,
+  renderFABListItem,
+}) => {
+  const defaultFAB: React.ReactElement = useMemo(
+    () =>
+      renderDefaultFAB ? (
+        renderDefaultFAB(DefaultFAB)
+      ) : (
+        <IconButton
+          icon={<StyledIcon size={24} name={DefaultFAB.icon} />}
+          onPress={DefaultFAB.onPress}
+        />
+      ),
+    [renderDefaultFAB, DefaultFAB],
+  );
+
+  const activeFAB: React.ReactElement = useMemo(
+    () =>
+      renderActiveFAB ? (
+        renderActiveFAB(ActiveFAB)
+      ) : (
+        <IconButton
+          icon={<StyledIcon size={24} name={ActiveFAB.icon} />}
+          onPress={ActiveFAB.onPress}
+        />
+      ),
+    [renderActiveFAB, ActiveFAB],
+  );
+
+  return (
+    <AbsolutePositionWrapperView>
+      <Animated.View>
+        {active &&
+          FABList.map((item, idx) =>
+            renderFABListItem ? (
+              <FABItemWrapperView key={item.icon + idx}>
+                {renderFABListItem(item, idx)}
+              </FABItemWrapperView>
+            ) : (
+              <FABItemWrapperView key={item.icon + idx}>
+                {
+                  <IconButton
+                    icon={
+                      <StyledIcon theme={theme} size={24} name={item.icon} />
+                    }
+                    onPress={item.onPress}
+                  />
+                }
+              </FABItemWrapperView>
+            ),
+          )}
+      </Animated.View>
+      <FABItemWrapperView>{active ? defaultFAB : activeFAB}</FABItemWrapperView>
+    </AbsolutePositionWrapperView>
+  );
+};
+
+export const FAB = withTheme(FloatingActionButtons);
+```
