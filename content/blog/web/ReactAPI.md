@@ -143,6 +143,64 @@ function Story(props) {
 ```
 
 
+이 render props는 children로도 정의가 가능하다. 실제로 Context api의 Consumer도 이런식으로 callback을 통해 랜더링 한다.
+```TSX
+<MyContext.Consumer>
+  {value => /* context 값을 이용한 렌더링 */}
+</MyContext.Consumer>
+```
+
+내부에서는 아래와 같이 데이터를 전달할 수 있다. 
+```TSX
+lass Mouse extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.state = { x: 0, y: 0 };
+  }
+
+  handleMouseMove(event) {
+    //데이터의 변화를 구독한다. 
+    this.setState({
+      x: event.clientX,
+      y: event.clientY
+    });
+  }
+
+  render() {
+    return (
+      <div style={{ height: '100vh' }} onMouseMove={this.handleMouseMove}>
+
+        {/*
+          <Mouse>가 무엇을 렌더링하는지에 대해 명확히 코드로 표기하는 대신,
+          `render` prop을 사용하여 무엇을 렌더링할지 동적으로 결정할 수 있습니다.
+        */}
+        {this.props.render(this.state)}
+      </div>
+    );
+  }
+}
+```
+
+혹은 아래처럼 HOC를 통해 구현도 가능하다. 컴포넌트를 받고 직접, 데이터를 주입하는 패턴으로도 사용이 가능하다.
+
+```TSX
+function withMouse(Component) {
+  return class extends React.Component {
+    render() {
+      return (
+        <Mouse render={mouse => (
+          <Component {...this.props} mouse={mouse} />
+        )}/>
+      );
+    }
+  }
+}
+```
+
+
+
+
 ## 참고 자료
 [리액트 공식 문서](https://ko.reactjs.org/docs/jsx-in-depth.html)
 
