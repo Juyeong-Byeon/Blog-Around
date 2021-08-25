@@ -1,5 +1,5 @@
 ---
-title: "OAuth 2.0"
+title: "React cheat sheet"
 date: "20210824"
 description: "React document 공식문서를 읽으며 기억하고 싶은 내용들을 정리."
 ---
