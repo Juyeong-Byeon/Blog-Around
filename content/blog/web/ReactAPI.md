@@ -131,10 +131,20 @@ function Story(props) {
 
 ```
 
+# [render props](https://ko.reactjs.org/docs/render-props.html)
 
+아래와 같이 데이터를 DataProvider에서 받아와서 callback에 전달하는 방식이다. 
+이렇게 될 경우 HOC 와 같이 로직을 재사용 할 수 있게 된다. 
+
+```tsx
+<DataProvider render={data => (
+  <h1>Hello {data.target}</h1>
+)}/>
+```
 
 
 ## 참고 자료
 [리액트 공식 문서](https://ko.reactjs.org/docs/jsx-in-depth.html)
+
 
 
