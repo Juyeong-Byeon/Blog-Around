@@ -198,6 +198,39 @@ function withMouse(Component) {
 }
 ```
 
+## Error boundary
+
+리액트에서 렌더중 에러가 발생하면 해당 에러가 발생한 트리를 언마운트 해버린다 그래서 이때문에 해당 에러를 처리해주지 않으면 [WSOD](https://medium.com/wix-engineering/white-screen-of-death-how-to-handle-errors-in-react-native-4d57ac82b6d8) 가 발생하는데 이는 일부분의 에러가 앱 전체를 죽게 만들기 때문에 사용자의 UX에 굉장히 좋지 못한 경험을 준다. 
+하지만 왜 이렇게 리액트는 트리를 때어 버릴까? 알아보니 잘못된 정보를 보여주는 것 보다 랜더링을 하지 않는 것이 더 낫다고 판단했기 때문이라고 한다. 때문에 이를 처리해줄 수 있는 fallback UI 를 제공할 수 있는 방법이 Error boundary 이다. 
+아래 코드를 참고하자.
+
+```jsx
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // 다음 렌더링에서 폴백 UI가 보이도록 상태를 업데이트 합니다.
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // 에러 리포팅 서비스에 에러를 기록할 수도 있습니다.
+    logErrorToMyService(error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // 폴백 UI를 커스텀하여 렌더링할 수 있습니다.
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children;
+  }
+}
+```
 
 
 
