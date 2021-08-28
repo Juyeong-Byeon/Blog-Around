@@ -141,6 +141,35 @@ React<span class="token punctuation">.</span><span class="token function">create
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
+<h2>Error boundary</h2>
+<p>리액트에서 렌더중 에러가 발생하면 해당 에러가 발생한 트리를 언마운트 해버린다 그래서 이때문에 해당 에러를 처리해주지 않으면 <a href="https://medium.com/wix-engineering/white-screen-of-death-how-to-handle-errors-in-react-native-4d57ac82b6d8">WSOD</a> 가 발생하는데 이는 일부분의 에러가 앱 전체를 죽게 만들기 때문에 사용자의 UX에 굉장히 좋지 못한 경험을 준다.
+하지만 왜 이렇게 리액트는 트리를 때어 버릴까? 알아보니 잘못된 정보를 보여주는 것 보다 랜더링을 하지 않는 것이 더 낫다고 판단했기 때문이라고 한다. 때문에 이를 처리해줄 수 있는 fallback UI 를 제공할 수 있는 방법이 Error boundary 이다.
+아래 코드를 참고하자.</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">class</span> <span class="token class-name">ErrorBoundary</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span> hasError<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">static</span> <span class="token function">getDerivedStateFromError</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 다음 렌더링에서 폴백 UI가 보이도록 상태를 업데이트 합니다.</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> hasError<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">componentDidCatch</span><span class="token punctuation">(</span><span class="token parameter">error<span class="token punctuation">,</span> errorInfo</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 에러 리포팅 서비스에 에러를 기록할 수도 있습니다.</span>
+    <span class="token function">logErrorToMyService</span><span class="token punctuation">(</span>error<span class="token punctuation">,</span> errorInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>hasError<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 폴백 UI를 커스텀하여 렌더링할 수 있습니다.</span>
+      <span class="token keyword">return</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span><span class="token plain-text">Something went wrong.</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>children<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
 <h2>참고 자료</h2>
 <p><a href="https://ko.reactjs.org/docs/jsx-in-depth.html">리액트 공식 문서</a></p></section><hr/><footer><div class="bio"><div class="bio-avatar gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIEBQP/xAAYAQACAwAAAAAAAAAAAAAAAAACAwABBP/aAAwDAQACEAMQAAABjU7Z+5eizVjaoCTkGz//xAAcEAACAgIDAAAAAAAAAAAAAAAAAgEDBBEQITH/2gAIAQEAAQUCLJEyWRZnqW2bLPOP/8QAGREAAgMBAAAAAAAAAAAAAAAAACEBAhAx/9oACAEDAQE/AZYyvM//xAAaEQACAgMAAAAAAAAAAAAAAAAAAQIhAxIx/9oACAECAQE/AaTs0iZeiP/EABgQAAMBAQAAAAAAAAAAAAAAAAABEBEx/9oACAEBAAY/AhGJzsd//8QAGhAAAgMBAQAAAAAAAAAAAAAAAAERIXEQQf/aAAgBAQABPyFsgYXamELMqK3DRgPwZ//aAAwDAQACAAMAAAAQXOe+/8QAGBEAAgMAAAAAAAAAAAAAAAAAABEBEFH/2gAIAQMBAT8QaAtWf//EABgRAAMBAQAAAAAAAAAAAAAAAAABMUER/9oACAECAQE/EE+TQ24iZB//xAAbEAEAAwEAAwAAAAAAAAAAAAABABEhQWFxgf/aAAgBAQABPxCFo8MqgBwBCYwC2bhdilVfIUsYw8dbMPoR0/Cf/9k=" alt="Juyeong Byeong" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/Blog-Around/static/896e7a31a23b164907ba2b522cbece28/340ed/profile-pic.jpg 1x,
 /Blog-Around/static/896e7a31a23b164907ba2b522cbece28/32ce1/profile-pic.jpg 1.5x,
