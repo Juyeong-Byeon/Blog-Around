@@ -224,15 +224,34 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       // 폴백 UI를 커스텀하여 렌더링할 수 있습니다.
-      return <h1>Something went wrong.</h1>;
+      return this.props.renderErrorView
+        ?this.props.renderErrorView() //커스텀뷰 렌더링
+        :<h1>Something went wrong.</h1>;
     }
 
     return this.props.children;
   }
 }
 ```
+## Error boundary with HOC
 
+회사에서 ErrorBoundaryView를 적용하면서 조금 더 편하게 사용하기 위해서 컴포넌트를 정의하고 export 할때 ErrorBoundaryView를 감싸서 사용할 수 있도록 withErrorBoundary hoc 를만들어 제공하기로 했다.
+이를 위한 방법을 찾아보았는데 아래와 같은 방법을 적용하게 되었다.
 
+```tsx
+function withErrorBoundaryView<Props>(
+  WrappedComponent:Component<Props>
+  ,renderErrorView:()=>ReactNode):Component<Props>{
+
+  return(props:Props)=>{
+    <ErrorBoundary renderErrorView={renderErrorView}>
+      <WrappedComponent {...props}/>
+    </ErrorBoundary>
+  }
+}
+```
+
+[errorboundary with HOC](https://stackoverflow.com/questions/65567374/building-a-higher-order-component-error-boundary)
 
 ## 참고 자료
 [리액트 공식 문서](https://ko.reactjs.org/docs/jsx-in-depth.html)
