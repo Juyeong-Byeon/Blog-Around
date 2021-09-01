@@ -259,6 +259,8 @@ hook을 사용하게된 이유는 무었일까? react공식 문서에 따르면 
 나또한 이 내용에 대해서 공감을 한다. class component에서는 view와 로직을 분리하고, 로직들을 재사용하기 위해서 문서의 윗부분에 설명한 HOC, renderProps를 이용할 수 있지만 이를 이용해도 여전히 render와 같은 view함수 등을 이용해야한다.
 또한 class 기반 컴포넌트는 this bind등을 계속해서 해줘야 한다는 귀찮음이 있었다. 때문에 function component + hook도 괜찮은 방법 같다는 생각이 든다. 
 
+HOOk을 사용하면 컴포넌트의 생명주기와 관련 없이 로직의 관계에 따라 코드의 위치를 둘 수 있다는 장점도 있는 것 같다.
+
 ## [custom hook](https://ko.reactjs.org/docs/hooks-overview.html) 
 useReducer, useState 등 react hook api에서 기본적으로 제공하는 hook들은 이전에 개인 프로젝트를 할때 몇번 이용해 봤었다. 하지만 custom hook은 정의해서 사용해본 경험이 없었다. 이번에 공식 문서를 통해서 custom hook을 처음 접했는데, 내부에서 구독을 통해 데이터들을 업데이트 하고, 이 데이터를 state를 이용해 관리하고 이를 외부에 내보낸다는 점에서 
 Class Component 에서 사용하는 HOC 패턴과 매우 유사하다는 생각을 했다. 다만 HOC는 내부에 컴포넌트를 받아서 이를 주입해주는 번거로운 작업이 있다는 것과 View 인 컴포넌트를(추상화 되어있긴 하지만) hoc 내부에서 알아야 한다는 점이 다른 것 같다. hook을 사용하면 view와 state관리 로직이 잘 분리가 되는 것 같다는 생각이 들었다. 
@@ -287,6 +289,19 @@ function useFriendStatus(friendID) {
 }
 
 ```
+
+## hook을 function component 내부에서만 사용할 수 있는 이유
+hook을 function 컴포넌트 내부에서만 사용할 수 있도록 react에서 제한 한 이유는 closure을 이용해 컴포넌트 내부의 state와 props에 접근하기 편하도록 하기 위해서이다. 
+
+## useEffect 
+* side effect 처리를 위한 hooks로써 ** 컴포넌트가 업데이트 된 뒤에** callback을 실행한다. callback 실행은 비동기적 (동기는 useLayoutEffect 이용)
+* cleanup 함수 실행 시점은 useEffect가 사용된 컴포넌트가 업데이트 될때 (구독을 계속 업데이트)
+
+
+
+
+
+
 
 
 ## 참고 자료
