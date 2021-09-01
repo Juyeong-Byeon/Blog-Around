@@ -253,6 +253,42 @@ function withErrorBoundaryView<Props>(
 
 [errorboundary with HOC](https://stackoverflow.com/questions/65567374/building-a-higher-order-component-error-boundary)
 
+
+# HOOK
+hook을 사용하게된 이유는 무었일까? react공식 문서에 따르면 class 컴포넌트내에서 사용하던 방식으로는 state관리 로직이 view와 온전히 분리 시킬 수 없었기 때문이라고 한다. 
+나또한 이 내용에 대해서 공감을 한다. class component에서는 view와 로직을 분리하고, 로직들을 재사용하기 위해서 문서의 윗부분에 설명한 HOC, renderProps를 이용할 수 있지만 이를 이용해도 여전히 render와 같은 view함수 등을 이용해야한다.
+또한 class 기반 컴포넌트는 this bind등을 계속해서 해줘야 한다는 귀찮음이 있었다. 때문에 function component + hook도 괜찮은 방법 같다는 생각이 든다. 
+
+## [custom hook](https://ko.reactjs.org/docs/hooks-overview.html) 
+useReducer, useState 등 react hook api에서 기본적으로 제공하는 hook들은 이전에 개인 프로젝트를 할때 몇번 이용해 봤었다. 하지만 custom hook은 정의해서 사용해본 경험이 없었다. 이번에 공식 문서를 통해서 custom hook을 처음 접했는데, 내부에서 구독을 통해 데이터들을 업데이트 하고, 이 데이터를 state를 이용해 관리하고 이를 외부에 내보낸다는 점에서 
+Class Component 에서 사용하는 HOC 패턴과 매우 유사하다는 생각을 했다. 다만 HOC는 내부에 컴포넌트를 받아서 이를 주입해주는 번거로운 작업이 있다는 것과 View 인 컴포넌트를(추상화 되어있긴 하지만) hoc 내부에서 알아야 한다는 점이 다른 것 같다. hook을 사용하면 view와 state관리 로직이 잘 분리가 되는 것 같다는 생각이 들었다. 
+
+
+
+``` TSX
+
+import React, { useState, useEffect } from 'react';
+
+function useFriendStatus(friendID) {
+  const [isOnline, setIsOnline] = useState(null);
+
+  function handleStatusChange(status) {
+    setIsOnline(status.isOnline);
+  }
+
+  useEffect(() => {
+    ChatAPI.subscribeToFriendStatus(friendID, handleStatusChange);
+    return () => {
+      ChatAPI.unsubscribeFromFriendStatus(friendID, handleStatusChange);
+    };
+  });
+
+  return isOnline;
+}
+
+```
+
+
 ## 참고 자료
 [리액트 공식 문서](https://ko.reactjs.org/docs/jsx-in-depth.html)
 
