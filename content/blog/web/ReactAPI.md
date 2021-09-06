@@ -297,10 +297,33 @@ hook을 function 컴포넌트 내부에서만 사용할 수 있도록 react에�
 * side effect 처리를 위한 hooks로써 ** 컴포넌트가 업데이트 된 뒤에** callback을 실행한다. callback 실행은 비동기적 (동기는 useLayoutEffect 이용)
 * cleanup 함수 실행 시점은 useEffect가 사용된 컴포넌트가 업데이트 될때 (구독을 계속 업데이트)
 
+## HOOK 규칙
+
+* hook은 최상위에서만 호출 되어야함. 즉 특성 상황에서만 hook을 호출 하도록 하는 것은 안된다는것
+```tsx
+function Item({}:Props){
+  //이렇게 될 경우 state의 업데이트를 보장 받을 수 없음. 
+  if(some condition..){
+    const [state,setState]=useState(true);  
+  }
+}
+
+
+function Item({}:Props){
+  //good
+    const [state,setState]=useState(true);  
+}
+
+* 모든 렌더링에서 hook이 호출되는 순서는 같아야함.
+위의 규칙과 일맥상통하다. 
+
+[hook의 호출이 항상 순수하게 보장되어야하는 이유](https://ko.reactjs.org/docs/hooks-rules.html)
+```
 
 
 
 
+[![juyeong's github stats](https://github-readme-stats.vercel.app/api?username=wndudqus&count_private=true&show_icons=true&theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
 
 
 
