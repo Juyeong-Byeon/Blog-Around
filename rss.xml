@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 01 Sep 2021 15:49:39 GMT</lastBuildDate><item><title><![CDATA[React cheat sheet]]></title><description><![CDATA[React cheat sheet Fragments key가 있는 fragment를 사용하고 싶을때는 축약형을 사용할 수 없다. 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 08 Sep 2021 04:00:14 GMT</lastBuildDate><item><title><![CDATA[Incremental DOM vs virtual DOM]]></title><description><![CDATA[Incremental DOM vs Virtual DOM 한줄 요약:
+Virtual DOM은 js object 기반으로 모델링된 DOM 전체를 상태변화가 있을때 마다 생성해서 비교하기 때문에 빠르지만 메모리를 많이 사용하고 Incremental DOM…]]></description><link>https://wndudqus.github.io/Blog-Around/web/IncreMental_dom_vs_virtual_dom/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/web/IncreMental_dom_vs_virtual_dom/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Incremental DOM vs Virtual DOM&lt;/h1&gt;
+&lt;p&gt;한줄 요약:
+Virtual DOM은 js object 기반으로 모델링된 DOM 전체를 상태변화가 있을때 마다 생성해서 비교하기 때문에 빠르지만 메모리를 많이 사용하고 Incremental DOM은 실제 DOM에 접근해 virtual dom 보다는 느리지만 메모리를 효율 적으로 사용한다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[React cheat sheet]]></title><description><![CDATA[React cheat sheet Fragments key가 있는 fragment를 사용하고 싶을때는 축약형을 사용할 수 없다. 
 대신 명시적으로 fragment를 선언해줘야 한다.  JSX jsx 는 babel-loader…]]></description><link>https://wndudqus.github.io/Blog-Around/web/ReactAPI/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/web/ReactAPI/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;React cheat sheet&lt;/h1&gt;
 &lt;h2&gt;Fragments&lt;/h2&gt;
 &lt;p&gt;key가 있는 fragment를 사용하고 싶을때는 축약형을 사용할 수 없다.
@@ -217,8 +220,33 @@ Class Component 에서 사용하는 HOC 패턴과 매우 유사하다는 생각�
 &lt;li&gt;side effect 처리를 위한 hooks로써 ** 컴포넌트가 업데이트 된 뒤에** callback을 실행한다. callback 실행은 비동기적 (동기는 useLayoutEffect 이용)&lt;/li&gt;
 &lt;li&gt;cleanup 함수 실행 시점은 useEffect가 사용된 컴포넌트가 업데이트 될때 (구독을 계속 업데이트)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;참고 자료&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://ko.reactjs.org/docs/jsx-in-depth.html&quot;&gt;리액트 공식 문서&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[ui 라이브러리의 컴포넌트를 구현하다 생긴 고민.]]></title><description><![CDATA[dooboo-ui 최근 오픈소스 컨트리뷰톤 이라는 프로그램에 참여해서 멘토링을 받으며 dooboo-ui에 기여할 기회가 생겼다.  dooboo-ui는 React-Native 기반의 ui 컴포넌트 라이브러리 프로젝트로서 React-Native UI…]]></description><link>https://wndudqus.github.io/Blog-Around/web/SomeDraft/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/web/SomeDraft/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h2&gt;dooboo-ui&lt;/h2&gt;
+&lt;h2&gt;HOOK 규칙&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;hook은 최상위에서만 호출 되어야함. 즉 특성 상황에서만 hook을 호출 하도록 하는 것은 안된다는것&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Item&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;Props&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//이렇게 될 경우 state의 업데이트를 보장 받을 수 없음. &lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;some condition&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;state&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;setState&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;  
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;function Item({}:Props){
+//good
+const [state,setState]=useState(true);&lt;br&gt;
+}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;모든 렌더링에서 hook이 호출되는 순서는 같아야함.
+위의 규칙과 일맥상통하다. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://ko.reactjs.org/docs/hooks-rules.html&quot;&gt;hook의 호출이 항상 순수하게 보장되어야하는 이유&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[![juyeong&amp;#39;s github stats](https://github-readme-stats.vercel.app/api?username=wndudqus&amp;amp;count_private=true&amp;amp;show_icons=true&amp;amp;theme=tokyonight)](https://github.com/anuraghazra/github-readme-stats)
+
+
+
+## 참고 자료
+[리액트 공식 문서](https://ko.reactjs.org/docs/jsx-in-depth.html)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[ui 라이브러리의 컴포넌트를 구현하다 생긴 고민.]]></title><description><![CDATA[dooboo-ui 최근 오픈소스 컨트리뷰톤 이라는 프로그램에 참여해서 멘토링을 받으며 dooboo-ui에 기여할 기회가 생겼다.  dooboo-ui는 React-Native 기반의 ui 컴포넌트 라이브러리 프로젝트로서 React-Native UI…]]></description><link>https://wndudqus.github.io/Blog-Around/web/SomeDraft/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/web/SomeDraft/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h2&gt;dooboo-ui&lt;/h2&gt;
 &lt;p&gt;최근 &lt;a href=&quot;https://www.oss.kr/notice/show/d7db473a-f57b-4d5e-be88-c0752f1719ec?page=7&quot;&gt;오픈소스 컨트리뷰톤&lt;/a&gt; 이라는 프로그램에 참여해서 멘토링을 받으며 &lt;a href=&quot;https://github.com/dooboolab/dooboo-ui&quot;&gt;dooboo-ui&lt;/a&gt;에 기여할 기회가 생겼다. &lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/dooboolab/dooboo-ui&quot;&gt;dooboo-ui&lt;/a&gt;는 React-Native 기반의 ui 컴포넌트 라이브러리 프로젝트로서 React-Native UI 컴포넌트들을 공용으로 정의해두고 쉽게 이용할 수 있도록 한다. 내부 스택은  emotion, typescript, jest, react-testing-library, expo, storybook, 등을 이용하고, dooboolab 에서 주로 관리하고있는 오픈소스 라이브러리이다.&lt;/p&gt;
 &lt;h2&gt;First Issue&lt;/h2&gt;
