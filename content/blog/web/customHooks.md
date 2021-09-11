@@ -33,7 +33,7 @@ custom hooks를 적용하면서 접근한 방식을 위에서 말한 상태들�
 // 사용하는 컴포넌트에서 해주기. 
 promiseList.push(makeCancelable(promise));
 useEffect(()=>{
-    promiseList.forEach(promise.cancel())// 관리하기 귀찮음!
+    return ()=>promiseList.forEach(promise.cancel())// 관리하기 귀찮음!
 },[])
 
 ...
