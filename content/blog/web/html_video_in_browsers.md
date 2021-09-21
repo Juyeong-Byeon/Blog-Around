@@ -1,6 +1,6 @@
 ---
 title: "브라우저별 HtmlVideoElement 지원 사항 및 제약 사항."
-date: "2021040410"
+date: "20210410"
 description: "비디오 관련 프로젝트를 하면서 정리한 브라우저별 HTMLVideoElement 지원사항, 정책 정리."
 ---
 

@@ -3,7 +3,7 @@ title: OKR 실천편 책 리뷰.
 date: "20201009"
 description: "지금 다니는 회사에서는 성과 중심 조직을 위한 실행 방법론인 OKR(Objective. Key Result)를 사용하고있다. 그래서 이와 관련된 OKR 실천편이라는 책을 입사할 때 선물로 받았는데, 이 책을 읽고 리뷰를 해보려고 한다. "
 ---
-l,['# OKR 실천편
+# OKR 실천편
 
 ![OKR 실천편](./assets/OKR_book.jpg)
 
