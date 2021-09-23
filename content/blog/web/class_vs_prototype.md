@@ -125,8 +125,8 @@ class Foo{
 
 const foo=new Foo();
 
-foo.fuzz();//fuzz
-foo.__proto__.fuzz();//fuzz
+foo.fuzz();//fuzz 자신을 생성한 생성자 함수의 prototype 객체로부터 참조 (암묵적으로 __proto__ 참조)
+foo.__proto__.fuzz();//fuzz 자신을 생성한 생성자 함수의 prototype 객체로부터 참조 (명시적으로 __proto__ 참조)
 Foo.prototype.fuzz();//fuzz
 ```
 또한 아래처럼 새로운 class를 상속받아 만든 후 상속 받은 class가 같은 prototype객체에 있는 fuzz를 참조하고 있음을 알 수 있다.
@@ -135,7 +135,7 @@ Foo.prototype.fuzz();//fuzz
 class Foo2 extends Foo{
 
   check(){
-    console.log(this.__proto__);//FOO 자신이 상속받고 있는 생성자 함수를 나타냄
+    console.log(this.__proto__);//FOO {check,fuzz2} 자신을 생성한 생성자 함수의 프로토타입 객체
   }
 
   fuzz2(){
@@ -145,15 +145,24 @@ class Foo2 extends Foo{
 
 const foo2=new Foo2();
 console.log(Foo2.prototype.fuzz===Foo.prototype.fuzz);//true
+//Foo2의 prototype에 Foo 생성자를 이용해 객체를 생성해 넣어줬기 때문에 위 둘은 같은 함수의 레퍼런스를 참조한다.
 ```
 
-그리고 new Foo2().__proto__에 값을 새로 넣게 되면 어떻게 될까?
-Foo2의 prototype객체에 값이 추가되지만 Foo 원형은 변경되지 않는다.
-"prototype 상속"절에서 상위 생성자를 new 키워드로 생성해 넣어준 것 처럼 Foo의 인스턴스가 Foo2의 프로토타입이 되는 것이다.
+그리고 new Foo2().__proto__에 값을 새로 넣게 되면 어떻게 될까? 
+자신을 생성한 생성자 함수의 prototype을 참조 하게 됨으로 Foo2.prototype에 값이 추가된다.
+
 
 ```js
-new Foo2().__proto__.b=1000;
-Foo2.__proto__//FOO {b: 100, constructor: ƒ}
-Foo.b//undefined 원본 생성함수엔 변화가 없다.
-FOO2.prototype instanceof FOO//true instance of 는 prototype chain에 특정 생성함수가 있는지 확인해주는 키워드이다.
+new Foo2().__proto__.b=1000;//자신을 생성한 생성자의 prototype 객체를 참조해서 b를 넣어준다.
+Foo2.prototype//자신의 prototype공간.
+Foo2.prototype instanceof Foo//true instance of 는 prototype chain에 특정 생성함수가 있는지 확인해주는 키워드이다.
+```
+
+마지막으로 Foo2의 프로토 타입 체인이 어떻게 연결되는지 확인해보자.
+
+```js
+new Foo2().__proto__//Foo {b: 1000, constructor: ƒ, check: ƒ, fuzz2: ƒ} Foo2.prototype 즉 new Foo()
+new Foo2().__proto__.__proto__//{constructor: ƒ, fuzz: ƒ} // new Foo()의 __proto__ 즉 Foo.prototype
+new Foo2().__proto__.__proto__.__proto__//{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …} Foo.prototype은 new Function()로 만들어졌기 때문에 Foo.__proto__  === Function.prototype
+new Foo2().__proto__.__proto__.__proto__.__proto__//null new Object().__proto__.__proto__는 null
 ```
