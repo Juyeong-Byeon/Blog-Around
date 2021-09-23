@@ -8,9 +8,11 @@ prototype에 대해서 공부를 하고 개념에 대해서 이해를 하고 있
 이번에 공부를 하면서 알게된 내용들이 있어서 정리하게 되었다. 
 
 # prototype chain과 상속
-JS 는 타 언어들과 다르게 class 기반의 상속이 아니라 prototype의 상속을 채택하고 있다. js에서 prototype object이란 특정 종류의 객체 내부 메소드와, 속성 들에 대한 정보를 가진 객체이다.
+JS 는 타 언어들과 다르게 class 기반의 상속이 아니라 prototype의 상속을 채택하고 있다. js에서 prototype object이란 특정 종류의 객체의 내부 메소드와, 내부 프로퍼티 들에 대한 정보를 가진 설계도 객체이다.
 class와 같이 object의 설계도 정도로 생각하면 될 것 같다. 특정 prototype을 가지고 있는 object는 prototype 내에 있는 속성들과 methods들을 사용할 수 있다.
 또한 prototype이 다른  prototype object로  prototype을 가질 수 있고, 메소드와 속성을 사용할 수 있는데, 이 것을 상속이라고 하고 이 prototype 간의 관계를 나타낸 것을 prototype chain이라고 한다.
+
+prototype chain: 프로토타입기반 상속 메커니즘에서 상속의 구조를 표현하는 자료구조로 __proto__를 계속해서 타고 올라가면서 해당 prototype에 메서드나 속성이 있는지 체크하는 구조로 작동한다. 
 
 # prototype 상속
 
@@ -46,6 +48,8 @@ Circle.prototype=Object.create(Ellipse.prototype,{// prototype을 상위 객체�
         writable:true
     }
 })
+
+console.log(Circle.prototype.getArea===Ellipse.prototype.getArea)//true
 ```
 위의 방식에는 생성자는 상속이 안된다. 때문에 만약 생성자도 상속받아 확장 하고 싶으면 Circle의 구현을 바꿔줘야 한다. 
 
@@ -105,3 +109,51 @@ class Circle extends Ellipse{
 }
 ```
 
+아래의 코드를 콘솔에 입력해보면 class 도 prototype을 이용하고 있음을 알 수 있다.
+
+```js
+class Foo{
+  constructor(){
+    this.a=10;
+    this.b=20;
+  }
+
+  fuzz(){
+    console.log('fuzz');
+  }
+}
+
+const foo=new Foo();
+
+foo.fuzz();//fuzz
+foo.__proto__.fuzz();//fuzz
+Foo.prototype.fuzz();//fuzz
+```
+또한 아래처럼 새로운 class를 상속받아 만든 후 상속 받은 class가 같은 prototype객체에 있는 fuzz를 참조하고 있음을 알 수 있다.
+이는 위에서 직접 상속을 구현해준 방식에서도 확인 할 수 있었다.
+```js
+class Foo2 extends Foo{
+
+  check(){
+    console.log(this.__proto__);//FOO 자신이 상속받고 있는 생성자 함수를 나타냄
+  }
+
+  fuzz2(){
+    console.log('fuzz2');
+  }
+}
+
+const foo2=new Foo2();
+console.log(Foo2.prototype.fuzz===Foo.prototype.fuzz);//true
+```
+
+그리고 new Foo2().__proto__에 값을 새로 넣게 되면 어떻게 될까?
+Foo2의 prototype객체에 값이 추가되지만 Foo 원형은 변경되지 않는다.
+"prototype 상속"절에서 상위 생성자를 new 키워드로 생성해 넣어준 것 처럼 Foo의 인스턴스가 Foo2의 프로토타입이 되는 것이다.
+
+```js
+new Foo2().__proto__.b=1000;
+Foo2.__proto__//FOO {b: 100, constructor: ƒ}
+Foo.b//undefined 원본 생성함수엔 변화가 없다.
+FOO2.prototype instanceof FOO//true instance of 는 prototype chain에 특정 생성함수가 있는지 확인해주는 키워드이다.
+```
