@@ -8,7 +8,7 @@ prototype에 대해서 공부를 하고 개념에 대해서 이해를 하고 있
 이번에 공부를 하면서 알게된 내용들이 있어서 정리하게 되었다. 
 
 # prototype chain과 상속
-JS 는 타 언어들과 다르게 class 기반의 상속이 아니라 prototype의 상속을 채택하고 있다. js에서 prototype object이란 특정 종류의 객체의 내부 메소드와, 내부 프로퍼티 들에 대한 정보를 가진 설계도 객체이다.
+JS 는 타 언어들과 다르게 class 기반의 상속이 아니라 prototype의 상속을 채택하고 있다. js에서 prototype object이란 특정 종류의 객체의 내부 메소드와, 내부 프로퍼티들에 대한 정보를 가진 설계도 객체이다.
 class와 같이 object의 설계도 정도로 생각하면 될 것 같다. 특정 prototype을 가지고 있는 object는 prototype 내에 있는 속성들과 methods들을 사용할 수 있다.
 또한 prototype이 다른  prototype object로  prototype을 가질 수 있고, 메소드와 속성을 사용할 수 있는데, 이 것을 상속이라고 하고 이 prototype 간의 관계를 나타낸 것을 prototype chain이라고 한다.
 

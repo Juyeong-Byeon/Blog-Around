@@ -88,7 +88,7 @@ closure라는 js의 함수적 특성을 이용함으로써 얻을 수 있는 이
 ```js
 function fetcherFactory(baseUrl){// 기본 엔드포인트 주소를 받는다.
     function async fetchData(id){// 특정 id를 받는다.
-        const res await fetch(`${baseUrl}/${id}`);
+        const res=await fetch(`${baseUrl}/${id}`);
         const data=res.json();
 
         //...do something
@@ -99,7 +99,7 @@ function fetcherFactory(baseUrl){// 기본 엔드포인트 주소를 받는다.
 이 함수는 아래와 같이 사용될 수 있을 것이다.
 아래처럼 항상 어떤 end-point에서 데이터를 받아오고 싶을 때 end-point를 인수로 전달해 호출하고, 반환된 함수를 통해 id만을 다르게 넣어 다른 데이터들을 fetch할 수 있을 것이다. 
 
-1. 함수를 factory처럼 이용해 함수의 행위를 set해주는 시점과 사용하는시점을 분리해줄 수 있고. 
+1. 함수를 factory처럼 이용해 특정 함수를 어떻게 동작할지 "설정" 해줄 수 있고.
 2. 비동기로 id를 얻어 fetch를 실행하는 작업을 end-point를 set해주는 실행 문맥과 분리할 수 있다.
 
 

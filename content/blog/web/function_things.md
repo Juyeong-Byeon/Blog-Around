@@ -80,7 +80,7 @@ Rest파라메터를 이용하는 방식도 있다. 이 방식이 나온 이유�
 ```js
 function foo(x,y,...theArgs){
     theArgs[1]||=0;
-    return x+y+arguments[1];
+    return x+y+theArgs[1];
 }
 
 foo(10,20,30)//60;
