@@ -41,3 +41,32 @@ description: "매일 매일 배운 내용들을 정리해보자."
         return ctx;
     }
     ```
+
+### 20211012
+
+Nominal type system vs Structural type system
+
+typescript는 Structural type system을 사용한다.
+
+Structural type system은 구조가 같으면 타입이 같은 것으로 판단한다.
+c#, java 같은 경우는 구조가 같더라도 이름이나, 타입의 관계를 정의해주지 않으면 폴리모피즘 등을 구현할 수 없다.
+즉 ts는 Structural type system을 사용하기 때문에 아래의 코드가 가능한 것이다.
+
+```ts
+interface Point {
+  x: number
+  y: number
+}
+
+const obj = {
+  x: 10,
+  y: 10,
+  name: "point_x",
+}
+
+printPoint(obj)
+
+function printPoint(point: Point): void {
+  console.log(point)
+}
+```
