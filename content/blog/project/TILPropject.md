@@ -70,3 +70,24 @@ function printPoint(point: Point): void {
   console.log(point)
 }
 ```
+
+### 20211013
+
+jest를 이용해 특정 UI를 권한에따라 보여줄지, 보여주지 않을지를 잘 체크하고 있는지 로직을 점검할 일이 었었다.
+그 과정에서 아래 두 함수의 차이를 알아보았다.
+
+```ts
+expect().toBe() vs expect().toEqual()
+```
+
+위 둘의 차이점은 toBe는 reference 비교이고 toEqual은 deep하게 들어가 값을 비교한다는 것이다.
+즉
+
+```ts
+const inputArr = ["A", "B", "C"]
+
+//...some code
+
+expect(inputArr).toEqual(["A", "B", "C"]) // Pass
+expect(inputArr).toEqual(["A", "B", "C"]) // Fail
+```
