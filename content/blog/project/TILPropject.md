@@ -73,6 +73,8 @@ function printPoint(point: Point): void {
 
 ### 20211013
 
+1. jest
+
 jest를 이용해 특정 UI를 권한에따라 보여줄지, 보여주지 않을지를 잘 체크하고 있는지 로직을 점검할 일이 었었다.
 그 과정에서 아래 두 함수의 차이를 알아보았다.
 
@@ -91,3 +93,10 @@ const inputArr = ["A", "B", "C"]
 expect(inputArr).toEqual(["A", "B", "C"]) // Pass
 expect(inputArr).toEqual(["A", "B", "C"]) // Fail
 ```
+
+2. scroll effect
+
+apple의 사이트에서 scroll위치에 따라서 에니메이션이 재생되는 이펙트가 있었는데 너무 멋있어보여서 직접 구현해보려고 했는데, 생각보다 성능이 좋지 않았다.
+그런데 개발 없이 이렇게 만들 수 도 있는듯 (apple과 같은 기술)
+
+https://www.youtube.com/watch?v=hY1a94niwpY
