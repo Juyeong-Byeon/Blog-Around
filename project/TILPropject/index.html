@@ -79,7 +79,37 @@ c#, java 같은 경우는 구조가 같더라도 이름이나, 타입의 관계�
 </ol>
 <p>apple의 사이트에서 scroll위치에 따라서 에니메이션이 재생되는 이펙트가 있었는데 너무 멋있어보여서 직접 구현해보려고 했는데, 생각보다 성능이 좋지 않았다.
 그런데 개발 없이 이렇게 만들 수 도 있는듯 (apple과 같은 기술)</p>
-<p><a href="https://www.youtube.com/watch?v=hY1a94niwpY">https://www.youtube.com/watch?v=hY1a94niwpY</a></p></section><hr/><footer><div class="bio"><div class="bio-avatar gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIEBQP/xAAYAQACAwAAAAAAAAAAAAAAAAACAwABBP/aAAwDAQACEAMQAAABjU7Z+5eizVjaoCTkGz//xAAcEAACAgIDAAAAAAAAAAAAAAAAAgEDBBEQITH/2gAIAQEAAQUCLJEyWRZnqW2bLPOP/8QAGREAAgMBAAAAAAAAAAAAAAAAACEBAhAx/9oACAEDAQE/AZYyvM//xAAaEQACAgMAAAAAAAAAAAAAAAAAAQIhAxIx/9oACAECAQE/AaTs0iZeiP/EABgQAAMBAQAAAAAAAAAAAAAAAAABEBEx/9oACAEBAAY/AhGJzsd//8QAGhAAAgMBAQAAAAAAAAAAAAAAAAERIXEQQf/aAAgBAQABPyFsgYXamELMqK3DRgPwZ//aAAwDAQACAAMAAAAQXOe+/8QAGBEAAgMAAAAAAAAAAAAAAAAAABEBEFH/2gAIAQMBAT8QaAtWf//EABgRAAMBAQAAAAAAAAAAAAAAAAABMUER/9oACAECAQE/EE+TQ24iZB//xAAbEAEAAwEAAwAAAAAAAAAAAAABABEhQWFxgf/aAAgBAQABPxCFo8MqgBwBCYwC2bhdilVfIUsYw8dbMPoR0/Cf/9k=" alt="Juyeong Byeong" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/Blog-Around/static/896e7a31a23b164907ba2b522cbece28/340ed/profile-pic.jpg 1x,
+<p><a href="https://www.youtube.com/watch?v=hY1a94niwpY">https://www.youtube.com/watch?v=hY1a94niwpY</a></p>
+<h3>20211016</h3>
+<h2>duck typing</h2>
+<p>타입 체계중 하나로 행동이 같다면 같은 타입으로 봐도 무방하다는 타이핑 방식이다.
+이는 클래스, 인터페이스로 타입을 구별하는 것과 다르게 메서드, 프로퍼티의 존제 유무를 통해 타입을 구분한다.
+이는 동적 타입 언어에서 나타나는 특성이다. 대표적으로 아래와 같이 JS가 있다.</p>
+<p><a href="https://stackoverflow.com/questions/3379529/duck-typing-in-javascript">https://stackoverflow.com/questions/3379529/duck-typing-in-javascript</a></p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> duck1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">speak</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"꽥꽥"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> duck2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">speak</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"꿕꿕"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">makeDuckSpeak</span><span class="token punctuation">(</span><span class="token parameter">duck</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  duck<span class="token punctuation">.</span><span class="token function">speak</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">makeDuckSpeak</span><span class="token punctuation">(</span>duck1<span class="token punctuation">)</span> <span class="token comment">//'꽥꽥' 같은 오리타입</span>
+<span class="token function">makeDuckSpeak</span><span class="token punctuation">(</span>duck2<span class="token punctuation">)</span> <span class="token comment">//'꿕꿕' 같은 오리타입</span></code></pre></div>
+<h2>duck typing vs structural typing</h2>
+<p>며칠 전에 봤던 duck typing과 매우 유사한 것 같아 차이점을 알아봤는데,
+duck typing은 동적으로 타입바인딩이 일어나는 언어적 특성에 의해서 일어나는 것이고,
+structural은 구조가 같으면 같은 타입으로 친다는 것에서는 동일하지만 structural typing은 정적으로 결정된 타입을 체크해서
+컴파일 타임에 타입 에러를 찾아 내고, duck typing은 이를 런타임전에는 모른 다는 것이 차이다.</p>
+<p><a href="https://softwareengineering.stackexchange.com/questions/259943/is-there-a-difference-between-duck-typing-and-structural-typing">https://softwareengineering.stackexchange.com/questions/259943/is-there-a-difference-between-duck-typing-and-structural-typing</a></p></section><hr/><footer><div class="bio"><div class="bio-avatar gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:50px;height:50px"><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIEBQP/xAAYAQACAwAAAAAAAAAAAAAAAAACAwABBP/aAAwDAQACEAMQAAABjU7Z+5eizVjaoCTkGz//xAAcEAACAgIDAAAAAAAAAAAAAAAAAgEDBBEQITH/2gAIAQEAAQUCLJEyWRZnqW2bLPOP/8QAGREAAgMBAAAAAAAAAAAAAAAAACEBAhAx/9oACAEDAQE/AZYyvM//xAAaEQACAgMAAAAAAAAAAAAAAAAAAQIhAxIx/9oACAECAQE/AaTs0iZeiP/EABgQAAMBAQAAAAAAAAAAAAAAAAABEBEx/9oACAEBAAY/AhGJzsd//8QAGhAAAgMBAQAAAAAAAAAAAAAAAAERIXEQQf/aAAgBAQABPyFsgYXamELMqK3DRgPwZ//aAAwDAQACAAMAAAAQXOe+/8QAGBEAAgMAAAAAAAAAAAAAAAAAABEBEFH/2gAIAQMBAT8QaAtWf//EABgRAAMBAQAAAAAAAAAAAAAAAAABMUER/9oACAECAQE/EE+TQ24iZB//xAAbEAEAAwEAAwAAAAAAAAAAAAABABEhQWFxgf/aAAgBAQABPxCFo8MqgBwBCYwC2bhdilVfIUsYw8dbMPoR0/Cf/9k=" alt="Juyeong Byeong" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms;border-radius:50%"/><noscript><picture><source srcset="/Blog-Around/static/896e7a31a23b164907ba2b522cbece28/340ed/profile-pic.jpg 1x,
 /Blog-Around/static/896e7a31a23b164907ba2b522cbece28/32ce1/profile-pic.jpg 1.5x,
 /Blog-Around/static/896e7a31a23b164907ba2b522cbece28/04d41/profile-pic.jpg 2x" /><img loading="lazy" width="50" height="50" srcset="/Blog-Around/static/896e7a31a23b164907ba2b522cbece28/340ed/profile-pic.jpg 1x,
 /Blog-Around/static/896e7a31a23b164907ba2b522cbece28/32ce1/profile-pic.jpg 1.5x,
