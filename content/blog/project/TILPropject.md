@@ -100,3 +100,43 @@ apple의 사이트에서 scroll위치에 따라서 에니메이션이 재생되�
 그런데 개발 없이 이렇게 만들 수 도 있는듯 (apple과 같은 기술)
 
 https://www.youtube.com/watch?v=hY1a94niwpY
+
+### 20211016
+
+## duck typing
+
+타입 체계중 하나로 행동이 같다면 같은 타입으로 봐도 무방하다는 타이핑 방식이다.
+이는 클래스, 인터페이스로 타입을 구별하는 것과 다르게 메서드, 프로퍼티의 존제 유무를 통해 타입을 구분한다.
+이는 동적 타입 언어에서 나타나는 특성이다. 대표적으로 아래와 같이 JS가 있다.
+
+https://stackoverflow.com/questions/3379529/duck-typing-in-javascript
+
+```js
+const duck1 = {
+  speak: function () {
+    console.log("꽥꽥")
+  },
+}
+
+const duck2 = {
+  speak: function () {
+    console.log("꿕꿕")
+  },
+}
+
+function makeDuckSpeak(duck) {
+  duck.speak()
+}
+
+makeDuckSpeak(duck1) //'꽥꽥' 같은 오리타입
+makeDuckSpeak(duck2) //'꿕꿕' 같은 오리타입
+```
+
+## duck typing vs structural typing
+
+며칠 전에 봤던 duck typing과 매우 유사한 것 같아 차이점을 알아봤는데,
+duck typing은 동적으로 타입바인딩이 일어나는 언어적 특성에 의해서 일어나는 것이고,
+structural은 구조가 같으면 같은 타입으로 친다는 것에서는 동일하지만 structural typing은 정적으로 결정된 타입을 체크해서
+컴파일 타임에 타입 에러를 찾아 내고, duck typing은 이를 런타임전에는 모른 다는 것이 차이다.
+
+https://softwareengineering.stackexchange.com/questions/259943/is-there-a-difference-between-duck-typing-and-structural-typing
