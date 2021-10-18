@@ -335,3 +335,91 @@ function buildName(firstName: string, ...restOfName: string[]) {
   return firstName + " " + restOfName.join(" ")
 }
 ```
+
+### 20211018
+
+#### 비공개 필드
+
+js 에서 class 내부 프로퍼티를 외부에 공개하고 싶지 않다면 이름 앞에 #을 붙이면 된다. ts의 private과 동일하다.
+
+```ts
+class Animal {
+  #name: string
+  constructor(theName: string) {
+    this.#name = theName
+  }
+}
+
+new Animal("Cat").#name // 프로퍼티 '#name'은 비공개 식별자이기 때문에 'Animal' 클래스 외부에선 접근할 수 없습니다.
+```
+
+getter, setter 는 js 문법.
+
+```ts
+class Employee {
+  private _fullName: string
+
+  get fullName(): string {
+    return this._fullName
+  }
+  set fullName(newName: string) {
+    // 제약 사항들
+
+    this.full_name
+  }
+}
+
+let emp = new Employee()
+
+emp.fullName = "asd" //제약 사항이 체크되어 들어간다.
+console.log(emp.fullName)
+```
+
+#### 제네릭
+
+아래와 같이 인라인으로 타입을 명시할 때도 제네릭 사용이 가능하다.
+
+```ts
+interface GenericIdentityFn {
+  <T>(arg: T): T
+}
+
+function identity<T>(arg: T): T {
+  return arg
+}
+
+let myIdentity1: <T>(arg: T) => T = identity
+let myIdentity2: GenericIdentityFn = identity
+let myIdentity3: { <T>(arg: T): T } = identity
+```
+
+어떤 제네릭이 특정 특성을 가지도록 강제 하고 싶다면 extends 키워드를 사용해 명시해주면 된다.
+
+```ts
+interface Lengthwise {
+  length: number
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+  console.log(arg.length) // 이제 .length 프로퍼티가 있는 것을 알기 때문에 더 이상 오류가 발생하지 않습니다.
+  return arg
+}
+```
+
+그리고 제네릭 타입에 기반해 extends한 제네릭 타입도 정의 가능하다.
+
+```ts
+function getProperty<T, K extends keyof T>(obj: T, key: K) {
+  return obj[key]
+}
+
+let x = { a: 1, b: 2, c: 3, d: 4 }
+
+getProperty(x, "a") // 성공
+getProperty(x, "m") // 오류: 인수의 타입 'm' 은 'a' | 'b' | 'c' | 'd'에 해당되지 않음.
+```
+
+#### 유틸리티 타입
+
+omit, parameters,
+https://typescript-kr.github.io/pages/utility-types.html
