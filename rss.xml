@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 27 Oct 2021 00:21:12 GMT</lastBuildDate><item><title><![CDATA[TIL]]></title><description><![CDATA[20211007 div등 focus가 일어나지 않는 요소에 focus를 하고 싶다면?
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 28 Oct 2021 11:57:34 GMT</lastBuildDate><item><title><![CDATA[TIL]]></title><description><![CDATA[20211007 div등 focus가 일어나지 않는 요소에 focus를 하고 싶다면?
 음의 정숫값(보통 tabindex=“-1”)은 연속 키보드 탐색으로 접근할 수는 없으나 JavaScript…]]></description><link>https://wndudqus.github.io/Blog-Around/project/TILPropject/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/project/TILPropject/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h3&gt;20211007&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -305,7 +305,59 @@ emp&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fullName &lt;sp
 &lt;span class=&quot;token function&quot;&gt;getProperty&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;m&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 오류: 인수의 타입 &apos;m&apos; 은 &apos;a&apos; | &apos;b&apos; | &apos;c&apos; | &apos;d&apos;에 해당되지 않음.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h4&gt;유틸리티 타입&lt;/h4&gt;
 &lt;p&gt;omit, parameters,
-&lt;a href=&quot;https://typescript-kr.github.io/pages/utility-types.html&quot;&gt;https://typescript-kr.github.io/pages/utility-types.html&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[closure]]></title><description><![CDATA[클로저는 “자기 내부 환경과 자신을 감싸고 있는 outerLexicalEnvironmentRef를 참조해 identifier를 참조할 수 있도록 하는” js…]]></description><link>https://wndudqus.github.io/Blog-Around/web/closure/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/web/closure/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;p&gt;클로저는 “자기 내부 환경과 자신을 감싸고 있는 outerLexicalEnvironmentRef를 참조해 identifier를 참조할 수 있도록 하는” js 함수적 특성을 말한다.&lt;/p&gt;
+&lt;a href=&quot;https://typescript-kr.github.io/pages/utility-types.html&quot;&gt;https://typescript-kr.github.io/pages/utility-types.html&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;react hooks 의 dependency 배열에 대해서.&lt;/h4&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;WOOOOOOOProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  idx&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;WOOOOOOO&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; idx &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; WOOOOOOOProps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;calc&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; idx
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;FOOOOOOProps&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  idx&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;number&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;FOOOOOO&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; idx &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; FOOOOOOProps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;calc1&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; idx
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token comment&quot;&gt;//보통 이렇게 쓸 이유가 없지만 deps의 행동을 보기 위해 이렇게 기술&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// 일반적으로 이렇게씀&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;/*
+  const calc2 = useCallback(() =&gt; {
+    return idx; 의미가 없다.
+  }, [idx])
+  */&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; calc2 &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useCallback&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;calc1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;calc2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;div&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;APP&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;counter&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; setCounter&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;WOOOOOOO&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;counter&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;FOOOOOO&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;counter&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;/&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;token script language-javascript&quot;&gt;&lt;span class=&quot;token script-punctuation punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;setCounter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;counter &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;++++++++&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위에서 보면 WOOOOOOO 는 버튼을 누를 때 마다 +1씩 되는 반면
+FOOOOOO는 +1씩 되지않는다 왜그럴까? 처음에는 &lt;code class=&quot;language-text&quot;&gt;const calc2 = useCallback(calc1, [])&lt;/code&gt;의 calc1이 calc1의 reference를 참조한다고 생각했기 때문에 어떤 마운트가 될때만
+함수를 evaluation되는 것이기 때문에 FOOOOOO 도 +1씩 될 것이라고 생각했다. 하지만 예상과는 다르게 동작을 했다.
+그래서 고민을 해보니 처음 FOOOOOO 컴포넌트가 마운트 될 때 &lt;code class=&quot;language-text&quot;&gt;const calc1 = () =&amp;gt; { return idx}&lt;/code&gt; 가 evaluation되고, 이의 reference가 &lt;code class=&quot;language-text&quot;&gt;const calc2 = useCallback(calc1, [])&lt;/code&gt;을 통해 함수가 반환되어도 메모리가 유지되는 어딘가에 저장이 될 것 이다.
+그리고 두번째 렌더 시에 hooks api 내부 코드는 &lt;code class=&quot;language-text&quot;&gt;const calc2 = useCallback(calc1, [])&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;[]&lt;/code&gt;가 바뀌지 않은 것을 확인하고 그 곳에서 값을 읽어올 것이다. 그렇기 때문에 거기서 가져오는 &lt;code class=&quot;language-text&quot;&gt;calc1&lt;/code&gt;의 reference는 이전 함수의 영역에서 가져오는 것이다.
+즉 이전 함수의 실행 문맥 속의 &lt;code class=&quot;language-text&quot;&gt;calc1&lt;/code&gt;을 가져오기 때문에 내부함수인 &lt;code class=&quot;language-text&quot;&gt;calc1&lt;/code&gt;은 처음 마운트 될때의 idx를 가져오는 것이다.&lt;/p&gt;
+&lt;p&gt;![callstack][https://images.app.goo.gl/bwnn6rx6rng1q8jb7]&lt;/p&gt;
+&lt;p&gt;이 부분에서 드는 통찰은 useCallback등을 이용했을 때 이전 메모이제이션을 하는 것은 함수의 내부 함수이고, 이 내부함수가 외부 함수의 지역변수를 참조하고 있으면 컴포넌트 자체가 메모리상에서 반환되지 않고 있게 된다는 것이다.
+그렇기 때문에 useCallback를 사용한다고 무조건 좋은 것이 아니다.&lt;/p&gt;
+&lt;p&gt;즉 &lt;h2 color=&apos;red&apos;&gt;무지성으로 기술을 사용하는 것은 독이 될 수 있고 항상 왜를 생각해야 한다는 것이다.&lt;/h2&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[closure]]></title><description><![CDATA[클로저는 “자기 내부 환경과 자신을 감싸고 있는 outerLexicalEnvironmentRef를 참조해 identifier를 참조할 수 있도록 하는” js…]]></description><link>https://wndudqus.github.io/Blog-Around/web/closure/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/web/closure/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;p&gt;클로저는 “자기 내부 환경과 자신을 감싸고 있는 outerLexicalEnvironmentRef를 참조해 identifier를 참조할 수 있도록 하는” js 함수적 특성을 말한다.&lt;/p&gt;
 &lt;p&gt;클로저는 이렇게 생겼다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;outer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//nested에겐 외부 lexicalEnvironment. &lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; out&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -721,53 +773,53 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 &lt;li&gt;일단 view가 간단해지기 때문에 해당 컴포넌트가 어떤 모양을 하고 있는지를 파악하기가 쉬워지는 것 같다. &lt;/li&gt;
 &lt;li&gt;이전엔 로직을 HOC등을 이용해서 재사용했어야 했는데 이 과정이 번거롭고 모양도 우아하지 않았던 것 같다. (HOC 는 컴포지션이 상위로 되는 느낌이라면 hook은 수평적으로 더해지는 느낌)&lt;/li&gt;
 &lt;li&gt;view와 로직이 확실히 분리 되어서 view는 hook에서 주는 인터페이스만 신경쓰면 되고, hook에서는 상태, sideEffect에만 신경쓰면 된다. &lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[custom hooks를 적용해보며 느낀점]]></title><description><![CDATA[Custom hooks 리액트 공식 문서에서는 커스텀 훅스의 이점을 이렇게 설명하고 있다. “자신만의 Hook을 만들면 컴포넌트 로직을 함수로 뽑아내어 재사용할 수 있습니다.” 
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[custom hooks를 적용해보며 느낀점]]></title><description><![CDATA[Custom hooks 리액트 공식 문서에서는 커스텀 훅스의 이점을 이렇게 설명하고 있다. “자신만의 Hook을 만들면 컴포넌트 로직을 함수로 뽑아내어 재사용할 수 있습니다.”
 이번에 react hook와 custom hook…]]></description><link>https://wndudqus.github.io/Blog-Around/web/customHooks/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/web/customHooks/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Custom hooks&lt;/h1&gt;
 &lt;p&gt;리액트 공식 문서에서는 커스텀 훅스의 이점을 이렇게 설명하고 있다. &lt;em&gt;“자신만의 Hook을 만들면 컴포넌트 로직을 함수로 뽑아내어 재사용할 수 있습니다.”&lt;/em&gt;
 이번에 react hook와 custom hook을 회사에 직접 적용해보면서 위의 장점을 정말 잘 느낄 수 있었던 것 같다.
 처음엔 컴포넌트를 class 형태로 짰었는데, 이를 논의를 통해서 function으로 바꾸면서 hooks를 적용해보고, 이를 다시 묶어서 custom hooks를 적용해봤다.&lt;/p&gt;
-&lt;p&gt;이 과정에서 느낀점을 몇가지 적어보려고 한다. &lt;/p&gt;
+&lt;p&gt;이 과정에서 느낀점을 몇가지 적어보려고 한다.&lt;/p&gt;
 &lt;h2&gt;기본 hooks를 적용&lt;/h2&gt;
 &lt;p&gt;기본 hooks를 적용해보면서는 상태를 관리하기 위해서 class의 형태를 위해 기본적으로 작성되어야 하는 보일러 플레이트 들을 사용하지 않아도 되어서 코드가 간결해진다는 느낌을 받았다.
 하지만 오히려 여러 상태를 관리하다 보니까 한 함수에 상태관리 로직과 render를 위한 함수가 모두 같이 있다는 것이 가독성을 떨어트리는 것 같다는 생각을 했다.
-내가 개발한 컴포넌트는 페이지네이션을 통해 각 페이지를 가져오는 로직이있는 리스트 컴포넌트였는데, 리스트 호출을 위한 로직과 리스트를 이용해 그려주는 로직, 컴포넌트가 unmount되었을 때 api 호출을 취소해주는 로직, 그리고 다음 리스트를 요청하는 로직 등 모든 부분을 한 함수에 넣게 되니 가독성이 떨어질 수 밖에 없었던 것 같다. &lt;/p&gt;
+내가 개발한 컴포넌트는 페이지네이션을 통해 각 페이지를 가져오는 로직이있는 리스트 컴포넌트였는데, 리스트 호출을 위한 로직과 리스트를 이용해 그려주는 로직, 컴포넌트가 unmount되었을 때 api 호출을 취소해주는 로직, 그리고 다음 리스트를 요청하는 로직 등 모든 부분을 한 함수에 넣게 되니 가독성이 떨어질 수 밖에 없었던 것 같다.&lt;/p&gt;
 &lt;h2&gt;custom hooks를 적용&lt;/h2&gt;
 &lt;p&gt;custom hooks를 적용하면서 접근한 방식을 위에서 말한 상태들을 하나하나 “순수히 데이터를 위한 로직” 인지 “view를 위한 로직”인지 파악해서 분리를 해보았다.
 처음에는 가장 먼저 앞선 글에서 설명한 promise 취소 유틸을 사용하기 쉽게 하는 hooks를 정의해보았다.
 기존엔 리스트 형태의 컴포넌트 였기때문에 여러 콜백을 관리해줘야 했고, 이를 필드로 관리하다가 useEffect에서 cancel해줘야 하는 귀찮음이 있었다.
-이 패턴을 파악해서 hooks로 만들게 되었다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;//..someCode&lt;/span&gt;
+이 패턴을 파악해서 hooks로 만들게 되었다.&lt;/p&gt;
+&lt;!-- ```tsx --&gt;
+&lt;p&gt;…
+//..someCode&lt;/p&gt;
+&lt;p&gt;// 사용하는 컴포넌트에서 해주기.
+promiseList.push(makeCancelable(promise));
+useEffect(()=&gt;{
+return ()=&gt;promiseList.forEach(promise.cancel())// 관리하기 귀찮음!
+},[])&lt;/p&gt;
+&lt;p&gt;…&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;[비슷한 코드](https://rajeshnaroth.medium.com/writing-a-react-hook-to-cancel-promises-when-a-component-unmounts-526efabf251f)
+```tsx
+//..someCode
 
-&lt;span class=&quot;token comment&quot;&gt;// 사용하는 컴포넌트에서 해주기. &lt;/span&gt;
-promiseList&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;makeCancelable&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;promise&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt;promiseList&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;promise&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cancel&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;// 관리하기 귀찮음!&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+function useCancelable&amp;lt;T&amp;gt;(promise:Promise&amp;lt;T&amp;gt;){
 
-&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;https://rajeshnaroth.medium.com/writing-a-react-hook-to-cancel-promises-when-a-component-unmounts-526efabf251f&quot;&gt;비슷한 코드&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;tsx&quot;&gt;&lt;pre class=&quot;language-tsx&quot;&gt;&lt;code class=&quot;language-tsx&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;//..someCode&lt;/span&gt;
+  //..somecode
 
-&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token generic-function&quot;&gt;&lt;span class=&quot;token function&quot;&gt;useCancelable&lt;/span&gt;&lt;span class=&quot;token generic class-name&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;promise&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;Promise&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;T&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token plain-text&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    useEffect(()=&amp;gt;{
+        promiseList.forEach(promise.cancel())
+    },[])
 
-  &lt;span class=&quot;token comment&quot;&gt;//..somecode&lt;/span&gt;
+  //..내부에서 관리
+    const cancelablePromise=makeCancelable&amp;lt;T&amp;gt;(promise);
+    promiseList.push(cancelablePromise);
 
-    &lt;span class=&quot;token function&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-        promiseList&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;promise&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cancel&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;token comment&quot;&gt;//..내부에서 관리&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; cancelablePromise&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token generic-function&quot;&gt;&lt;span class=&quot;token function&quot;&gt;makeCancelable&lt;/span&gt;&lt;span class=&quot;token generic class-name&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;promise&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    promiseList&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cancelablePromise&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;cancelablePromise&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;promise&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+    return [cancelablePromise.promise];
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;그리고 페이지네이션, fetch 하는 로직도 hooks로 뽑아내서 만들어보았는데, class 형보다도, function형 컴포넌트에 기본 hooks를 사용한 것 보다 훨씬 view쪽의 코드가 깔끔해지고
 view와 데이터를 위한 로직이 확실히 분리되는 것 같았다.
 구체적으로는 view 컴포넌트에서는 데이터를 fetch 하고 관리하는 로직은 전혀 모르고 custom hooks에서 반환하는 list 데이터와 다음 페이지를 읽어오는 getNextPage()만 알면 됐기 때문에 훨씬 간결해졌고,
 데이터를 fetch 해주고 관리해주는 hooks는 view와 관련 없이 데이터만을 신경 쓸 수 있어서 더 간결해졌던 것 같다. 그리고 hooks가 반환하는 인터페이스가 정해져 있고 잘 캡슐화 되어있기 때문에 이를 다른 view에서도 충분히 이용할 수 있다는 장점이 있는 것 같다.
-기존 class 형 컴포넌트에서는 HOC를 이용하지 않는 이상 같은 데이터이고, 같은 방식(스크롤 페이지네이션)을 가지는 다른 컴포넌트에서 로직을 사용하고 싶으면 다시 로직을 작성해줘야했는데 이런 반복작업을 할 필요가 없을 것 같다는 생각이 들었다. &lt;/p&gt;
+기존 class 형 컴포넌트에서는 HOC를 이용하지 않는 이상 같은 데이터이고, 같은 방식(스크롤 페이지네이션)을 가지는 다른 컴포넌트에서 로직을 사용하고 싶으면 다시 로직을 작성해줘야했는데 이런 반복작업을 할 필요가 없을 것 같다는 생각이 들었다.&lt;/p&gt;
 &lt;h2&gt;고민&lt;/h2&gt;
 &lt;p&gt;hooks를 작성 하면서 callback처럼 특정 이벤트가 발생하고 fetch 를 하는 경우가 있었는데 이럴 경우 fetch 함수를 해당 callback에서 실행해야하나, useEffect안에서 렌더링시에 자연스럽게 처리되도록 해야 하나 고민이 있었다. 그런데,
 공식 문서를 다시 읽어보니 이름 처럼 sideEffect는 useEffect안에서 하는것이 맞는것 같다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[isMounted is an Antipattern]]></title><description><![CDATA[팝업이나, 특정 페이지를 열 때 api fetch를 하는 경우가 많다. 이럴 경우 보통 class 형 컴포넌트의 경우 fetch의 등록을 componentDidMounted에서 (함수형의 경우 useEffect…]]></description><link>https://wndudqus.github.io/Blog-Around/web/isunMounted/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/web/isunMounted/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;p&gt;팝업이나, 특정 페이지를 열 때 api fetch를 하는 경우가 많다. 이럴 경우 보통 class 형 컴포넌트의 경우 fetch의 등록을 componentDidMounted에서 (함수형의 경우 useEffect) 하게된다.
