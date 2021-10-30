@@ -471,15 +471,11 @@ function APP() {
 ```
 
 위에서 보면 WOOOOOOO 는 버튼을 누를 때 마다 +1씩 되는 반면
-FOOOOOO는 +1씩 되지않는다 왜그럴까? 처음에는 `const calc2 = useCallback(calc1, [])`의 calc1이 calc1의 reference를 참조한다고 생각했기 때문에 어떤 마운트가 될때만
-함수를 evaluation되는 것이기 때문에 FOOOOOO 도 +1씩 될 것이라고 생각했다. 하지만 예상과는 다르게 동작을 했다.
-그래서 고민을 해보니 처음 FOOOOOO 컴포넌트가 마운트 될 때 ` const calc1 = () => { return idx}` 가 evaluation되고, 이의 reference가 `const calc2 = useCallback(calc1, [])`을 통해 함수가 반환되어도 메모리가 유지되는 어딘가에 저장이 될 것 이다.
+FOOOOOO는 +1씩 되지않는다 왜그럴까? 처음에는 `const calc2 = useCallback(calc1, [])`의 calc1이 calc1의 reference를 참조한다고 생각했다.
+때문에 컴포넌트가 마운트 될때만 함수를 evaluation하기 때문에 FOOOOOO 도 +1씩 될 것이라고 생각했다. 하지만 예상과 다르게 동작을 했다.
+그래서 고민을 해보니 처음 FOOOOOO 컴포넌트가 마운트 될 때 ` const calc1 = () => { return idx}` 가 evaluation되고, 이의 reference가 `const calc2 = useCallback(calc1, [])`을 통해 함수가 메모이제이션이 될 것 이다.
 그리고 두번째 렌더 시에 hooks api 내부 코드는 `const calc2 = useCallback(calc1, [])`의 `[]`가 바뀌지 않은 것을 확인하고 그 곳에서 값을 읽어올 것이다. 그렇기 때문에 거기서 가져오는 `calc1`의 reference는 이전 함수의 영역에서 가져오는 것이다.
 즉 이전 함수의 실행 문맥 속의 `calc1`을 가져오기 때문에 내부함수인 `calc1`은 처음 마운트 될때의 idx를 가져오는 것이다.
 
-![callstack][https://images.app.goo.gl/bwnn6rx6rng1q8jb7]
-
-이 부분에서 드는 통찰은 useCallback등을 이용했을 때 이전 메모이제이션을 하는 것은 함수의 내부 함수이고, 이 내부함수가 외부 함수의 지역변수를 참조하고 있으면 컴포넌트 자체가 메모리상에서 반환되지 않고 있게 된다는 것이다.
-그렇기 때문에 useCallback를 사용한다고 무조건 좋은 것이 아니다.
-
-즉 <h2 color='red'>무지성으로 기술을 사용하는 것은 독이 될 수 있고 항상 왜를 생각해야 한다는 것이다.</h2>
+이 부분에서 생긴 통찰은 useCallback등을 이용했을 때 이전 메모이제이션을 하는 것은 함수의 내부 함수이고, 이 내부함수가 외부 함수의 지역변수를 참조하고 있으면 컴포넌트 자체가 메모리상에서 반환되지 않고 있게 된다는 것이다.
+그렇기 때문에 useCallback를 사용한다고 무조건 좋은 것이 아니다. 즉 <b color='red'>무지성으로 기술을 사용하는 것은 독이 될 수 있고 항상 왜를 생각해야 한다는 것이다.</b>
