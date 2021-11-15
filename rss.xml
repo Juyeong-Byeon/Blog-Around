@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 14 Nov 2021 15:16:53 GMT</lastBuildDate><item><title><![CDATA[OKR 실천편 책 리뷰.]]></title><description><![CDATA[Part.1 눈 가리고 아웅하지 말기 데이터 분석을 해야 하는 이유. 챕터…]]></description><link>https://wndudqus.github.io/Blog-Around/books/린분석/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/books/린분석/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Part.1 눈 가리고 아웅하지 말기&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 15 Nov 2021 15:13:45 GMT</lastBuildDate><item><title><![CDATA[OKR 실천편 책 리뷰.]]></title><description><![CDATA[Part.1 눈 가리고 아웅하지 말기 데이터 분석을 해야 하는 이유. 챕터…]]></description><link>https://wndudqus.github.io/Blog-Around/books/린분석/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/books/린분석/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Part.1 눈 가리고 아웅하지 말기&lt;/h1&gt;
 &lt;p&gt;데이터 분석을 해야 하는 이유.&lt;/p&gt;
 &lt;h2&gt;챕터 1 우리는 모두 거짓말 쟁이&lt;/h2&gt;
 &lt;p&gt;창업가들은 자신의 비전이 현실이 될 수 있다는 확고한 신념과 생각을 가지고 창업을 한다.
@@ -62,7 +62,16 @@ ex)에어비엔비&lt;/p&gt;
 ex 월별 신규 사용자들을 비교한다.
 1월 신규 사용자들과 2월 신규 사용자들을 비교.&lt;/p&gt;
 &lt;p&gt;AB테스트 :
-선택지를 주고 어떤 선택지를 선택하는지 보는 연구법&lt;/p&gt;</content:encoded></item><item><title><![CDATA[TIL]]></title><description><![CDATA[20211007 div등 focus가 일어나지 않는 요소에 focus를 하고 싶다면?
+선택지를 주고 어떤 선택지를 선택하는지 보는 연구법&lt;/p&gt;
+&lt;h2&gt;어떻게 일을 할 것인가.&lt;/h2&gt;
+&lt;p&gt;린 캔버스 : 실행에 옮길 수 있는 1페이지 사업계획 정리서&lt;/p&gt;
+&lt;p&gt;어떤 일을 해야할까?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;잘 할 수 있는 일 -&gt; 좋은 서비스를 잘 제공 할 수 있는가?&lt;/li&gt;
+&lt;li&gt;하고싶은 일 -&gt; 흥미가 있어야함&lt;/li&gt;
+&lt;li&gt;돈이 되는 일 -&gt; 사업의 이유,.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;위 3 기준의 접점에서 일을 하는 것이 좋은 것 같다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[TIL]]></title><description><![CDATA[20211007 div등 focus가 일어나지 않는 요소에 focus를 하고 싶다면?
 음의 정숫값(보통 tabindex=“-1”)은 연속 키보드 탐색으로 접근할 수는 없으나 JavaScript…]]></description><link>https://wndudqus.github.io/Blog-Around/project/TILPropject/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/project/TILPropject/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h3&gt;20211007&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
