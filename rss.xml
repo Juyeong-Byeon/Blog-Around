@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Dec 2021 07:42:56 GMT</lastBuildDate><item><title><![CDATA[린분석 Part.2 상황에 맞는 올바른 지표찾기.]]></title><description><![CDATA[다양한 분석 체계 chap.5 데이브 맥클루어 해적지표 성공적 사업을 필요하는데 필요한 지표 5가지를 정의 A Acquisition : 다양한 수단으로 시선을 끈다. A Activation : Acquisition에서 모인 고객들을 전환시킨다. R…]]></description><link>https://wndudqus.github.io/Blog-Around/books/린분석_part2/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/books/린분석_part2/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;다양한 분석 체계&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Dec 2021 08:14:33 GMT</lastBuildDate><item><title><![CDATA[린분석 Part.2 상황에 맞는 올바른 지표찾기.]]></title><description><![CDATA[다양한 분석 체계 chap.5 데이브 맥클루어 해적지표 성공적 사업을 필요하는데 필요한 지표 5가지를 정의 A Acquisition : 다양한 수단으로 시선을 끈다. A Activation : Acquisition에서 모인 고객들을 전환시킨다. R…]]></description><link>https://wndudqus.github.io/Blog-Around/books/린분석_part2/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/books/린분석_part2/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;다양한 분석 체계&lt;/h1&gt;
 &lt;h1&gt;chap.5&lt;/h1&gt;
 &lt;h2&gt;데이브 맥클루어 해적지표&lt;/h2&gt;
 &lt;p&gt;성공적 사업을 필요하는데 필요한 지표 5가지를 정의&lt;/p&gt;
@@ -19,7 +19,40 @@
 &lt;li&gt;바이럴 효과는 많이 알리는 것이 가장 중요하다. 이 성장 원동력의 핵심 지표는 바이럴 계수이다. 바이럴 계소가 1이상이면 사업이 성장하고 있음을 뜻한다.&lt;/li&gt;
 &lt;li&gt;바이럴 계수 : 한 사용자가 다른 사용차를 초대하는 속도&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;유료 성장 엔진&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[린분석 Part.1 눈 가리고 아웅하지 말기.]]></title><description><![CDATA[데이터 분석을 해야 하는 이유. 챕터…]]></description><link>https://wndudqus.github.io/Blog-Around/books/린분석/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/books/린분석/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;p&gt;데이터 분석을 해야 하는 이유.&lt;/p&gt;
+&lt;h2&gt;유료 성장 엔진&lt;/h2&gt;
+&lt;p&gt;흡인력과 바이럴 엔진 이후에 하는 것이 적절, 광고 등을 이용해서 사용자들을 끌어모으는 것 이다. =&gt; 이 방법을 사용할 때는 광고 비용/광고로 생기는 고객의 비율을 잘 고려해야 한다.&lt;/p&gt;
+&lt;h2&gt;애시 모리아 린 캔버스&lt;/h2&gt;
+&lt;p&gt;린캔버스의 각 단계별 지표&lt;/p&gt;
+&lt;p&gt;문제 - 니즈를 가지고 있는 응답자수
+솔루션 - MVP를 시험적으로 사용해보는 응답자 수, 인게이지먼트, 이탈률,
+고유가치 - 경쟁 분석, 고객 정서
+고객군 - 얼마나 쉽게 잠제고객을 발견 할 수 있는지
+채널 - 고객을 유치할 수 있는 방법
+경쟁우위 - 신규 시장 진입 업체의 수
+매출원 - 생애 고객 가치
+비용 구조 - 고정비 고객 확부 비용&lt;/p&gt;
+&lt;h2&gt;스타트업 성장 피라미드&lt;/h2&gt;
+&lt;p&gt;시장 적합성을 달성한 후 해야 할 일에 초점을 맞춤&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;제품/ 시장 적합성 : 무엇을 팔지 결정&lt;/li&gt;
+&lt;li&gt;경쟁우위 : 지킬 수 있는 경쟁 우위&lt;/li&gt;
+&lt;li&gt;규모 확장: 신규 시장, 제품, 채널 개발을 가속화&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;긴 퍼널&lt;/h2&gt;
+&lt;p&gt;고객이 유입되어서 원하는 특정 행동을 하는데까지 이어지는 흐름이 긴 것것을 긴 퍼널이라고 한다.&lt;/p&gt;
+&lt;h2&gt;린 분석 단계와 게이트 지표&lt;/h2&gt;
+&lt;p&gt;게이트 지표: 린 분석 단계에서 특정 단계로 넘어갈 시기임을 알려주는 지표&lt;/p&gt;
+&lt;h1&gt;chap 6&lt;/h1&gt;
+&lt;h2&gt;가장 중요한 한 가지 지표&lt;/h2&gt;
+&lt;p&gt;한 가지 지표를 선택해서 초점을 맞추는 것.
+이전 챕터에서 확인한 각 단계의 지표를 하나씩만 초점을 맞추는 것이다. 이것을 OMTM (one metric that matters)이라고 한다. 이 것은 각 단계마다 달라지며 각 단계에서 가장 중요하게 바라보는 지표를 뜻한다.&lt;/p&gt;
+&lt;p&gt;OMTM을 이용해야 하는 4가지 이유&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;가장 중요한 질문에 대해 답을 제시한다.&lt;/li&gt;
+&lt;li&gt;기준을 정하게 되고 분명한 목표를 가지게 된다.&lt;/li&gt;
+&lt;li&gt;회사 전체를 한 가지에 집중하게 하낟.&lt;/li&gt;
+&lt;li&gt;실험 문화를 조성한다. 구축 =&gt; 측정 =&gt; 학습 주기를 반복하게 한다.&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[린분석 Part.1 눈 가리고 아웅하지 말기.]]></title><description><![CDATA[데이터 분석을 해야 하는 이유. 챕터…]]></description><link>https://wndudqus.github.io/Blog-Around/books/린분석/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/books/린분석/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;p&gt;데이터 분석을 해야 하는 이유.&lt;/p&gt;
 &lt;h2&gt;챕터 1 우리는 모두 거짓말 쟁이&lt;/h2&gt;
 &lt;p&gt;창업가들은 자신의 비전이 현실이 될 수 있다는 확고한 신념과 생각을 가지고 창업을 한다.
 자신의 확고한 신념 (책에서 말하는 현실 왜곡장)은 창업을 시작하고 사업을 확장시켜나다는 것에 필수적이지만.
