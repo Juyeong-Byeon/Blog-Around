@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 15 Nov 2021 15:13:45 GMT</lastBuildDate><item><title><![CDATA[OKR 실천편 책 리뷰.]]></title><description><![CDATA[Part.1 눈 가리고 아웅하지 말기 데이터 분석을 해야 하는 이유. 챕터…]]></description><link>https://wndudqus.github.io/Blog-Around/books/린분석/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/books/린분석/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Part.1 눈 가리고 아웅하지 말기&lt;/h1&gt;
-&lt;p&gt;데이터 분석을 해야 하는 이유.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Dec 2021 07:25:00 GMT</lastBuildDate><item><title><![CDATA[린분석 Part.1 눈 가리고 아웅하지 말기.]]></title><description><![CDATA[데이터 분석을 해야 하는 이유. 챕터…]]></description><link>https://wndudqus.github.io/Blog-Around/books/린분석/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/books/린분석/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;p&gt;데이터 분석을 해야 하는 이유.&lt;/p&gt;
 &lt;h2&gt;챕터 1 우리는 모두 거짓말 쟁이&lt;/h2&gt;
 &lt;p&gt;창업가들은 자신의 비전이 현실이 될 수 있다는 확고한 신념과 생각을 가지고 창업을 한다.
 자신의 확고한 신념 (책에서 말하는 현실 왜곡장)은 창업을 시작하고 사업을 확장시켜나다는 것에 필수적이지만.
@@ -3117,70 +3116,77 @@ textInput&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span 
 &lt;/ol&gt;
 &lt;h2&gt;마치며.&lt;/h2&gt;
 &lt;p&gt;  git branch전략인 git-flow를 알아보았다. git-flow어려운 개념이 아니라 기능 개발버전 부터 최종버전까지의 개발 과정에 맞추어 브랜치를 나누어 관리하는 방법이다.
-이 글을 쓰며 이전에 학교 수업에서 조별과제를 할 때, branch관리를 하지 않고 단순히 원하는대로 branch를 따고, merge를 하고, 심지어 master에서 바로 함께 같은 부분을 작업해서 충돌을 해결하느라 많은 시간을 썼던 것이 기억났다. 그때 이러한 전략을 알았더라면 더 쉽게 관리할 수 있었을 것 같다는 생각이 든다.   &lt;/p&gt;</content:encoded></item><item><title><![CDATA[JS - call by value VS call by Reference]]></title><description><![CDATA[call by value VS call by Reference 다른 언어에서 값은 구문에 따라 call by value 나 call by ref로 전달, 할당 된다. c++에서는 &와 같은 참조 연산자 등을 이용해 레퍼런스를 넘긴다. Alias…]]></description><link>https://wndudqus.github.io/Blog-Around/YDKJS_study/day3_valueAndReference/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/YDKJS_study/day3_valueAndReference/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;call by value VS call by Reference&lt;/h1&gt;
-&lt;p&gt;다른 언어에서 값은 구문에 따라 call by value 나 call by ref로 전달, 할당 된다.&lt;/p&gt;
-&lt;p&gt;c++에서는 &amp;#x26;와 같은 참조 연산자 등을 이용해 레퍼런스를 넘긴다. Alias 이름을 가지는 것이다. 또한 배열등을 제외하고는 참조 연산자나 포인터 연산자를 사용하지 않으면 항상 call by value로 전달이 된다. &lt;/p&gt;
-&lt;p&gt;이에 비해 자바스크립트는 참조연산자나 포인터등 직접 변수의 메모리의 주소에 별명을 붙히는 것을 지원하는 것이 없다. 또한 참조방법도 다르며 다른 변수가 다른 변수를 참조 할 수 없다. &lt;/p&gt;
-&lt;p&gt;자바스크립트에서는 reference는 공유된 값을 가리킨다.(다른 언어들이 변수의 공간을 가리키는 것과 다르다.) 따라서 서로다른 10개의 래퍼런스가 있다면 저마다 항상 공유된 값을 참조한다. 값의 타입만으로 copy by value 나 copy by ref가 결정이 되는 것이다.
-&lt;Test/&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;//val는 값을 복사한다.&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; b&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// &apos;b&apos;는 값을  a 에서 값을 복사한다  &lt;/span&gt;
-
-b&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-a&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//2&lt;/span&gt;
-b&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//3&lt;/span&gt;
-
-&lt;span class=&quot;token comment&quot;&gt;//array는 값의 ref가 전달 된다.&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; c&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; d&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-c&lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt;d&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;null, undefined string, number, boolean, symbol은 항상 값을 복사한다. &lt;/p&gt;
-&lt;p&gt;Object나 함수, 배열, 등은 할당/전달 시에 ref를 전달 한다. &lt;/p&gt;
-&lt;p&gt;c,b는 값을 가지고 있는 것이 아니라, 동등하게 값이 위치하는 ref를 참조하고 있는 것이다. &lt;/p&gt;
-&lt;p&gt;레퍼런스는 변수가 아니라 값 자체를 가리키는 것이기 때문에 A레퍼런스의 참조 대상을 바꿈으로써 B를 바꿀 수있는 포인터와 유사한 방법은 지원하지 않는다.
-즉&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;c&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1212&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-c&lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt;d&lt;span class=&quot;token comment&quot;&gt;//true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;가 되는 것이다. c에 새로운 배열을 할당하면 새로운 배열의 위치를 참조하기 때문이다. &lt;/p&gt;
-&lt;p&gt;함수 인자도 값의 레퍼런스로 전달이 되는데, 포인터가 아니어서 혼돈되는 부분이 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    x&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//[1,2,3,4];&lt;/span&gt;
-
-    x&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//참조하는 값이 바뀜&lt;/span&gt;
-    x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    x&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+이 글을 쓰며 이전에 학교 수업에서 조별과제를 할 때, branch관리를 하지 않고 단순히 원하는대로 branch를 따고, merge를 하고, 심지어 master에서 바로 함께 같은 부분을 작업해서 충돌을 해결하느라 많은 시간을 썼던 것이 기억났다. 그때 이러한 전략을 알았더라면 더 쉽게 관리할 수 있었을 것 같다는 생각이 든다.   &lt;/p&gt;</content:encoded></item><item><title><![CDATA[JS - 프로토타입]]></title><description><![CDATA[Prototype 이 정리는 프로토타입 이해하기,MDN Object prototypes 를 참고해 작성한 글입니다.  자바스크립트를 처음 배우기 시작할 때 JS는 객체 지향형 언어의 패러다임의 특성을 가지고 있다는 말을 들었을 것이다. ES…]]></description><link>https://wndudqus.github.io/Blog-Around/JavaScriptAtoZ/day4_Prototype/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/JavaScriptAtoZ/day4_Prototype/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Prototype&lt;/h1&gt;
+&lt;p&gt;이 정리는 &lt;a href=&quot;https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67&quot;&gt;프로토타입 이해하기&lt;/a&gt;,&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Object_prototypes&quot;&gt;MDN Object prototypes&lt;/a&gt; 를 참고해 작성한 글입니다. &lt;/p&gt;
+&lt;p&gt;자바스크립트를 처음 배우기 시작할 때 JS는 객체 지향형 언어의 패러다임의 특성을 가지고 있다는 말을 들었을 것이다. ES6 에서 class 가 추가되긴 하였지만 js의 상속은 다른 언어의 상속과는 다르다. 이는 JS가 프로토 타입 상속을 하기 때문인데 Prototype이 뭔지 정리해보자. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ear&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;nose&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mouth&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-a&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//[1,2,3,4]????????????????????????????&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이는 x가 전달 될 때 a 에 들어가 있는 “값”의 ref가 전달되었기 때문이다. 그래서 x.push(4) 를 통해서는 x에서 참조 하고있는 전달된 원래 배열을 변화 시키지만 새로운 배열을 할당함으로써 이전에 가리키고 있던 배열의 ref를 더이상 가리키지 않기 때문에 반영이 되지 않는다. &lt;/p&gt;
-&lt;p&gt;따라서 위의 함수를 일반적으로 기대하는 형태로 작동하게 하기 위해서는 다음과 같이 처리 해야 한다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    x&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//[1,2,3,4];&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; person1&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; person2&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-    x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//원본 배열을 수정&lt;/span&gt;
-    x&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//[4,5,6,7]&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+person1&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ear&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 될 경우 person1과 person2에 각각의 ear, nose, mouth 등이 각각 생성되어 메모리를 차지 한다. 만약 수 많은 객체가 생성되면 메모리의 낭비가 심해질 것이다. 이러한 문제를 해결하고, 여러 메서드, 오브젝트들을 공유하기 위해 사용하는 것이 바로 Prototype 상속이다.&lt;/p&gt;
+&lt;p&gt;prototype은 하나의 원형이 되는 함수에서 생성되는 모든 함수들이 공유하는 값, 객체들이 들어있는 object인데, 같은 공유되는 ref를 참조한다.&lt;/p&gt;
+&lt;p&gt;prototype 으로 상속을 할 경우 다음과 같이 하면 되는데&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;이름&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-a&lt;span class=&quot;token comment&quot;&gt;//[4,5,6,7]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;우리는 call by ref, call by val을 선택 할 수 없음을 기억 해야 한다. &lt;/p&gt;
-&lt;p&gt;또한 만약 기존 변수의 값을 바꾸고싶지 않다면 다음과 같이&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;등과 같이 새로운 배열을 얕은복사로 반환하는 값을 사용해야한다. (얕은 복사: 값을 복사하긴 하되 만약 복사되는 객체의 하위에 객체나 배열이 있다면 그 값은 ref로 복사가 되는 것을 뜻한다.)&lt;/p&gt;
-&lt;p&gt;반대로 스칼라 값을 ref로 전달 하려고 하면 배열이나 객체, 함수 등으로 감싸야 한다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[JS - Value]]></title><description><![CDATA[값 자바스크립트에 내장된 값 타입과 작동방식에 대한 이해. 배열 자바스크립트의 배열은 다른 strict type language…]]></description><link>https://wndudqus.github.io/Blog-Around/YDKJS_study/day2_Value/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/YDKJS_study/day2_Value/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;값&lt;/h1&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; person1&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; person2&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+person1&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//&quot;이름&quot;&lt;/span&gt;
+person2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//&quot;이름&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이럴 경우 Person object내의 prototype object에 대한 ref가 공유되기 때문에 같은 값을 가지게 된다. &lt;/p&gt;
+&lt;p&gt;이 것에 대해 조금 더 차근차근 알아보자&lt;/p&gt;
+&lt;h2&gt;함수 생성과정&lt;/h2&gt;
+&lt;h3&gt;1. prototype Object&lt;/h3&gt;
+&lt;p&gt;js 에서 객체는 항상 함수로 생성된다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; arr&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 사실 let arr=new Array();&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; obj&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;// 사실 let obj=new Object();&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//let a=new Number(1)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위의 예에서 알 수 있듯이 우리가 사용하는 객체는 항상 함수를 통해 생성됨을 알 수 있다. &lt;/p&gt;
+&lt;p&gt;함수를 처음에 정의하면 constructor 라는 자격을 부여해 정의된 함수로 새로운 객체를 만들어낼 수 있는 자격을 준다. &lt;/p&gt;
+&lt;p&gt;object.constructor 를 이용하면 해당 객체가 어떠한 생성자를 통해 만들어졌는지 확인 할 수 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+foo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;constructor&lt;span class=&quot;token comment&quot;&gt;//Function() { [native code] }new Function()을 통해 생성되었음을 알 수 있다. &lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; foo2&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+foo2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;constructor&lt;span class=&quot;token comment&quot;&gt;//foo(){} 함수를 통해 만들어졌음&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;2. prototype object 생성, 연결&lt;/h3&gt;
+&lt;p&gt;이렇게 constructor로서의 자격을 얻은 함수는 새로 생성된 prototype 객체와 연결이 된다. 이 객체는 상속이 될 때, 하위객체에서 접근 가능하며, 접근하여 값을 읽어올 수 있는 공유된 객체이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+foo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype
+&lt;span class=&quot;token comment&quot;&gt;/*
+foo.prototype.age=10
+10
+foo.prototype
+{age: 10, constructor: ƒ}//prototype
+*/&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; foo2&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+foo2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age
+&lt;span class=&quot;token comment&quot;&gt;//10&lt;/span&gt;
+foo2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;__proto__
+&lt;span class=&quot;token comment&quot;&gt;//{age: 10, constructor: ƒ}//공유되는 prototype&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기서 한가지 더 볼 점은 &lt;strong&gt;proto&lt;/strong&gt;는 자신이 상속 받은 객체의 prototype object이다. 위의 참조가 가능하게 하는 이유는 이 객체 때문이다.
+js에서 객체 내에 선언되어있는 객체가 존재 하지 않으면 &lt;strong&gt;proto&lt;/strong&gt;를 타고 올라가 상위에서 찾아내고, 최 상위인 object에도 없으면 에러를 일으킨다 이것을 prototype link라고 한다. &lt;/p&gt;
+&lt;p&gt;예를 들어 이를 통해 Array가 Object의 메서드 들을 상속 받았음을 증명할 수 있다. t&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; arr&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+arr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;__proto__&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//arr의 __proto__는 Array정의시에 생성된 Array.prototype()&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;/*Array에서 지원하는 많은 메서드들
+concat: ƒ concat()
+constructor: ƒ Array()
+copyWithin: ƒ copyWithin()
+entries: ƒ entries()
+...
+..
+.
+
+__proto__: Object //이 를 보면 Array의 prototype 또한 Object로 부터 상속받아 생성되었음을 알 수 있다. 
+*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[JS - Value]]></title><description><![CDATA[값 자바스크립트에 내장된 값 타입과 작동방식에 대한 이해. 배열 자바스크립트의 배열은 다른 strict type language…]]></description><link>https://wndudqus.github.io/Blog-Around/YDKJS_study/day2_Value/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/YDKJS_study/day2_Value/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;값&lt;/h1&gt;
 &lt;h5&gt;자바스크립트에 내장된 값 타입과 작동방식에 대한 이해.&lt;/h5&gt;
 &lt;hr&gt;
 &lt;h2&gt;배열&lt;/h2&gt;
@@ -3412,77 +3418,70 @@ a&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;b&lt;span class=&
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;이렇게 부호를 유지해서 좋은 점은 에니메이션 등 방향을 나타낼 때 0이어도 이전까지의 방향데이터를 유지할 수 있다는 점이다. &lt;/p&gt;
 &lt;h2&gt;Object.is(a,b)&lt;/h2&gt;
-&lt;p&gt;양 값이 절대적으로 같은지 확인 NaN도 확인 가능 -0과 0도 구분 가능하다&lt;/p&gt;</content:encoded></item><item><title><![CDATA[JS - 프로토타입]]></title><description><![CDATA[Prototype 이 정리는 프로토타입 이해하기,MDN Object prototypes 를 참고해 작성한 글입니다.  자바스크립트를 처음 배우기 시작할 때 JS는 객체 지향형 언어의 패러다임의 특성을 가지고 있다는 말을 들었을 것이다. ES…]]></description><link>https://wndudqus.github.io/Blog-Around/JavaScriptAtoZ/day4_Prototype/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/JavaScriptAtoZ/day4_Prototype/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Prototype&lt;/h1&gt;
-&lt;p&gt;이 정리는 &lt;a href=&quot;https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67&quot;&gt;프로토타입 이해하기&lt;/a&gt;,&lt;a href=&quot;https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Object_prototypes&quot;&gt;MDN Object prototypes&lt;/a&gt; 를 참고해 작성한 글입니다. &lt;/p&gt;
-&lt;p&gt;자바스크립트를 처음 배우기 시작할 때 JS는 객체 지향형 언어의 패러다임의 특성을 가지고 있다는 말을 들었을 것이다. ES6 에서 class 가 추가되긴 하였지만 js의 상속은 다른 언어의 상속과는 다르다. 이는 JS가 프로토 타입 상속을 하기 때문인데 Prototype이 뭔지 정리해보자. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ear&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;nose&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;mouth&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;양 값이 절대적으로 같은지 확인 NaN도 확인 가능 -0과 0도 구분 가능하다&lt;/p&gt;</content:encoded></item><item><title><![CDATA[JS - call by value VS call by Reference]]></title><description><![CDATA[call by value VS call by Reference 다른 언어에서 값은 구문에 따라 call by value 나 call by ref로 전달, 할당 된다. c++에서는 &와 같은 참조 연산자 등을 이용해 레퍼런스를 넘긴다. Alias…]]></description><link>https://wndudqus.github.io/Blog-Around/YDKJS_study/day3_valueAndReference/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/YDKJS_study/day3_valueAndReference/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;call by value VS call by Reference&lt;/h1&gt;
+&lt;p&gt;다른 언어에서 값은 구문에 따라 call by value 나 call by ref로 전달, 할당 된다.&lt;/p&gt;
+&lt;p&gt;c++에서는 &amp;#x26;와 같은 참조 연산자 등을 이용해 레퍼런스를 넘긴다. Alias 이름을 가지는 것이다. 또한 배열등을 제외하고는 참조 연산자나 포인터 연산자를 사용하지 않으면 항상 call by value로 전달이 된다. &lt;/p&gt;
+&lt;p&gt;이에 비해 자바스크립트는 참조연산자나 포인터등 직접 변수의 메모리의 주소에 별명을 붙히는 것을 지원하는 것이 없다. 또한 참조방법도 다르며 다른 변수가 다른 변수를 참조 할 수 없다. &lt;/p&gt;
+&lt;p&gt;자바스크립트에서는 reference는 공유된 값을 가리킨다.(다른 언어들이 변수의 공간을 가리키는 것과 다르다.) 따라서 서로다른 10개의 래퍼런스가 있다면 저마다 항상 공유된 값을 참조한다. 값의 타입만으로 copy by value 나 copy by ref가 결정이 되는 것이다.
+&lt;Test/&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;//val는 값을 복사한다.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; b&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// &apos;b&apos;는 값을  a 에서 값을 복사한다  &lt;/span&gt;
+
+b&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+a&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//2&lt;/span&gt;
+b&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//3&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;//array는 값의 ref가 전달 된다.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; c&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; d&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+d&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+c&lt;span class=&quot;token operator&quot;&gt;===&lt;/span&gt;d&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;null, undefined string, number, boolean, symbol은 항상 값을 복사한다. &lt;/p&gt;
+&lt;p&gt;Object나 함수, 배열, 등은 할당/전달 시에 ref를 전달 한다. &lt;/p&gt;
+&lt;p&gt;c,b는 값을 가지고 있는 것이 아니라, 동등하게 값이 위치하는 ref를 참조하고 있는 것이다. &lt;/p&gt;
+&lt;p&gt;레퍼런스는 변수가 아니라 값 자체를 가리키는 것이기 때문에 A레퍼런스의 참조 대상을 바꿈으로써 B를 바꿀 수있는 포인터와 유사한 방법은 지원하지 않는다.
+즉&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;c&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1212&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+c&lt;span class=&quot;token operator&quot;&gt;!==&lt;/span&gt;d&lt;span class=&quot;token comment&quot;&gt;//true&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;가 되는 것이다. c에 새로운 배열을 할당하면 새로운 배열의 위치를 참조하기 때문이다. &lt;/p&gt;
+&lt;p&gt;함수 인자도 값의 레퍼런스로 전달이 되는데, 포인터가 아니어서 혼돈되는 부분이 있다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    x&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//[1,2,3,4];&lt;/span&gt;
+
+    x&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//참조하는 값이 바뀜&lt;/span&gt;
+    x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    x&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; person1&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; person2&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+a&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//[1,2,3,4]????????????????????????????&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이는 x가 전달 될 때 a 에 들어가 있는 “값”의 ref가 전달되었기 때문이다. 그래서 x.push(4) 를 통해서는 x에서 참조 하고있는 전달된 원래 배열을 변화 시키지만 새로운 배열을 할당함으로써 이전에 가리키고 있던 배열의 ref를 더이상 가리키지 않기 때문에 반영이 되지 않는다. &lt;/p&gt;
+&lt;p&gt;따라서 위의 함수를 일반적으로 기대하는 형태로 작동하게 하기 위해서는 다음과 같이 처리 해야 한다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    x&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//[1,2,3,4];&lt;/span&gt;
 
-person1&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ear&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이렇게 될 경우 person1과 person2에 각각의 ear, nose, mouth 등이 각각 생성되어 메모리를 차지 한다. 만약 수 많은 객체가 생성되면 메모리의 낭비가 심해질 것이다. 이러한 문제를 해결하고, 여러 메서드, 오브젝트들을 공유하기 위해 사용하는 것이 바로 Prototype 상속이다.&lt;/p&gt;
-&lt;p&gt;prototype은 하나의 원형이 되는 함수에서 생성되는 모든 함수들이 공유하는 값, 객체들이 들어있는 object인데, 같은 공유되는 ref를 참조한다.&lt;/p&gt;
-&lt;p&gt;prototype 으로 상속을 할 경우 다음과 같이 하면 되는데&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;이름&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    x&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//원본 배열을 수정&lt;/span&gt;
+    x&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//[4,5,6,7]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; person1&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; person2&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-person1&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//&quot;이름&quot;&lt;/span&gt;
-person2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//&quot;이름&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이럴 경우 Person object내의 prototype object에 대한 ref가 공유되기 때문에 같은 값을 가지게 된다. &lt;/p&gt;
-&lt;p&gt;이 것에 대해 조금 더 차근차근 알아보자&lt;/p&gt;
-&lt;h2&gt;함수 생성과정&lt;/h2&gt;
-&lt;h3&gt;1. prototype Object&lt;/h3&gt;
-&lt;p&gt;js 에서 객체는 항상 함수로 생성된다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; arr&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 사실 let arr=new Array();&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; obj&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;// 사실 let obj=new Object();&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//let a=new Number(1)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;위의 예에서 알 수 있듯이 우리가 사용하는 객체는 항상 함수를 통해 생성됨을 알 수 있다. &lt;/p&gt;
-&lt;p&gt;함수를 처음에 정의하면 constructor 라는 자격을 부여해 정의된 함수로 새로운 객체를 만들어낼 수 있는 자격을 준다. &lt;/p&gt;
-&lt;p&gt;object.constructor 를 이용하면 해당 객체가 어떠한 생성자를 통해 만들어졌는지 확인 할 수 있다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-foo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;constructor&lt;span class=&quot;token comment&quot;&gt;//Function() { [native code] }new Function()을 통해 생성되었음을 알 수 있다. &lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; foo2&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-foo2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;constructor&lt;span class=&quot;token comment&quot;&gt;//foo(){} 함수를 통해 만들어졌음&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;2. prototype object 생성, 연결&lt;/h3&gt;
-&lt;p&gt;이렇게 constructor로서의 자격을 얻은 함수는 새로 생성된 prototype 객체와 연결이 된다. 이 객체는 상속이 될 때, 하위객체에서 접근 가능하며, 접근하여 값을 읽어올 수 있는 공유된 객체이다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-foo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;prototype
-&lt;span class=&quot;token comment&quot;&gt;/*
-foo.prototype.age=10
-10
-foo.prototype
-{age: 10, constructor: ƒ}//prototype
-*/&lt;/span&gt;
-
-&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; foo2&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-foo2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;age
-&lt;span class=&quot;token comment&quot;&gt;//10&lt;/span&gt;
-foo2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;__proto__
-&lt;span class=&quot;token comment&quot;&gt;//{age: 10, constructor: ƒ}//공유되는 prototype&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;여기서 한가지 더 볼 점은 &lt;strong&gt;proto&lt;/strong&gt;는 자신이 상속 받은 객체의 prototype object이다. 위의 참조가 가능하게 하는 이유는 이 객체 때문이다.
-js에서 객체 내에 선언되어있는 객체가 존재 하지 않으면 &lt;strong&gt;proto&lt;/strong&gt;를 타고 올라가 상위에서 찾아내고, 최 상위인 object에도 없으면 에러를 일으킨다 이것을 prototype link라고 한다. &lt;/p&gt;
-&lt;p&gt;예를 들어 이를 통해 Array가 Object의 메서드 들을 상속 받았음을 증명할 수 있다. t&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; arr&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-arr&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;__proto__&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//arr의 __proto__는 Array정의시에 생성된 Array.prototype()&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;/*Array에서 지원하는 많은 메서드들
-concat: ƒ concat()
-constructor: ƒ Array()
-copyWithin: ƒ copyWithin()
-entries: ƒ entries()
-...
-..
-.
-
-__proto__: Object //이 를 보면 Array의 prototype 또한 Object로 부터 상속받아 생성되었음을 알 수 있다. 
-*/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[JS - 타입]]></title><description><![CDATA[타입 자바스크립트는 동적 언어이기 때문에 변수를 선언 할 때, 타입을 명시해주지 않는다. 이러한 부분때문에 자바스크립트에서 타입이 있다는 사실을 간과하기 쉬운데 ECMA…]]></description><link>https://wndudqus.github.io/Blog-Around/YDKJS_study/day1_Type/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/YDKJS_study/day1_Type/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;타입&lt;/h1&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; a&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+a&lt;span class=&quot;token comment&quot;&gt;//[4,5,6,7]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;우리는 call by ref, call by val을 선택 할 수 없음을 기억 해야 한다. &lt;/p&gt;
+&lt;p&gt;또한 만약 기존 변수의 값을 바꾸고싶지 않다면 다음과 같이&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;등과 같이 새로운 배열을 얕은복사로 반환하는 값을 사용해야한다. (얕은 복사: 값을 복사하긴 하되 만약 복사되는 객체의 하위에 객체나 배열이 있다면 그 값은 ref로 복사가 되는 것을 뜻한다.)&lt;/p&gt;
+&lt;p&gt;반대로 스칼라 값을 ref로 전달 하려고 하면 배열이나 객체, 함수 등으로 감싸야 한다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[JS - 타입]]></title><description><![CDATA[타입 자바스크립트는 동적 언어이기 때문에 변수를 선언 할 때, 타입을 명시해주지 않는다. 이러한 부분때문에 자바스크립트에서 타입이 있다는 사실을 간과하기 쉬운데 ECMA…]]></description><link>https://wndudqus.github.io/Blog-Around/YDKJS_study/day1_Type/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/YDKJS_study/day1_Type/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;타입&lt;/h1&gt;
 &lt;p&gt;자바스크립트는 동적 언어이기 때문에 변수를 선언 할 때, 타입을 명시해주지 않는다. 이러한 부분때문에 자바스크립트에서 타입이 있다는 사실을 간과하기 쉬운데 ECMA에서는 다음과 같이 말하고 있다.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;ECMAScript 프로그래머가 언어를 이용하여 직접 조작하는 값들의 타입이 바로 ECAMScript 언어인데, 이 언어 타입에는 Undefined, Null, Boolean,String,Number, Object 가 있다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;여기서 ‘타입’이란 자바스크립트 엔진, 개발자 모두에게 어떠한 값을 다른 값과 분별할 수 있는, 고유한 내부특성의 집합이다. &lt;/p&gt;
@@ -3624,7 +3623,63 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
     &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; helper&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;funcFoo&lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 
     &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; val&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 자료형과 표준 입출력]]></title><description><![CDATA[Java의 기본문법1: 자료형과 표준 입출력 자바 프로그램의 가장 기본적인 구조는 다음과 같다.  import 문장 java.lang을 재외한 모든 패키지를 가져올때는 import…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/2_Java의 기본문법_자료형과 표준입출력/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/2_Java의 기본문법_자료형과 표준입출력/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 기본문법1: 자료형과 표준 입출력&lt;/h1&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 특징 및 특성]]></title><description><![CDATA[자바의 개념 및 특징 JAVA는 c++를 모델로 하여 선마이크로 시스템즈에서 개발된 언어로써 객체지향형 언어이며, 인터프리터 언어로써 JVM 위에서 실행되는 언어이다.  자바 프로그램의 종류 J2SE:개인용 컴퓨터용 자바 Java SE…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/1_Java의 특징 및 특성/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/1_Java의 특징 및 특성/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;자바의 개념 및 특징&lt;/h1&gt;
+&lt;p&gt;JAVA는 c++를 모델로 하여 선마이크로 시스템즈에서 개발된 언어로써 객체지향형 언어이며, 인터프리터 언어로써 JVM 위에서 실행되는 언어이다. &lt;/p&gt;
+&lt;h2&gt;자바 프로그램의 종류&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;J2SE:개인용 컴퓨터용 자바&lt;/p&gt;
+&lt;p&gt;Java SE는 데스크탑과 서버에서 자바 애플리케이션을 개발하고 실행할 수 있게 해주며 임베디드 환경과 real-Time environments도 지원한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;J2ME: 휴대폰 PDA 스마트카드 등의 임베디드 시스템 자바&lt;/p&gt;
+&lt;p&gt;Java ME는 핸드폰 프린터, 등 모바일 기기나 임베디드 장치에서 실행되는 애플리케이션을 위한 환경을 제공한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;J2EE:대규모의 서버용 자바 &lt;/p&gt;
+&lt;p&gt;Java EE 는 기업용 애플리케이션을 개발하는데 필요한 여러가지 도구민 라이브러리들을 모아놓은 것이다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;자바 프로그램형태의 종류&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;자바 애플리케이션: c,c++ 처럼 컴퓨터에서 실행할 수 있는 여러 형태의 응용프로그램을 개발 했을 때의 형태이다. &lt;/li&gt;
+&lt;li&gt;자바 애플릿: 서버에서 클라이언트 쪽으로 전송되어 클라이언트에서 실행되며 웹 브라우저에 의해서 실행된다. &lt;/li&gt;
+&lt;li&gt;자바 서블릿: 웹서버에서 동작하는 서버 모듈로서 클라이언트의 요구를 받아서 그에 대한 처리를 한 후에 실행 결과를 HTML 문서로 클라이언트 컴퓨터로 전송(server side rendering)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;자바의 역사&lt;/h2&gt;
+&lt;p&gt;1991년에 sun 마이크로 시스템 사에서 제임스 고슬링을 비롯한 연구팀에서 가정용 전자체품에 사용할 수 있는 작은 컴퓨터 언어를 설계하였다. 처음에는 c++를 이용해 운영체제를 만들었으나 c++의 복잡도로 인해 실패하였다.
+이때 프로젝트를 위해 만든 언어가 Java이다. &lt;/p&gt;
+&lt;h2&gt;자바의 특성&lt;/h2&gt;
+&lt;p&gt;자바의 핵심 문구중 하나는 Write once, Run Everywhere 이다.
+이 문구는 자바의 개발 환경에서 바이트코드 기반으로 중간언어로 컴파일을 한 후 실행환경에서 JVM으로 실행을 하기 때문에 JVM이 설치된 환경이라면 어느 곳에서나 동일한 코드로 실행 할 수 있다는 핵심 개념을 표현 한 것이다. &lt;/p&gt;
+&lt;p&gt;이외의 특성에는 다음과 같은 것들이 있다. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;단순하다.&lt;/p&gt;
+&lt;p&gt;c나 c++에서 프로그래머에게 혼란을 줄 수 있는 많은 요소들을 제거하였다. 또한 포인터, 구조체, 전처리 기능등을 삭제 했으며, 메모리를 자동으로 관리해준다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;객체지향형이다. &lt;/p&gt;
+&lt;p&gt;원시 데이터타입을 제외한 대부분의 요소들을 객체로 표현하고 있다. 따라서 소프트웨어의 재사용과 정보의 캡슐화 같은 많은 장점을 제공한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;높은 성능을 가진다. &lt;/p&gt;
+&lt;p&gt;자바는 컴파일을 한 후에 그 결과인 바이트 코드를 인터프리터가 기계어로 번혁하는 방식으로 구현된다.
+따라서 한번 중간언어로 번역된 바이트코드는 실시간으로 인터프리팅을 하는 것보다 나은 성능을 가진다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;견고하다.&lt;/p&gt;
+&lt;p&gt;다양한 환경에서 동일한 결과를 제공하기 위해서 높은 신뢰성을 요구하는데, 이런 특성을 위해 포인터가 없고, 메모리를 자동으로 관리해주며, 객체타입을 코드 작성시점에 검사한다. 또한 실행시점에 에러를 처리해준다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;안전하다.&lt;/p&gt;
+&lt;p&gt;자바는 분산 환경에서 실행될 수 있도록 개발 환경과 실행환경이 분리되어있으며 실행 전과 컴파일 시에 JVM이 무결성 검사를 한다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;구조중립적이다. &lt;/p&gt;
+&lt;p&gt;바이트코드와 JVM을 사용하기 때문에 소스코드를 한번만 작성하고, 기기에 상관 없이 JVM에서 사용할 수 있다. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 자료형과 표준 입출력]]></title><description><![CDATA[Java의 기본문법1: 자료형과 표준 입출력 자바 프로그램의 가장 기본적인 구조는 다음과 같다.  import 문장 java.lang을 재외한 모든 패키지를 가져올때는 import…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/2_Java의 기본문법_자료형과 표준입출력/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/2_Java의 기본문법_자료형과 표준입출력/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 기본문법1: 자료형과 표준 입출력&lt;/h1&gt;
 &lt;p&gt;자바 프로그램의 가장 기본적인 구조는 다음과 같다. &lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Java_EX_01&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; args&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -3688,63 +3743,7 @@ a&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quo
 &lt;/li&gt;
 &lt;li&gt;삼항 연산자.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;여느 c계열 언어들과 다르지 않다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 특징 및 특성]]></title><description><![CDATA[자바의 개념 및 특징 JAVA는 c++를 모델로 하여 선마이크로 시스템즈에서 개발된 언어로써 객체지향형 언어이며, 인터프리터 언어로써 JVM 위에서 실행되는 언어이다.  자바 프로그램의 종류 J2SE:개인용 컴퓨터용 자바 Java SE…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/1_Java의 특징 및 특성/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/1_Java의 특징 및 특성/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;자바의 개념 및 특징&lt;/h1&gt;
-&lt;p&gt;JAVA는 c++를 모델로 하여 선마이크로 시스템즈에서 개발된 언어로써 객체지향형 언어이며, 인터프리터 언어로써 JVM 위에서 실행되는 언어이다. &lt;/p&gt;
-&lt;h2&gt;자바 프로그램의 종류&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;J2SE:개인용 컴퓨터용 자바&lt;/p&gt;
-&lt;p&gt;Java SE는 데스크탑과 서버에서 자바 애플리케이션을 개발하고 실행할 수 있게 해주며 임베디드 환경과 real-Time environments도 지원한다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;J2ME: 휴대폰 PDA 스마트카드 등의 임베디드 시스템 자바&lt;/p&gt;
-&lt;p&gt;Java ME는 핸드폰 프린터, 등 모바일 기기나 임베디드 장치에서 실행되는 애플리케이션을 위한 환경을 제공한다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;J2EE:대규모의 서버용 자바 &lt;/p&gt;
-&lt;p&gt;Java EE 는 기업용 애플리케이션을 개발하는데 필요한 여러가지 도구민 라이브러리들을 모아놓은 것이다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;자바 프로그램형태의 종류&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;자바 애플리케이션: c,c++ 처럼 컴퓨터에서 실행할 수 있는 여러 형태의 응용프로그램을 개발 했을 때의 형태이다. &lt;/li&gt;
-&lt;li&gt;자바 애플릿: 서버에서 클라이언트 쪽으로 전송되어 클라이언트에서 실행되며 웹 브라우저에 의해서 실행된다. &lt;/li&gt;
-&lt;li&gt;자바 서블릿: 웹서버에서 동작하는 서버 모듈로서 클라이언트의 요구를 받아서 그에 대한 처리를 한 후에 실행 결과를 HTML 문서로 클라이언트 컴퓨터로 전송(server side rendering)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;자바의 역사&lt;/h2&gt;
-&lt;p&gt;1991년에 sun 마이크로 시스템 사에서 제임스 고슬링을 비롯한 연구팀에서 가정용 전자체품에 사용할 수 있는 작은 컴퓨터 언어를 설계하였다. 처음에는 c++를 이용해 운영체제를 만들었으나 c++의 복잡도로 인해 실패하였다.
-이때 프로젝트를 위해 만든 언어가 Java이다. &lt;/p&gt;
-&lt;h2&gt;자바의 특성&lt;/h2&gt;
-&lt;p&gt;자바의 핵심 문구중 하나는 Write once, Run Everywhere 이다.
-이 문구는 자바의 개발 환경에서 바이트코드 기반으로 중간언어로 컴파일을 한 후 실행환경에서 JVM으로 실행을 하기 때문에 JVM이 설치된 환경이라면 어느 곳에서나 동일한 코드로 실행 할 수 있다는 핵심 개념을 표현 한 것이다. &lt;/p&gt;
-&lt;p&gt;이외의 특성에는 다음과 같은 것들이 있다. &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;단순하다.&lt;/p&gt;
-&lt;p&gt;c나 c++에서 프로그래머에게 혼란을 줄 수 있는 많은 요소들을 제거하였다. 또한 포인터, 구조체, 전처리 기능등을 삭제 했으며, 메모리를 자동으로 관리해준다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;객체지향형이다. &lt;/p&gt;
-&lt;p&gt;원시 데이터타입을 제외한 대부분의 요소들을 객체로 표현하고 있다. 따라서 소프트웨어의 재사용과 정보의 캡슐화 같은 많은 장점을 제공한다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;높은 성능을 가진다. &lt;/p&gt;
-&lt;p&gt;자바는 컴파일을 한 후에 그 결과인 바이트 코드를 인터프리터가 기계어로 번혁하는 방식으로 구현된다.
-따라서 한번 중간언어로 번역된 바이트코드는 실시간으로 인터프리팅을 하는 것보다 나은 성능을 가진다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;견고하다.&lt;/p&gt;
-&lt;p&gt;다양한 환경에서 동일한 결과를 제공하기 위해서 높은 신뢰성을 요구하는데, 이런 특성을 위해 포인터가 없고, 메모리를 자동으로 관리해주며, 객체타입을 코드 작성시점에 검사한다. 또한 실행시점에 에러를 처리해준다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;안전하다.&lt;/p&gt;
-&lt;p&gt;자바는 분산 환경에서 실행될 수 있도록 개발 환경과 실행환경이 분리되어있으며 실행 전과 컴파일 시에 JVM이 무결성 검사를 한다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;구조중립적이다. &lt;/p&gt;
-&lt;p&gt;바이트코드와 JVM을 사용하기 때문에 소스코드를 한번만 작성하고, 기기에 상관 없이 JVM에서 사용할 수 있다. &lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 조건문, 반복문, 배열 객체]]></title><description><![CDATA[Java 기본문법: 조건문, 반복문, 배열객체 조건문 if문 c와 동일 switch case 문 for 문 while 문 break, continue break: 하나의 loop을 빠져나감
+&lt;p&gt;여느 c계열 언어들과 다르지 않다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 조건문, 반복문, 배열 객체]]></title><description><![CDATA[Java 기본문법: 조건문, 반복문, 배열객체 조건문 if문 c와 동일 switch case 문 for 문 while 문 break, continue break: 하나의 loop을 빠져나감
 continue…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/3_Java의 기본문법_제어문, 반복문, 배열객체/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/3_Java의 기본문법_제어문, 반복문, 배열객체/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java 기본문법: 조건문, 반복문, 배열객체&lt;/h1&gt;
 &lt;h2&gt;조건문&lt;/h2&gt;
 &lt;h3&gt;if문&lt;/h3&gt;
@@ -3806,7 +3805,53 @@ continue: 다음 명령을 실행하지 않고 루프의 맨 앞으로 돌아감
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; arr1&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;arr2&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; arr3&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-arr3&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 class, 객체 지향형 언어의 특성.]]></title><description><![CDATA[Java의 class…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/4_Java의 class, 객체 지향형언어의 특성/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/4_Java의 class, 객체 지향형언어의 특성/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 class, 객체지향형 언어의 특성&lt;/h1&gt;
+arr3&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Java - Java의 상속, 인터페이스, 접근제어자]]></title><description><![CDATA[Java…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/5_Java의 상속, 인터페이스, 접근제어자/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/5_Java의 상속, 인터페이스, 접근제어자/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 상속, 인터페이스, 접근제어자&lt;/h1&gt;
+&lt;h2&gt;상속&lt;/h2&gt;
+&lt;p&gt;자바에서 상속은 하나의 클래스에서 이 클래스를 확장하여 새로운 클래스를 만들어 나가는 과정을 말한다. 여러개의 클래스를 확장할 수 있는 것이 아니라 단일 상속으로 확장된다. 단, 인터페이스의 경우 다중 상속이 가능하다. &lt;/p&gt;
+&lt;p&gt;상위클래스 내의 멤버변수나 메소드가 private접근제어자를 사용할때는 그 멤버를 상속할 수 없다. &lt;/p&gt;
+&lt;p&gt;Java의 상속은 다음과 같이 한다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;abstract&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;final&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; subClassName &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; superClassName&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;자바는 단일상속만을 허용하며, 인터페이스를 사용할때만 다중 상속이 가능하다.&lt;/p&gt;
+&lt;h3&gt;this&lt;/h3&gt;
+&lt;p&gt;class 내의 메서드에서 자신의 객체의 프로퍼티와 메서드의 지역변수, argument와 구분하기 위해서는 this 예약어를 사용한다.  &lt;/p&gt;
+&lt;h3&gt;super&lt;/h3&gt;
+&lt;p&gt;생성자나 메소드의 매개변수가 상의 클래스내의 객체 변수명과 동일한 이름을 사용할 때 사용한다. 또한 하위 객체에서 상위객체를 초기화 해야 할때도 사용한다. &lt;/p&gt;
+&lt;h3&gt;overriding&lt;/h3&gt;
+&lt;p&gt;상위 클래스와 하위 클래스 각각 안에 동일한 이름의 메소드가 있을 때, 상위 클래스로 부터 하위 클래스로 상속되는 메소드는 무시되고, 하위클래스의 메소드가 정의 된다.
+단, private메소드나 final 메소드는 불가능 하다. &lt;/p&gt;
+&lt;h2&gt;interface&lt;/h2&gt;
+&lt;p&gt;인터페이스란 클래스의 골격만 정의한 것이다. 종단(final) 변수인 상수와 추상 메소드로 구성된 클래스이다. 클래스 내의 인퍼페이스 구현을 위해 implement 문을 사용한다. 인터페이스의 개념을 사용하면 자바에서 허용하지 않는 다중 상속이 가능하게 된다. &lt;/p&gt;
+&lt;p&gt;접근제어자는 기본적으로 public 이다. &lt;/p&gt;
+&lt;p&gt;인터페이스는 메소드를 구현하지 않고, 선언부만 정의한다. &lt;/p&gt;
+&lt;p&gt;인터페이스 내에서 선언된 변수는 public static final 로 자동으로 설정되며, 메서드는 public abstract 로 선언된다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;인터페이스 접근 제한자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; interfaceName &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; interfaceName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이를 구현할때는&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; className &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; 상위클래스&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;implements&lt;/span&gt; interfaceName&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;의 꼴로 구현한다.&lt;/p&gt;
+&lt;p&gt;인터페이스로 다중 상속을 할때는 extends 예약어를 사용한다. &lt;/p&gt;
+&lt;h2&gt;Abstract class&lt;/h2&gt;
+&lt;p&gt;실행문은 없고, 선언은 되어있는 한개이상의 추상메소드로 구성된클래스로서, 클래스 내에 추상 메소드가 하나라도 있으면 해당 클래스를 추상 클래스로 선언해야 한다. &lt;/p&gt;
+&lt;p&gt;생성자, static메소드, private메소드는 추상화 불가.&lt;/p&gt;
+&lt;p&gt;추상클래스 객체를 생성시킬수는 없지만 변수로서 선언은 가능하다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; className&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;methodName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;종단 클래스&lt;/h3&gt;
+&lt;p&gt;더이상의 상속을 원하지 않을때, 사용하는 클래스이다. &lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; className&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;접근제어자&lt;/h2&gt;
+&lt;p&gt;클래스, 변수, 메소드 앞에서 사용된다. 종류엔 클래스 접근 한정자, 필드접근 한정자, 생성자 접근 한정자, 메소드 접근 한정자 등이 있다.&lt;/p&gt;
+&lt;h2&gt;다형성&lt;/h2&gt;
+&lt;p&gt;임의의 객체가 다른 객체를 참조할 수 있는 것이다. 하나의 모습을 가지고 여러 형태로 보일수 있는 특징이 있는데, 이를 상위클래스에서 인터페이스로 제공하고, 하위클레스에서 각각 구체적으로 정의 하였을 때, 상황에 맞추어 해당 기능이 각각의 기능에 맞게 사용된다는 것이다. &lt;/p&gt;
+&lt;p&gt;여러 클래스들 사이에서 상속 관계가 있을때, 하위클래스에서 상위클래스로의 형 변환은 가능하나, 그 반대는 불가능 하다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Java - 자바의 class, 객체 지향형 언어의 특성.]]></title><description><![CDATA[Java의 class…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/4_Java의 class, 객체 지향형언어의 특성/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/4_Java의 class, 객체 지향형언어의 특성/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 class, 객체지향형 언어의 특성&lt;/h1&gt;
 &lt;p&gt;객체지향형은 소프트웨어 모듈의 재사용성과 독립성을 지원해준다. &lt;/p&gt;
 &lt;p&gt;즉 코드에 객체라는 효율적인 정보관리를 위해 의미를 부여하고, 분류하는 개념적인 단위를 이용한 것이다.또한 객체는 순차 지향형 언어가 공유데이터에 함수로써 접근해 결과를 얻어내는 것과 다르게 (객체.프로퍼티) 꼴의 message를 통해 통신함으로써 원하는 결과를 얻게 된다. &lt;/p&gt;
 &lt;p&gt;객체는 메서드와 프로퍼티로 구성되어있으며, 메서드는 객체의 정보인 프로퍼티와 파라미터로 전달되는 값을 이용해 객체가 할 수 있도록 정의된 일들을 해준다. 이러한 객체를 생성해주는 것을 class라고 한다. 클래스는 객체를 생성하는 template로 볼 수 있다.
@@ -3924,53 +3969,7 @@ formal argument는 피호출 메소드에 나타나는 인수이다. &lt;/p&gt;
 &lt;h2&gt;생성자&lt;/h2&gt;
 &lt;p&gt;클래스에서 객체를 생성할 때, 객체를 초기화 하는 특수한 메소드이다.
 클래스명과 동일한 이름을 사용하며, 사용후 반환 값이 없다.&lt;/p&gt;
-&lt;p&gt;class내의 객체 변수들을 초기화 할 때, 사용한다. 명시적으로 생성자를 호출 하지 않고, new연산자를 이용해 객체가 생성될 때, 자동적으로 호출 된다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[Java - Java의 상속, 인터페이스, 접근제어자]]></title><description><![CDATA[Java…]]></description><link>https://wndudqus.github.io/Blog-Around/Java_reboot/5_Java의 상속, 인터페이스, 접근제어자/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/Java_reboot/5_Java의 상속, 인터페이스, 접근제어자/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;Java의 상속, 인터페이스, 접근제어자&lt;/h1&gt;
-&lt;h2&gt;상속&lt;/h2&gt;
-&lt;p&gt;자바에서 상속은 하나의 클래스에서 이 클래스를 확장하여 새로운 클래스를 만들어 나가는 과정을 말한다. 여러개의 클래스를 확장할 수 있는 것이 아니라 단일 상속으로 확장된다. 단, 인터페이스의 경우 다중 상속이 가능하다. &lt;/p&gt;
-&lt;p&gt;상위클래스 내의 멤버변수나 메소드가 private접근제어자를 사용할때는 그 멤버를 상속할 수 없다. &lt;/p&gt;
-&lt;p&gt;Java의 상속은 다음과 같이 한다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;abstract&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;final&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; subClassName &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; superClassName&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;자바는 단일상속만을 허용하며, 인터페이스를 사용할때만 다중 상속이 가능하다.&lt;/p&gt;
-&lt;h3&gt;this&lt;/h3&gt;
-&lt;p&gt;class 내의 메서드에서 자신의 객체의 프로퍼티와 메서드의 지역변수, argument와 구분하기 위해서는 this 예약어를 사용한다.  &lt;/p&gt;
-&lt;h3&gt;super&lt;/h3&gt;
-&lt;p&gt;생성자나 메소드의 매개변수가 상의 클래스내의 객체 변수명과 동일한 이름을 사용할 때 사용한다. 또한 하위 객체에서 상위객체를 초기화 해야 할때도 사용한다. &lt;/p&gt;
-&lt;h3&gt;overriding&lt;/h3&gt;
-&lt;p&gt;상위 클래스와 하위 클래스 각각 안에 동일한 이름의 메소드가 있을 때, 상위 클래스로 부터 하위 클래스로 상속되는 메소드는 무시되고, 하위클래스의 메소드가 정의 된다.
-단, private메소드나 final 메소드는 불가능 하다. &lt;/p&gt;
-&lt;h2&gt;interface&lt;/h2&gt;
-&lt;p&gt;인터페이스란 클래스의 골격만 정의한 것이다. 종단(final) 변수인 상수와 추상 메소드로 구성된 클래스이다. 클래스 내의 인퍼페이스 구현을 위해 implement 문을 사용한다. 인터페이스의 개념을 사용하면 자바에서 허용하지 않는 다중 상속이 가능하게 된다. &lt;/p&gt;
-&lt;p&gt;접근제어자는 기본적으로 public 이다. &lt;/p&gt;
-&lt;p&gt;인터페이스는 메소드를 구현하지 않고, 선언부만 정의한다. &lt;/p&gt;
-&lt;p&gt;인터페이스 내에서 선언된 변수는 public static final 로 자동으로 설정되며, 메서드는 public abstract 로 선언된다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;인터페이스 접근 제한자&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; interfaceName &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; interfaceName&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이를 구현할때는&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; className &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; 상위클래스&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;implements&lt;/span&gt; interfaceName&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;의 꼴로 구현한다.&lt;/p&gt;
-&lt;p&gt;인터페이스로 다중 상속을 할때는 extends 예약어를 사용한다. &lt;/p&gt;
-&lt;h2&gt;Abstract class&lt;/h2&gt;
-&lt;p&gt;실행문은 없고, 선언은 되어있는 한개이상의 추상메소드로 구성된클래스로서, 클래스 내에 추상 메소드가 하나라도 있으면 해당 클래스를 추상 클래스로 선언해야 한다. &lt;/p&gt;
-&lt;p&gt;생성자, static메소드, private메소드는 추상화 불가.&lt;/p&gt;
-&lt;p&gt;추상클래스 객체를 생성시킬수는 없지만 변수로서 선언은 가능하다.&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; className&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;methodName&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;종단 클래스&lt;/h3&gt;
-&lt;p&gt;더이상의 상속을 원하지 않을때, 사용하는 클래스이다. &lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;java&quot;&gt;&lt;pre class=&quot;language-java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; className&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-    
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;접근제어자&lt;/h2&gt;
-&lt;p&gt;클래스, 변수, 메소드 앞에서 사용된다. 종류엔 클래스 접근 한정자, 필드접근 한정자, 생성자 접근 한정자, 메소드 접근 한정자 등이 있다.&lt;/p&gt;
-&lt;h2&gt;다형성&lt;/h2&gt;
-&lt;p&gt;임의의 객체가 다른 객체를 참조할 수 있는 것이다. 하나의 모습을 가지고 여러 형태로 보일수 있는 특징이 있는데, 이를 상위클래스에서 인터페이스로 제공하고, 하위클레스에서 각각 구체적으로 정의 하였을 때, 상황에 맞추어 해당 기능이 각각의 기능에 맞게 사용된다는 것이다. &lt;/p&gt;
-&lt;p&gt;여러 클래스들 사이에서 상속 관계가 있을때, 하위클래스에서 상위클래스로의 형 변환은 가능하나, 그 반대는 불가능 하다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[JS - 비구조화 할당]]></title><description><![CDATA[ES6의 배열 비구조화 할당 만약 함수가 array를 return 할 때 비구조화 할당을 이용하면 깔끔한 처리가 가능하다.  객체 비구조화 할당 obj Destructuring…]]></description><link>https://wndudqus.github.io/Blog-Around/JavaScriptAtoZ/day3_ES6_arrays/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/JavaScriptAtoZ/day3_ES6_arrays/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;ES6의 배열&lt;/h1&gt;
+&lt;p&gt;class내의 객체 변수들을 초기화 할 때, 사용한다. 명시적으로 생성자를 호출 하지 않고, new연산자를 이용해 객체가 생성될 때, 자동적으로 호출 된다. &lt;/p&gt;</content:encoded></item><item><title><![CDATA[JS - 비구조화 할당]]></title><description><![CDATA[ES6의 배열 비구조화 할당 만약 함수가 array를 return 할 때 비구조화 할당을 이용하면 깔끔한 처리가 가능하다.  객체 비구조화 할당 obj Destructuring…]]></description><link>https://wndudqus.github.io/Blog-Around/JavaScriptAtoZ/day3_ES6_arrays/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/JavaScriptAtoZ/day3_ES6_arrays/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;ES6의 배열&lt;/h1&gt;
 &lt;h2&gt;비구조화 할당&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token comment&quot;&gt;//a=1,b=1&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;d&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
