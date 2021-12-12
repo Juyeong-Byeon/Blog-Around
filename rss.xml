@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Dec 2021 07:25:00 GMT</lastBuildDate><item><title><![CDATA[린분석 Part.1 눈 가리고 아웅하지 말기.]]></title><description><![CDATA[데이터 분석을 해야 하는 이유. 챕터…]]></description><link>https://wndudqus.github.io/Blog-Around/books/린분석/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/books/린분석/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;p&gt;데이터 분석을 해야 하는 이유.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Blog-Around]]></title><description><![CDATA[개발, 그리고 여러 잡다한 끄적임.]]></description><link>https://wndudqus.github.io/Blog-Around</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Dec 2021 07:42:56 GMT</lastBuildDate><item><title><![CDATA[린분석 Part.2 상황에 맞는 올바른 지표찾기.]]></title><description><![CDATA[다양한 분석 체계 chap.5 데이브 맥클루어 해적지표 성공적 사업을 필요하는데 필요한 지표 5가지를 정의 A Acquisition : 다양한 수단으로 시선을 끈다. A Activation : Acquisition에서 모인 고객들을 전환시킨다. R…]]></description><link>https://wndudqus.github.io/Blog-Around/books/린분석_part2/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/books/린분석_part2/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;h1&gt;다양한 분석 체계&lt;/h1&gt;
+&lt;h1&gt;chap.5&lt;/h1&gt;
+&lt;h2&gt;데이브 맥클루어 해적지표&lt;/h2&gt;
+&lt;p&gt;성공적 사업을 필요하는데 필요한 지표 5가지를 정의&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A Acquisition : 다양한 수단으로 시선을 끈다.&lt;/li&gt;
+&lt;li&gt;A Activation : Acquisition에서 모인 고객들을 전환시킨다.&lt;/li&gt;
+&lt;li&gt;R Retention : Retention 계속해서 사용자들이 서비스를 이용하도록 한다.&lt;/li&gt;
+&lt;li&gt;R Revenue : 실질적인 수익이 발생하도록 한다.&lt;/li&gt;
+&lt;li&gt;R Referral : 지인들에게 추천하도록 해서 잠재 사용자들을 초대한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;에릭 리스의 성장 엔진&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;흡인력있는 성장엔진: 사용자가 제품을 계속해서 사용하게 하는데 초점을 맞춘다. 즉 사용자가 제품에 애착과 로열티를 가지고 계속해서 이용하도록 하는것이 목표.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ex) 미리 캔버스에서는 제품을 사용하면서 쉬운 디자인과 디자인 자산을 쌓아두도록 해서 제품에 애착을 가지도록 한다.&lt;/p&gt;
+&lt;h2&gt;바이럴 성장 엔진&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;바이럴 효과는 많이 알리는 것이 가장 중요하다. 이 성장 원동력의 핵심 지표는 바이럴 계수이다. 바이럴 계소가 1이상이면 사업이 성장하고 있음을 뜻한다.&lt;/li&gt;
+&lt;li&gt;바이럴 계수 : 한 사용자가 다른 사용차를 초대하는 속도&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;유료 성장 엔진&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[린분석 Part.1 눈 가리고 아웅하지 말기.]]></title><description><![CDATA[데이터 분석을 해야 하는 이유. 챕터…]]></description><link>https://wndudqus.github.io/Blog-Around/books/린분석/</link><guid isPermaLink="false">https://wndudqus.github.io/Blog-Around/books/린분석/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;p&gt;데이터 분석을 해야 하는 이유.&lt;/p&gt;
 &lt;h2&gt;챕터 1 우리는 모두 거짓말 쟁이&lt;/h2&gt;
 &lt;p&gt;창업가들은 자신의 비전이 현실이 될 수 있다는 확고한 신념과 생각을 가지고 창업을 한다.
 자신의 확고한 신념 (책에서 말하는 현실 왜곡장)은 창업을 시작하고 사업을 확장시켜나다는 것에 필수적이지만.
