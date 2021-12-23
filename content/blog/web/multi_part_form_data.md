@@ -25,7 +25,7 @@ multipart/form-data는 일단 form tag의 enctype중 하나이다. 일반적으�
 
 하지만 나는 이번 피쳐에서 폼을 화면에 드러내고 있지 않기 때문에
 내부적으로만 input 태그를 생성해준 후 click이벤트를 fire시켜서 파일 선택과정을 진행하고 있어 아래와 같은 방법을 사용하지는 않았다.
-나는 위 과정에서 받아온 FileList 객체를 FormData를 생성한 후 내부에 key, value 방식으로 set해준 후 전송을 해주었다.
+나는 위 과정에서 받아온 FileList 객체를 FormData를 생성한 후 내부에 key, value 방식으로 set해준 후 post의 body에 실어 전송을 해주었다.
 
 이 과정에서 enctype 가 무엇인지에 대해 궁금증이 생겼고, FormData에는 왜 enctype을 지정해주지 않는지 궁금해져서 알아보게 되었다.
 
@@ -38,7 +38,7 @@ multipart/form-data: 여러 형태의 데이터를 제출할 것임을 명시
 
 text/plain: 공백문자를 +로 인코딩 하는 것을 의미.
 
-한다고 한다. 그리고 FormData에서 제공하는 인터페이스를 사용하게 되면 multipart/form-data를 사용하는 것과 같은 형태의 데이터를 만들어 준다고 한다.
+그리고 FormData에서 제공하는 인터페이스를 사용하게 되면 multipart/form-data를 사용하는 것과 같은 형태의 데이터를 만들어 준다고 한다.
 때문에 이미 enctype이 multipart/form-data로 되어있기 때문에 추가적인 설정이 필요 없는 것이다.
 
 # ok 근데 인코딩 방식이 서버에 전달하는거랑 뭔상관?
