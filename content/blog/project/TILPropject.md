@@ -479,3 +479,56 @@ FOOOOOO는 +1씩 되지않는다 왜그럴까? 처음에는 `const calc2 = useCa
 
 이 부분에서 생긴 통찰은 useCallback등을 이용했을 때 이전 메모이제이션을 하는 것은 함수의 내부 함수이고, 이 내부함수가 외부 함수의 지역변수를 참조하고 있으면 컴포넌트 자체가 메모리상에서 반환되지 않고 있게 된다는 것이다.
 그렇기 때문에 useCallback를 사용한다고 무조건 좋은 것이 아니다. 즉 <b color='red'>무지성으로 기술을 사용하는 것은 독이 될 수 있고 항상 왜를 생각해야 한다는 것이다.</b>
+
+#### react 배치 처리
+
+```tsx
+import { useState } from "react"
+
+export default function FunctionComponentCounter() {
+  const [count, setCounter] = useState(0)
+
+  const onClickAddThree = () => {
+    //호출시 3씩 업데이트 된다.
+    setCounter(prev => prev + 1)
+    setCounter(prev => prev + 1)
+    setCounter(prev => prev + 1)
+  }
+
+  const onClickOne = () => {
+    //호출시 1씩 업데이트 된다.
+    setCounter(count + 1)
+    setCounter(count + 1)
+    setCounter(count + 1)
+  }
+
+  return (
+    <div>
+      <h1>function</h1>
+      <h1>{count}</h1>
+      <button onClick={onClick}>add three</button>
+      <button onClick={onClickOne}>add one</button>
+    </div>
+  )
+}
+```
+
+흔하게 많이 보는 react 배치를 알고 있는지 물어볼 때 쓰이는 예제,
+위의 차이를 만들어내는 이유는 react에서 rendering을 최적화 하기 위해서 setState함수가 일어 났을 때 바로 순차적으로 처리하는 것이 아니라 queue에 등록해둔 뒤
+일괄 처리를 하기 때문이다. 때문에 `onClickOne`이 호출되는 시점에 count가 0이었다면 등록된 세 함수 모두` setCounter(count + 1)`의 `count + 1`가 `ts 0+1`로 evaluation된 후
+배치 큐에 등록 되기 때문에 결과가 `0+1`이 3번 반복된 `1`으로 업데이트 된다. 그렇다면 `onClickAddThree`는 무슨 차이일까? `setCounter(prev => prev + 1)`의 인자로 전달되는`prev => prev + 1`함수는 첫 번째 인자로 최신state를 받아온뒤 새로운 state를 반환 한다.
+때문에 `prev => prev + 1` 함수가 호출되는 시점에 최신 데이터를 받아올 수 있어 `0=>0+1`,`1=>1+1`,`2=>2+1` 순으로 처리가 되어 3이 되는 것이다.
+랜더링 최적화를 위해 batch를 하는 react는 예외적으로 다음과 같은 상황에 한번의 setState마다 함수를 render하게 된다.
+
+```ts
+const onClickOne = async () => {
+  await fetch("")
+  setCounter(count - 1)
+  setCounter(count + 1)
+  setCounter(count + 1)
+}
+```
+
+위 함수를 실행 시키게 되면 render가 3번 되는 것을 확인 할 수 있는데, 이는 비동기 처리 다음의 callback 내부에 있는 setState혹은 await 등으로 블로킹 된 후 실행 되는 setState는 react가 배치처리를 하지 않기 때문이다.
+
+하지만 18버전 부터는 기본으로 모든 상황에 배치 처리를 할 예정이라고 한다. [관련 문서](https://immigration9.github.io/react/2021/06/12/automatic-batching-react.html)
